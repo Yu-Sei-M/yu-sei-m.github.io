@@ -36,14 +36,17 @@
 <li>Nodeのバージョン管理ツールのインストール</li>
 <li>Nodeのバージョンを変更</li>
 </ul>
+<p>Homebrewがない人はインストールしましょう。</p>
+<p>/bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&#34;</p>
 <p>ターミナルで次のコマンドを実行しましょう。</p>
 <pre><code>brew install node</code></pre>
 <p>完了したら次のコマンドを実行しましょう。</p>
 <pre><code>npm -g i n</code></pre>
 <p>続いて、次のコマンドを実行しバージョンを変更します。</p>
-<pre><code>n 10.19.0</code></pre>
+<pre><code>sudo n 10.19.0</code></pre>
 <p>最後に正しくバージョンが変更できているかチェックしておきましょう。</p>
-<pre><code>node -v</code></pre>
+<pre><code>sudo node -v</code></pre>
+<p>Windowsの方は<a href="https://techfun.cc/javascript/nodejs.html" target="_blank">こちら</a></p>
 
 
       </google-codelab-step>
