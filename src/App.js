@@ -7,7 +7,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          どこよりも効率よくReactを学んでいきましょう
+          どこよりも効率よくReactを身につけましょう
         </p>
         <a
           className="App-link"
@@ -17,6 +17,7 @@ function App() {
         >
           Learn
         </a>
+        <br/>
         <a
           className="App-link"
           href="https://yu-sei-m.github.io/react-challenge"
