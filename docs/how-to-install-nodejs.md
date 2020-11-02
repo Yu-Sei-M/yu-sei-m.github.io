@@ -12,30 +12,29 @@ analytics account:
 ## Nodeをインストールしよう
 Duration: 0:05:00
 
-<aside class="positive">
-Macの方の作業です。
-</aside>
-
-`Homebrewのインストール`
-```console
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
-```
-
-<aside class="negative">
-Homebrew（ホームブルー）は、コマンドラインで利用できるツールをインストールするツールです。
-</aside>
-
-`nodeのインストール`
-```console
-brew install node
-```
-
 ### このページでやること
 - Homebrewのインストール
 - Nodeのインストール
 - Nodeのバージョン管理ツールのインストール
 - Nodeのバージョンを変更
 
+Positive
+: Macの方の作業です。
+
+`Homebrewのインストール`
+```console
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+Negative
+: Homebrew（ホームブルー）は、コマンドラインで利用できるツールをインストールするツールです。つまり、HomebrewはMac（またはLinux）がデフォルトで備えていない便利なコマンドを導入できます。
+
+`nodeのインストール`
+```console
+brew install node
+```
+
+---
 
 ### 番号リストも勿論対応！
 
@@ -65,11 +64,3 @@ func main(){
 | ---------- | ---- | ------ |
 | Nodeまだない | <button>[こちら](https://techfun.cc/javascript/nodejs.html)</button> | こちら |
 | Node入ってる | こちら | こちら |
-
-
-### ボックス
-Positive
-: 何かお知らせを書きたい時のボックス
-
-Negative
-: 何か注意点などを書きたい時のボックス
