@@ -12,14 +12,18 @@ analytics account:
 ## Nodeをインストールしよう
 Duration: 0:05:00
 
-<span style="color:red;">Macの方の作業です。</span>
+<aside class="positive">
+Macの方の作業です。
+</aside>
 
 `Homebrewのインストール`
 ```console
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-> Homebrew（ホームブルー）は、コマンドラインで利用できるツールをインストールするツールです。
+<aside class="negative">
+Homebrew（ホームブルー）は、コマンドラインで利用できるツールをインストールするツールです。
+</aside>
 
 `nodeのインストール`
 ```console
