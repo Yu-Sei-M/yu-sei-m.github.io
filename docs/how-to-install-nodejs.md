@@ -12,8 +12,19 @@ analytics account:
 ## Nodeをインストールしよう
 Duration: 0:05:00
 
-### CodeLabはいいぞ！
-めちゃくちゃ資料が見やすい！
+<span style="color:red;">Macの方の作業です。</span>
+
+`Homebrewのインストール`
+```console
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+```
+
+> Homebrew（ホームブルー）は、コマンドラインで利用できるツールをインストールするツールです。
+
+`nodeのインストール`
+```console
+brew install node
+```
 
 ### このページでやること
 - Homebrewのインストール
@@ -44,19 +55,12 @@ func main(){
 }
 ```
 
-### OS別に参考にする記事を紹介
-|            | Windows | Mac |
+### OS別に現状に合わせた作業スタート地点が異なります
+
+| Node有無 | Win | Mac |
 | ---------- | ---- | ------ |
-| Nodeまだない | こちら | こちら |
+| Nodeまだない | <button>[こちら](https://techfun.cc/javascript/nodejs.html)</button> | こちら |
 | Node入ってる | こちら | こちら |
-
-
-### リンクの挿入方法は2個
-[通常のリンク](https://zenn.dev/reerishun/articles/ac128b86e090195f59cd/)
-
-<button>
-  [ボタンリンク](https://zenn.dev/reerishun/articles/ac128b86e090195f59cd/)
-</button>
 
 
 ### ボックス
