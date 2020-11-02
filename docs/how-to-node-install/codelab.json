@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2020-11-02T11:33:05Z",
+  "id": "how-to-node-install",
+  "duration": 3,
+  "title": "はじめて学ぶReact",
+  "authors": "Yu-Sei Mikura",
+  "summary": "Nodeインストール",
+  "source": "1jptNErLcvcMifbdTGyKEP1ICxBa-gDoK3kAKoJmJlvY",
+  "theme": "tutorial",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "tutorial"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/Yu-Sei-M/tech-for-beginners/issues",
+  "url": "how-to-node-install"
+}
