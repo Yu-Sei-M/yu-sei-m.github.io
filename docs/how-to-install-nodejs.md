@@ -21,17 +21,19 @@ Negative
 node -v
 ```
 
-nodeのバージョンが表示されたらあなたのパソコンにはnodeがインストールされています。
-以下のような表示になる場合は、あなたのパソコンにはnodeがまだ入っていません。
-この情報をもとに、自分の該当するボタンを押して、Nodeのバージョンをハンズオンで使用するものに変更しましょう。
+次のような表示になる場合は、あなたのパソコンにはnodeがまだ入っていません。
+
+Windowsの方は**作業A**を、Macの方は**作業B**を進めてください。
+
+次のようにnodeのバージョンが表示されたらあなたのパソコンにはnodeがインストールされています。
 
 Negative
-: 指示：nodeのバージョンを10.19.0にしてください。
+: 指示：作業A~Dのうち自分に該当するものを開き、記事の内容を元にnodeのバージョンを10.19.0にしてください。
 
 | Node有無 | Win | Mac |
 | ---------- | ---- | ------ |
-| Nodeまだない | <button>[こちら](https://techfun.cc/javascript/nodejs.html)</button> | <button>[こちら](https://yu-sei-m.github.io/how-to-install-nodejs/#1)</button> |
-| Node入ってる | <button>[こちら](https://qiita.com/satoyan419/items/56e0b5f35912b9374305)</button> | <button>[こちら](https://qiita.com/bigplants/items/2d75bf552e0da4a7e822)</button> |
+| まだない | [作業A](https://techfun.cc/javascript/nodejs.html) | [作業B](https://yu-sei-m.github.io/how-to-install-nodejs/#1) |
+| 入ってる | [作業C](https://qiita.com/satoyan419/items/56e0b5f35912b9374305) | [作業D](https://qiita.com/bigplants/items/2d75bf552e0da4a7e822) |
 
 ### ４つのうちいずれかの作業をした後にもう一度チェック
 
@@ -90,7 +92,16 @@ Positive
 Duration: 0:05:00
 
 11月7日のハンズオンは初心者向けの内容ですが、事前に知識があるに越したことはありません。
+
 パソコンを買ったばかりの人や、HTMLを見たこともない人、プログラミングに一切触れたことがない人が一緒に手を動かして作業するのは難しいので、以下のコンテンツで自学しておくと良いでしょう。
 
 Positive
 : 以下はHTML/CSSとJavaScriptを見たことがない人のための案内です。
+
+流し見て聞いた内容を理解するだけでもかなり変わってくるので、少し触った程度の方もぜひ復習しておいてください。
+
+- [はじめてのHTML](https://dotinstall.com/lessons/basic_html_v5)
+- [はじめてのCSS](https://dotinstall.com/lessons/basic_css_v5)
+- [はじめてのJavaScript](https://dotinstall.com/lessons/basic_javascript_v4)
+
+２倍速で再生すると１時間ほどでキャッチアップできます。
