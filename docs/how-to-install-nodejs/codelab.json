@@ -3,23 +3,23 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2020-11-02T17:21:16Z",
+  "updated": "2020-11-03T07:53:38+09:00",
   "id": "how-to-install-nodejs",
-  "duration": 3,
+  "duration": 15,
   "title": "事前準備｜はじめて学ぶReact",
-  "authors": "Yu-Sei Mikura",
-  "summary": "Nodeインストール",
-  "source": "1jptNErLcvcMifbdTGyKEP1ICxBa-gDoK3kAKoJmJlvY",
-  "theme": "tutorial",
+  "summary": "Reactハンズオンの事前準備",
+  "source": "how-to-install-nodejs.md",
+  "theme": "",
   "status": [
     "published"
   ],
   "category": [
+    "react",
     "tutorial"
   ],
   "tags": [
     "web"
   ],
-  "feedback": "https://github.com/Yu-Sei-M/tech-for-beginners/issues",
+  "feedback": "https://github.com/Yu-Sei-M/yu-sei-m.github.io/issues",
   "url": "how-to-install-nodejs"
 }
