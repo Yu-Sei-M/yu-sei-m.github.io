@@ -3,13 +3,13 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2020-10-30T05:17:58Z",
-  "id": "react",
+  "updated": "2020-11-02T11:52:58Z",
+  "id": "react-challenge",
   "duration": 3,
   "title": "はじめて学ぶReact",
   "authors": "Yu-Sei Mikura",
-  "summary": "はじめて学ぶReact",
-  "source": "1pIUqrZlT00bQL5Uhzbr_WckqBfTGMygjOBFPkFwy2f0",
+  "summary": "Reactで課題に挑戦",
+  "source": "1aFsekZCBHbF2XbUn6I-Xf30BfpsmNZrWsWDs1lNYrKk",
   "theme": "tutorial",
   "status": [
     "published"
@@ -21,5 +21,5 @@
     "web"
   ],
   "feedback": "https://github.com/Yu-Sei-M/tech-for-beginners/issues",
-  "url": "react"
+  "url": "react-challenge"
 }

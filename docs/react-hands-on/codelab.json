@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2020-11-02T11:53:39Z",
+  "id": "react-hands-on",
+  "duration": 3,
+  "title": "はじめて学ぶReact",
+  "authors": "Yu-Sei Mikura",
+  "summary": "はじめて学ぶReact",
+  "source": "1pIUqrZlT00bQL5Uhzbr_WckqBfTGMygjOBFPkFwy2f0",
+  "theme": "tutorial",
+  "status": [
+    "published"
+  ],
+  "category": [
+    "tutorial"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/Yu-Sei-M/tech-for-beginners/issues",
+  "url": "react-hands-on"
+}
