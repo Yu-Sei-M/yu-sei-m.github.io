@@ -1,7 +1,7 @@
-# Yu-Sei's Curriculum
+# ハンドアウト
 
-## DAGアプリ開発チーム専用資料
+## DAGアプリ開発チーム資料
 - 限定公開
 
-## FitnessEngineerのテクノロジー勉強会用カリキュラム
+## FitnessEngineerのテクノロジー勉強会資料
 - [無料公開](https://yu-sei-m.github.io)
