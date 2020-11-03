@@ -33,6 +33,9 @@ Negative
 | まだない | [記事A](https://techfun.cc/javascript/nodejs.html) | [記事B](https://yu-sei-m.github.io/how-to-install-nodejs/#1) |
 | 入ってる | [記事C](https://qiita.com/satoyan419/items/56e0b5f35912b9374305) | [記事D](https://qiita.com/bigplants/items/2d75bf552e0da4a7e822) |
 
+Positive
+: 注意：nodebrewなどすでに使っているバージョン管理ソフトがある方はご自身が利用しているもので10.19.0に設定してください。
+
 ### 記事A~Dのいずれかを作業した後にもう一度チェック
 
 Negative
@@ -208,6 +211,9 @@ Positive
 ### Discordに参加しておこう
 また、当日のイベントはDiscordというチャットアプリで行います。
 直前になって登録し遅れてしまう方もよくいらっしゃるので、あらかじめ参加しておくとハンズオンに遅れず参加できるためおすすめです。
+
+Positive
+: 事前準備で不明点やできないことがある方はDiscordのハンズオン会場で質問していただいても構いません。対応可能なスタッフがいればヘルプできる場合があるかと思いますのでご相談ください。
 
 [FitnessEngineer公式Discordサーバー](https://discord.gg/hnvv5ZM)
 
