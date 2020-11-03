@@ -40,6 +40,8 @@ Duration: 0:01:00
 - 3.ライブラリのコンポーネント導入
 - 9.Reactアプリのビルドコマンド実行
 - 10.初心者が混乱するポイントの確認
+https://github.com/indreklasn/react-fire-auth-example/tree/master/src
+
 
 ## コマンドのインストールと説明
 Duration: 0:03:00

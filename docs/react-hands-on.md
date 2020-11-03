@@ -68,6 +68,7 @@ Duration: 0:03:00
 Positive
 : 説明：Reactアプリを開発するときに大切になるjsファイルの中身を確認し、基本的な構成要素を説明できるようになりましょう。
 
+`App.js`
 ```js
 import logo from './logo.svg';
 import './App.css';
@@ -102,7 +103,9 @@ Duration: 0:02:00
 Positive
 : 説明：Reactアプリの表示画面の見た目を整えるためにどこをどのように編集すれば良いかを押さえましょう。
 
+`App.css`
 ```css
+.App {
   text-align: center;
 }
 
