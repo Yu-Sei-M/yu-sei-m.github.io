@@ -193,23 +193,8 @@ Negative
 ## これにて準備完了です
 Duration: 0:01:00
 
-11月7日のハンズオンは初心者向けの内容ですが、事前に知識があるに越したことはありません。
-
-パソコンを買ったばかりの人や、HTMLを見たこともない人、プログラミングに一切触れたことがない人が一緒に手を動かして作業するのは難しいので、以下のコンテンツで自学しておくと良いでしょう。
-
-Positive
-: 以下はHTML/CSSとJavaScriptを見たことがない人のための案内です。
-
-流し見て聞いておくだけでもかなり変わってくるので、少し触った程度の方もぜひ復習しておいてください。
-
-- [はじめてのHTML](https://dotinstall.com/lessons/basic_html_v5)
-- [はじめてのCSS](https://dotinstall.com/lessons/basic_css_v5)
-- [はじめてのJavaScript](https://dotinstall.com/lessons/basic_javascript_v4)
-
-２倍速で再生すると１時間ほどでキャッチアップできます。
-
 ### Discordに参加しておこう
-また、当日のイベントはDiscordというチャットアプリで行います。
+当日のイベントはDiscordというチャットアプリで行います。
 直前になって登録し遅れてしまう方もよくいらっしゃるので、あらかじめ参加しておくとハンズオンに遅れず参加できるためおすすめです。
 
 Positive
@@ -219,3 +204,18 @@ Positive
 
 なお、当日会場がわからない場合は、connpassの募集ページにある案内を見てください。
 [はじめて学ぶReact](https://npo-fitness-engineer.connpass.com/event/190556/)
+
+Positive
+: 以下はHTML/CSSとJavaScriptを見たことがない人のための案内です。
+
+11月7日のハンズオンは初心者向けの内容ですが、事前に知識があるに越したことはありません。
+
+パソコンを買ったばかりの人や、HTMLを見たこともない人、プログラミングに一切触れたことがない人が一緒に手を動かして作業するのは難しいので、以下のコンテンツで自学しておくと良いでしょう。
+
+流し見て聞いておくだけでもかなり変わってくるので、少し触った程度の方もぜひ復習しておいてください。
+
+- [はじめてのHTML](https://dotinstall.com/lessons/basic_html_v5)
+- [はじめてのCSS](https://dotinstall.com/lessons/basic_css_v5)
+- [はじめてのJavaScript](https://dotinstall.com/lessons/basic_javascript_v4)
+
+２倍速で再生すると１時間ほどでキャッチアップできます。
