@@ -21,21 +21,19 @@ Negative
 node -v
 ```
 
-次のような表示になる場合は、あなたのパソコンにはnodeがまだ入っていません。
+errorが表示される場合は、あなたのパソコンにはnodeがまだ入っていません。Windowsの方は**記事A**を、Macの方は**記事B**を進めてください。
 
-Windowsの方は**作業A**を、Macの方は**作業B**を進めてください。
-
-次のようにnodeのバージョンが表示されたらあなたのパソコンにはnodeがインストールされています。
+次のようにnodeのバージョンが表示されたらあなたのパソコンにはnodeがインストールされています。10.19.0でない場合は、変更する必要があるため、Windowsの方は**記事C**を、Macの方は**記事D**を進めてください。
 
 Negative
-: 指示：作業A~Dのうち自分に該当するものを開き、記事の内容を元にnodeのバージョンを10.19.0にしてください。
+: 指示：記事A~Dのうち自分に該当するものを開き、記事の内容を元にnodeのバージョンを10.19.0にしてください。
 
 | Node有無 | Win | Mac |
 | ---------- | ---- | ------ |
-| まだない | [作業A](https://techfun.cc/javascript/nodejs.html) | [作業B](https://yu-sei-m.github.io/how-to-install-nodejs/#1) |
-| 入ってる | [作業C](https://qiita.com/satoyan419/items/56e0b5f35912b9374305) | [作業D](https://qiita.com/bigplants/items/2d75bf552e0da4a7e822) |
+| まだない | [記事A](https://techfun.cc/javascript/nodejs.html) | [記事B](https://yu-sei-m.github.io/how-to-install-nodejs/#1) |
+| 入ってる | [記事C](https://qiita.com/satoyan419/items/56e0b5f35912b9374305) | [記事D](https://qiita.com/bigplants/items/2d75bf552e0da4a7e822) |
 
-### ４つのうちいずれかの作業をした後にもう一度チェック
+### 記事A~Dのいずれかを作業した後にもう一度チェック
 
 Negative
 : 指示：コマンドラインを開いて、下記のコマンドを実行してください。
@@ -45,6 +43,8 @@ node -v
 ```
 
 以下のように出力されていれば問題ありません。
+
+![Nodeバージョン](./images/node-version.png)
 
 ## Nodeのインストール（Mac）
 Duration: 0:05:00
@@ -91,6 +91,9 @@ sudo n 10.19.0
 node -v
 ```
 
+最後の実行結果が以下のように出力されていれば問題ありません。
+
+![Nodeバージョン](./images/node-version.png)
 
 ## VSCodeのインストール
 Duration: 0:05:00
