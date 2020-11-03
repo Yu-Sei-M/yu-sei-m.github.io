@@ -50,8 +50,10 @@
       <google-codelab-step label="アプリ作成コマンドの実行と説明" duration="3">
         <aside class="special"><p>説明：Reactアプリはコマンドで作成できます。コマンドはデフォルトで入っているものではなく、インターネットでダウンロードできるFacebook製の外部コマンドです。</p>
 </aside>
-<pre>npx create-react-app react-practice &amp;&amp; cd $_
+<pre>npx create-react-app react-practice
+cd practice
 </pre>
+<p class="image-container"><img src="img/9478cb577d22cd55.gif"></p>
 
 
       </google-codelab-step>
@@ -59,6 +61,7 @@
       <google-codelab-step label="作成されたアプリの構造の説明" duration="2">
         <aside class="special"><p>説明：コマンド一つでアプリの雛形が完成しますが、いきなり編集を始めるのではなく、中身について大体のイメージができていることが大切です。</p>
 </aside>
+<p class="image-container"><img src="img/2f30963fb3751971.png"></p>
 <table>
 <tr><td colspan="1" rowspan="1"><p>名前</p>
 </td><td colspan="1" rowspan="1"><p>説明</p>
@@ -91,6 +94,7 @@
 </aside>
 <pre>npm start
 </pre>
+<p class="image-container"><img src="img/e9f5d1c1d47ae64e.png"></p>
 
 
       </google-codelab-step>
@@ -108,15 +112,15 @@ function App() {
       &lt;header className=&#34;App-header&#34;&gt;
         &lt;img src={logo} className=&#34;App-logo&#34; alt=&#34;logo&#34; /&gt;
         &lt;p&gt;
-          Edit &lt;code&gt;src/App.js&lt;/code&gt; and save to reload.
+          フィットネス・エンジニアの勉強会
         &lt;/p&gt;
         &lt;a
           className=&#34;App-link&#34;
-          href=&#34;https://reactjs.org&#34;
+          href=&#34;https://yu-sei-m.github.io/react-hands-on&#34;
           target=&#34;_blank&#34;
           rel=&#34;noopener noreferrer&#34;
         &gt;
-          Learn React
+          はじめて学ぶReact
         &lt;/a&gt;
       &lt;/header&gt;
     &lt;/div&gt;
@@ -161,6 +165,7 @@ export default App;
 
 .App-link {
   color: #61dafb;
+  text-decoration: none;
 }
 
 @keyframes App-logo-spin {
