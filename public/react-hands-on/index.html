@@ -1,0 +1,229 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>ハンズオン｜はじめて学ぶReact</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="react-hands-on"
+                  title="ハンズオン｜はじめて学ぶReact"
+                  environment="web"
+                  feedback-link="https://github.com/Yu-Sei-M/yu-sei-m.github.io/issues">
+    
+      <google-codelab-step label="はじめに" duration="1">
+        <aside class="special"><p>説明：今回のハンズオンでは、Reactアプリ開発の基本を確認しながら、作成から公開までを通しで進めていきます。途中で詰まった場合はDiscordに投稿してください。</p>
+</aside>
+<h2 is-upgraded>ハンズオンの流れ</h2>
+<ol type="1">
+<li>はじめに（ハンズオンの流れ）</li>
+<li>アプリ作成コマンドの実行と説明</li>
+<li>作成されたアプリの構造の説明</li>
+<li>Reactアプリ起動コマンドの確認</li>
+<li>表示されているテキストの編集</li>
+<li>表示されているデザインの編集</li>
+<li>表示に簡易ログイン機能を実装</li>
+<li>コンポーネントの作成と読み込み</li>
+<li>Reactアプリのビルドコマンド実行</li>
+<li>初心者が混乱するポイントの確認</li>
+</ol>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="アプリ作成コマンドの実行と説明" duration="3">
+        <aside class="special"><p>説明：Reactアプリはコマンドで作成できます。コマンドはデフォルトで入っているものではなく、インターネットでダウンロードできるFacebook製の外部コマンドです。</p>
+</aside>
+<pre>npx create-react-app react-practice &amp;&amp; cd $_
+</pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="作成されたアプリの構造の説明" duration="2">
+        <aside class="special"><p>説明：コマンド一つでアプリの雛形が完成しますが、いきなり編集を始めるのではなく、中身について大体のイメージができていることが大切です。</p>
+</aside>
+<table>
+<tr><td colspan="1" rowspan="1"><p>名前</p>
+</td><td colspan="1" rowspan="1"><p>説明</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>README.md</p>
+</td><td colspan="1" rowspan="1"><p>このディレクトリのアプリの説明などを書く</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>package.json</p>
+</td><td colspan="1" rowspan="1"><p>このアプリのライブラリや各種情報を書く</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>yarn.lock</p>
+</td><td colspan="1" rowspan="1"><p>このアプリの利用ライブラリの依存関係が書かれている</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>node_modules</p>
+</td><td colspan="1" rowspan="1"><p>このアプリが利用しているライブラリが入っている</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>src</p>
+</td><td colspan="1" rowspan="1"><p>このアプリを開発するときに書くコードやプログラムが入っている</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>public</p>
+</td><td colspan="1" rowspan="1"><p>静的サイトを公開したいときにファイルを配置する</p>
+</td></tr>
+</table>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Reactアプリ起動コマンドの確認" duration="1">
+        <aside class="special"><p>説明：ローカルサーバーを起動すると開発環境で開発しているReactアプリをブラウザで確認できます。</p>
+</aside>
+<pre>npm start
+</pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="表示されているテキストの編集" duration="3">
+        <aside class="special"><p>説明：Reactアプリを開発するときに大切になるjsファイルの中身を確認し、基本的な構成要素を説明できるようになりましょう。</p>
+</aside>
+<pre><code language="language-js" class="language-js">import logo from &#39;./logo.svg&#39;;
+import &#39;./App.css&#39;;
+
+function App() {
+  return (
+    &lt;div className=&#34;App&#34;&gt;
+      &lt;header className=&#34;App-header&#34;&gt;
+        &lt;img src={logo} className=&#34;App-logo&#34; alt=&#34;logo&#34; /&gt;
+        &lt;p&gt;
+          Edit &lt;code&gt;src/App.js&lt;/code&gt; and save to reload.
+        &lt;/p&gt;
+        &lt;a
+          className=&#34;App-link&#34;
+          href=&#34;https://reactjs.org&#34;
+          target=&#34;_blank&#34;
+          rel=&#34;noopener noreferrer&#34;
+        &gt;
+          Learn React
+        &lt;/a&gt;
+      &lt;/header&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="表示されているデザインの編集" duration="2">
+        <aside class="special"><p>説明：Reactアプリの表示画面の見た目を整えるためにどこをどのように編集すれば良いかを押さえましょう。</p>
+</aside>
+<pre><code language="language-css" class="language-css">  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="表示に簡易ログイン機能を実装" duration="3">
+        <aside class="special"><p>説明：ReactアプリでJavaScriptを記述し、プログラミングを組み合わせる方法を確認し、いつでも追加実装できるようにポイントを押さえましょう。</p>
+</aside>
+<pre><code language="language-js" class="language-js">const checkIn = () =&gt; {
+  var pass = prompt(&#34;パスワードを入力して下さい:&#34;,&#34;&#34;);
+  if (pass != null) window.location.href = pass;
+}
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="コンポーネント作成と導入" duration="3">
+        <aside class="special"><p>説明：Reactアプリ開発においてなぜコンポーネントを作成することが大切なのか理解し、今後はコンポーネントを活用できるようになりましょう。</p>
+</aside>
+<pre>mkdir components
+touch components/header.js
+</pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Reactのビルドコマンド実行" duration="2">
+        <aside class="special"><p>説明：Reactアプリを公開するときのオーソドックスな方法を学びます。</p>
+</aside>
+<pre>npm build
+</pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="初心者が混乱するポイント" duration="5">
+        <aside class="special"><p>説明：初心者がReactを学習するときにわからなくなりがちなところをピックアップします。</p>
+</aside>
+<ul>
+<li>ライブラリの利用方法の揺らぎ</li>
+<li>コンポーネントの定義の揺らぎ</li>
+<li>関数の書き方の揺らぎ</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
