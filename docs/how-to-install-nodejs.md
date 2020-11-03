@@ -204,3 +204,12 @@ Positive
 - [はじめてのJavaScript](https://dotinstall.com/lessons/basic_javascript_v4)
 
 ２倍速で再生すると１時間ほどでキャッチアップできます。
+
+### Discordに参加しておこう
+また、当日のイベントはDiscordというチャットアプリで行います。
+直前になって登録し遅れてしまう方もよくいらっしゃるので、あらかじめ参加しておくとハンズオンに遅れず参加できるためおすすめです。
+
+[FitnessEngineer公式Discordサーバー](https://discord.gg/hnvv5ZM)
+
+なお、当日会場がわからない場合は、connpassの募集ページにある案内を見てください。
+[はじめて学ぶReact](https://npo-fitness-engineer.connpass.com/event/190556/)
