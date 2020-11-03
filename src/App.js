@@ -1,7 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
 
-
 const checkIn = () => {
   var pass = prompt("パスワードを入力して下さい:","");
   if (pass != null) window.location.href = pass;
