@@ -88,6 +88,7 @@ Positive
 - [VSCodeダウンロード](https://code.visualstudio.com)
 
 ちなみにWinでもMacでも使えますのでご安心ください。
+![MacでもWinでも使える統合開発ソフト](./images/vsc-01.gif)
 
 #### STEP2
 ダウンロードが終わったら、そのファイルを開いてMacならDockに、WinならTaskBarに追加してください。
@@ -97,38 +98,42 @@ Positive
 以下の方法は、VSCode以外のソフトについても同じように使えますので、ぜひ覚えておいてください。
 
 ##### MacでDockに追加
-
 1. 開いているVSCodeのアイコン（Dock）を右クリックしてください。
 2. 「オプション」にカーソルを合わせて「Dockに追加」をクリックしてください。
 3. これでVSCodeを閉じてもDockにVSCodeが残存します。
 
+![MacでVSCodeをDockに追加](./images/vsc-02.gif)
 
 ##### WinでTaskBarに追加
-
 1. 開いているVSCodeのアイコン（TaskBar）を右クリックしてください。
 2. 「タスクバーに追加」をクリックしてください。
 3. これでVSCodeを閉じてもTaskBarにVSCodeが残存します。
 
+![WinでVSCodeをTaskBarに追加](./images/vsc-03.gif)
 
 ### 起動と画面の説明
 #### STEP3
 Macの人はDockの、Winの人はTaskBarのVSCodeをクリックして起動してください。
 ちなみにMacの場合は、`command + space` で表示される検索バーに「VSC」と入力してエンターを押してもすぐに起動できます。
 
+![Macでショートカット起動](./images/vsc-04.gif)
 
 #### STEP4
 こちらはVSCodeの画面です。
 この短い動画と同じように操作して同じ画面にしてください。
 まずは、左バーの上のボタンを押してフォルダ一覧をみれるようにしましょう。
 
+![左の縦長メニューバーの一番上をクリック](./images/vsc-05.gif)
 
 次にターミナル（Terminal）を開きます。
 このVSCodeの下側の部分でパソコンをコマンドで操作できます。
 （パソコンのコマンド操作をしたことがない人は、意味がわからなくてもまだ大丈夫です）
 
+![VSCodeでターミナルを開く](./images/vsc-06.gif)
 
 実際のフォルダを開くと、次のようになります。
 
+![VSCodeでフォルダを開く](./images/vsc-07.jpg)
 
 左側にディレクトリの中身が表示され、新規作成やコピー、削除の他、名前の変更などの操作が可能になっています。
 
