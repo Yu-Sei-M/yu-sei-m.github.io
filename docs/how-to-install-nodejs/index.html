@@ -73,13 +73,24 @@
 <li>Nodeのバージョン管理ツールのインストール</li>
 <li>Nodeのバージョンを変更</li>
 </ul>
+<aside class="special"><p>Homebrew（ホームブルー）は、コマンドラインで利用できるツールをインストールするツールです。つまり、HomebrewはMac（またはLinux）がデフォルトで備えていない便利なコマンドを導入できます。</p>
+</aside>
+<aside class="warning"><p>指示：次の５つのコマンドを順番にターミナルで実行してください。</p>
+</aside>
 <p><code>Homebrewのインストール</code></p>
 <pre>/bin/bash -c &#34;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)&#34;
 </pre>
-<aside class="special"><p>Homebrew（ホームブルー）は、コマンドラインで利用できるツールをインストールするツールです。つまり、HomebrewはMac（またはLinux）がデフォルトで備えていない便利なコマンドを導入できます。</p>
-</aside>
 <p><code>nodeのインストール</code></p>
 <pre>brew install node
+</pre>
+<p><code>nのインストール</code></p>
+<pre>npm -g i n
+</pre>
+<p><code>nodeのバージョン変更</code></p>
+<pre>sudo n 10.19.0
+</pre>
+<p><code>nodeのバージョン確認</code></p>
+<pre>node -v
 </pre>
 
 
@@ -87,26 +98,29 @@
     
       <google-codelab-step label="VSCodeのインストール" duration="5">
         <p>11月7日のハンズオンではVSCodeを利用します。</p>
-<aside class="special"><p>このページはVSCodeが入っていない人のための解説をしています。普段から使っている人は次に進んでください。</p>
+<aside class="special"><p>このページはVSCodeが入っていない人のための解説をしています。普段から使っている人は次に進んでください。使い方も説明していますが、ハンズオンで口頭で説明するので時間がない方はインストールのみでも構いません。</p>
 </aside>
 <h2 is-upgraded>VSCodeのダウンロード</h2>
 <h3 is-upgraded>STEP1</h3>
-<p>公式ページから、最新版のVSCodeをダウンロードしましょう。</p>
+<aside class="warning"><p>指示：公式ページから、最新版のVSCodeをダウンロードしましょう。</p>
+</aside>
 <ul>
 <li><a href="https://code.visualstudio.com" target="_blank">VSCodeダウンロード</a></li>
 </ul>
 <p>ちなみにWinでもMacでも使えますのでご安心ください。 <img alt="MacでもWinでも使える統合開発ソフト" src="img/24519aa432cc7bd9.gif"></p>
 <h3 is-upgraded>STEP2</h3>
-<p>ダウンロードが終わったら、そのファイルを開いてMacならDockに、WinならTaskBarに追加してください。 これでいつでもVSCodeをクリック起動できます！ 追加の仕方は簡単で、初めて開いたときに次のように操作するだけでOKです。</p>
+<aside class="warning"><p>指示：ダウンロードが終わったら、そのファイルを開いてMacならDockに、WinならTaskBarに追加してください。</p>
+</aside>
+<p>これでいつでもVSCodeをクリック起動できます！ 追加の仕方は簡単で、初めて開いたときに次のように操作するだけでOKです。</p>
 <p>以下の方法は、VSCode以外のソフトについても同じように使えますので、ぜひ覚えておいてください。</p>
-<h4 is-upgraded>MacでDockに追加</h4>
+<h4 is-upgraded>MacでDockに追加する手順</h4>
 <ol type="1">
 <li>開いているVSCodeのアイコン（Dock）を右クリックしてください。</li>
 <li>「オプション」にカーソルを合わせて「Dockに追加」をクリックしてください。</li>
 <li>これでVSCodeを閉じてもDockにVSCodeが残存します。</li>
 </ol>
 <p class="image-container"><img alt="MacでVSCodeをDockに追加" src="img/f44cc322a38a8363.gif"></p>
-<h4 is-upgraded>WinでTaskBarに追加</h4>
+<h4 is-upgraded>WinでTaskBarに追加する手順</h4>
 <ol type="1">
 <li>開いているVSCodeのアイコン（TaskBar）を右クリックしてください。</li>
 <li>「タスクバーに追加」をクリックしてください。</li>
@@ -126,19 +140,30 @@
 <p class="image-container"><img alt="VSCodeでフォルダを開く" src="img/179c7f6614b05748.jpg"></p>
 <p>左側にディレクトリの中身が表示され、新規作成やコピー、削除の他、名前の変更などの操作が可能になっています。</p>
 <p>右側の上のスペースは、プログラムファイルにコードを記述するときにエディターとして使うスペースです。 右側の下には、主にコマンドラインを表示し、各種コマンドを実行します。</p>
+<h2 is-upgraded>おつかれ様でした！</h2>
+<p>VSCodeのインストールはこれで完了です。次に進みましょう。</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="Netlifyアカウント作成" duration="5">
+      <google-codelab-step label="Netlifyアカウント作成" duration="3">
         <p>11月7日のハンズオンではNelifyを利用します。</p>
 <aside class="special"><p>このページはNetlifyのアカウントがない人のための案内です。普段から使っている人はこれで準備完了です。</p>
+</aside>
+<h2 is-upgraded>Netlifyのアカウント開設</h2>
+<aside class="warning"><p>指示：公式ページからNetlifyに登録しましょう。</p>
+</aside>
+<ul>
+<li><a href="https://app.netlify.com/signup/email" target="_blank">ネットリファイ登録</a></li>
+</ul>
+<p>メールアドレスとパスワードを入力すると完了します。 <img alt="ネットリファイ登録画面" src="img/61d6bbcad39d58a2.png"></p>
+<aside class="warning"><p>指示：メールが届くので、認証リンクをクリックしておきましょう。</p>
 </aside>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="これにて準備完了です" duration="5">
+      <google-codelab-step label="これにて準備完了です" duration="1">
         <p>11月7日のハンズオンは初心者向けの内容ですが、事前に知識があるに越したことはありません。</p>
 <p>パソコンを買ったばかりの人や、HTMLを見たこともない人、プログラミングに一切触れたことがない人が一緒に手を動かして作業するのは難しいので、以下のコンテンツで自学しておくと良いでしょう。</p>
 <aside class="special"><p>以下はHTML/CSSとJavaScriptを見たことがない人のための案内です。</p>

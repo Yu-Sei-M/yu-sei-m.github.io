@@ -60,19 +60,37 @@ Positive
 - Nodeのバージョン管理ツールのインストール
 - Nodeのバージョンを変更
 
+Positive
+: Homebrew（ホームブルー）は、コマンドラインで利用できるツールをインストールするツールです。つまり、HomebrewはMac（またはLinux）がデフォルトで備えていない便利なコマンドを導入できます。
+
+Negative
+: 指示：次の５つのコマンドを順番にターミナルで実行してください。
 
 `Homebrewのインストール`
 ```console
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-Positive
-: Homebrew（ホームブルー）は、コマンドラインで利用できるツールをインストールするツールです。つまり、HomebrewはMac（またはLinux）がデフォルトで備えていない便利なコマンドを導入できます。
-
 `nodeのインストール`
 ```console
 brew install node
 ```
+
+`nのインストール`
+```console
+npm -g i n
+```
+
+`nodeのバージョン変更`
+```console
+sudo n 10.19.0
+```
+
+`nodeのバージョン確認`
+```console
+node -v
+```
+
 
 ## VSCodeのインストール
 Duration: 0:05:00
@@ -80,31 +98,34 @@ Duration: 0:05:00
 11月7日のハンズオンではVSCodeを利用します。
 
 Positive
-: このページはVSCodeが入っていない人のための解説をしています。普段から使っている人は次に進んでください。
+: このページはVSCodeが入っていない人のための解説をしています。普段から使っている人は次に進んでください。使い方も説明していますが、ハンズオンで口頭で説明するので時間がない方はインストールのみでも構いません。
 
 ### VSCodeのダウンロード
 #### STEP1
-公式ページから、最新版のVSCodeをダウンロードしましょう。
+Negative
+: 指示：公式ページから、最新版のVSCodeをダウンロードしましょう。
 - [VSCodeダウンロード](https://code.visualstudio.com)
 
 ちなみにWinでもMacでも使えますのでご安心ください。
 ![MacでもWinでも使える統合開発ソフト](./images/vsc-01.gif)
 
 #### STEP2
-ダウンロードが終わったら、そのファイルを開いてMacならDockに、WinならTaskBarに追加してください。
+Negative
+: 指示：ダウンロードが終わったら、そのファイルを開いてMacならDockに、WinならTaskBarに追加してください。
+
 これでいつでもVSCodeをクリック起動できます！
 追加の仕方は簡単で、初めて開いたときに次のように操作するだけでOKです。
 
 以下の方法は、VSCode以外のソフトについても同じように使えますので、ぜひ覚えておいてください。
 
-##### MacでDockに追加
+##### MacでDockに追加する手順
 1. 開いているVSCodeのアイコン（Dock）を右クリックしてください。
 2. 「オプション」にカーソルを合わせて「Dockに追加」をクリックしてください。
 3. これでVSCodeを閉じてもDockにVSCodeが残存します。
 
 ![MacでVSCodeをDockに追加](./images/vsc-02.gif)
 
-##### WinでTaskBarに追加
+##### WinでTaskBarに追加する手順
 1. 開いているVSCodeのアイコン（TaskBar）を右クリックしてください。
 2. 「タスクバーに追加」をクリックしてください。
 3. これでVSCodeを閉じてもTaskBarにVSCodeが残存します。
@@ -140,17 +161,31 @@ Macの人はDockの、Winの人はTaskBarのVSCodeをクリックして起動し
 右側の上のスペースは、プログラムファイルにコードを記述するときにエディターとして使うスペースです。
 右側の下には、主にコマンドラインを表示し、各種コマンドを実行します。
 
+### おつかれ様でした！
+VSCodeのインストールはこれで完了です。次に進みましょう。
 
 ## Netlifyアカウント作成
-Duration: 0:05:00
+Duration: 0:03:00
 
 11月7日のハンズオンではNelifyを利用します。
 
 Positive
 : このページはNetlifyのアカウントがない人のための案内です。普段から使っている人はこれで準備完了です。
 
+### Netlifyのアカウント開設
+Negative
+: 指示：公式ページからNetlifyに登録しましょう。
+- [ネットリファイ登録](https://app.netlify.com/signup/email)
+
+メールアドレスとパスワードを入力すると完了します。
+![ネットリファイ登録画面](./images/netlify-signup.png)
+
+Negative
+: 指示：メールが届くので、認証リンクをクリックしておきましょう。
+
+
 ## これにて準備完了です
-Duration: 0:05:00
+Duration: 0:01:00
 
 11月7日のハンズオンは初心者向けの内容ですが、事前に知識があるに越したことはありません。
 
