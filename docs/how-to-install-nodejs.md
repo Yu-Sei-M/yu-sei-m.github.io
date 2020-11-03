@@ -12,6 +12,12 @@ analytics account:
 ## 自分に必要な準備を確認
 Duration: 0:03:00
 
+Macの人はターミナルを、Winの人はコマンドプロンプト（またはパワーシェル）を起動しておきましょう。
+
+わからない人は以下の記事を参照
+- [Winコマンドプロンプト](https://www.pc-cafe.jp/%E3%82%B3%E3%83%9E%E3%83%B3%E3%83%89%E3%83%97%E3%83%AD%E3%83%B3%E3%83%97%E3%83%88%E3%80%81%E3%82%B7%E3%82%A7%E3%83%AB%E3%80%81%E3%82%BF%E3%83%BC%E3%83%9F%E3%83%8A%E3%83%AB%E3%81%A8%E3%81%AF%EF%BC%9F/)
+- [Macターミナル](https://macmac.jp/macmac127/)
+
 ### OS別に現状に合わせた作業スタート地点が異なります
 
 Negative
@@ -205,6 +211,9 @@ Positive
 なお、当日会場がわからない場合は、connpassの募集ページにある案内を見てください。
 [はじめて学ぶReact](https://npo-fitness-engineer.connpass.com/event/190556/)
 
+
+### HTML/CSS/JSの勧め
+
 Positive
 : 以下はHTML/CSSとJavaScriptを見たことがない人のための案内です。
 
@@ -212,7 +221,7 @@ Positive
 
 パソコンを買ったばかりの人や、HTMLを見たこともない人、プログラミングに一切触れたことがない人が一緒に手を動かして作業するのは難しいので、以下のコンテンツで自学しておくと良いでしょう。
 
-流し見て聞いておくだけでもかなり変わってくるので、少し触った程度の方もぜひ復習しておいてください。
+流し見て聞いておくだけでもかなり変わってくるので、少し触った程度の方もぜひ復習しておいてください。すべて無料のコンテンツです。
 
 - [はじめてのHTML](https://dotinstall.com/lessons/basic_html_v5)
 - [はじめてのCSS](https://dotinstall.com/lessons/basic_css_v5)
