@@ -3,12 +3,12 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2020-11-04T06:29:15+09:00",
+  "updated": "2020-11-04T06:15:32+09:00",
   "id": "react-hands-on",
-  "duration": 6,
+  "duration": 25,
   "title": "ハンズオン｜はじめて学ぶReact",
-  "summary": "はじめて学ぶReactハンズオン",
-  "source": "react-challenge.md",
+  "summary": "Reactハンズオンの事前準備",
+  "source": "react-hands-on.md",
   "theme": "",
   "status": [
     "draft"
