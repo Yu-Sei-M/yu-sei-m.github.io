@@ -66,23 +66,26 @@ cd practice
 <tr><td colspan="1" rowspan="1"><p>名前</p>
 </td><td colspan="1" rowspan="1"><p>説明</p>
 </td></tr>
-<tr><td colspan="1" rowspan="1"><p>README.md</p>
-</td><td colspan="1" rowspan="1"><p>このディレクトリのアプリの説明などを書く</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p>package.json</p>
-</td><td colspan="1" rowspan="1"><p>このアプリのライブラリや各種情報を書く</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p>yarn.lock</p>
-</td><td colspan="1" rowspan="1"><p>このアプリの利用ライブラリの依存関係が書かれている</p>
-</td></tr>
 <tr><td colspan="1" rowspan="1"><p>node_modules</p>
 </td><td colspan="1" rowspan="1"><p>このアプリが利用しているライブラリが入っている</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>public</p>
+</td><td colspan="1" rowspan="1"><p>静的サイトを公開したいときにファイルを配置する</p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p>src</p>
 </td><td colspan="1" rowspan="1"><p>このアプリを開発するときに書くコードやプログラムが入っている</p>
 </td></tr>
-<tr><td colspan="1" rowspan="1"><p>public</p>
-</td><td colspan="1" rowspan="1"><p>静的サイトを公開したいときにファイルを配置する</p>
+<tr><td colspan="1" rowspan="1"><p>.gitignore</p>
+</td><td colspan="1" rowspan="1"><p>リモートリポジトリにプッシュしないファイルを書く</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>package.json</p>
+</td><td colspan="1" rowspan="1"><p>このアプリのライブラリや各種情報を書く</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>README.md</p>
+</td><td colspan="1" rowspan="1"><p>このディレクトリのアプリの説明などを書く</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>yarn.lock</p>
+</td><td colspan="1" rowspan="1"><p>このアプリの利用ライブラリの依存関係が書かれている</p>
 </td></tr>
 </table>
 
@@ -102,17 +105,19 @@ cd practice
       <google-codelab-step label="表示されているテキストの編集" duration="3">
         <aside class="special"><p>説明：Reactアプリを開発するときに大切になるjsファイルの中身を確認し、基本的な構成要素を説明できるようになりましょう。</p>
 </aside>
-<p><code>App.js</code></p>
-<pre><code language="language-js" class="language-js">import logo from &#39;./logo.svg&#39;;
-import &#39;./App.css&#39;;
+<p><code>完成後のApp.js</code></p>
+<pre><code language="language-js" class="language-js">import &#39;./App.css&#39;;
 
 function App() {
+  const logo = &#39;/images/logo.png&#39;;
   return (
     &lt;div className=&#34;App&#34;&gt;
       &lt;header className=&#34;App-header&#34;&gt;
         &lt;img src={logo} className=&#34;App-logo&#34; alt=&#34;logo&#34; /&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
         &lt;p&gt;
-          フィットネス・エンジニアの勉強会
+          &lt;b&gt;フィットネス・エンジニアの勉強会&lt;/b&gt;
         &lt;/p&gt;
         &lt;a
           className=&#34;App-link&#34;
@@ -129,14 +134,16 @@ function App() {
 
 export default App;
 </code></pre>
+<aside class="warning"><p>指示：</p>
+</aside>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="表示されているデザインの編集" duration="2">
-        <aside class="special"><p>説明：Reactアプリの表示画面の見た目を整えるためにどこをどのように編集すれば良いかを押さえましょう。</p>
+        <aside class="special"><p>説明：Reactアプリの表示画面の見た目を整えるためにどこをどのように編集すれば良いかを押さえましょう。ここではCSSの内容については特に説明しないので、「装飾したい部分にこんなふうに指定すると色やサイズ・余白を変更できるのか」と感覚をつかんでください。</p>
 </aside>
-<p><code>App.css</code></p>
+<p><code>完成後のApp.css</code></p>
 <pre><code language="language-css" class="language-css">.App {
   text-align: center;
 }
@@ -153,18 +160,20 @@ export default App;
 }
 
 .App-header {
-  background-color: #282c34;
+  /* background-color: #282c34; */
+  background-color: #fefefe;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
-  color: white;
+  color: dimgrey;
 }
 
 .App-link {
-  color: #61dafb;
+  /* color: #61dafb; */
+  color: #294b8f;
   text-decoration: none;
 }
 
@@ -176,7 +185,26 @@ export default App;
     transform: rotate(360deg);
   }
 }
-
+</code></pre>
+<aside class="warning"><p>指示１：背景色をカラーコード「#fefefe」に変更しましょう。</p>
+</aside>
+<p>一行目のバックグラウンドカラーをコメントアウトして値を「background-color: #fefefe;」を追記します。</p>
+<p><code>App.cssの中のApp-headerクラスのスタイルを変更</code></p>
+<pre><code language="language-css" class="language-css">.App-header {
+  /* background-color: #282c34; */
+  background-color: #fefefe;
+  /* 以下省略 */
+}
+</code></pre>
+<aside class="warning"><p>指示２：リンクの色をカラーコード「#fefefe」に変更しましょう。</p>
+</aside>
+<p>一行目のカラーの指定をコメントアウトして値を「color: #294b8f;」を追記します。</p>
+<p><code>App.cssの中のApp-linkクラスのスタイルを変更</code></p>
+<pre><code language="language-css" class="language-css">.App-link {
+  /* color: #61dafb; */
+  color: #294b8f;
+  /* 以下省略 */
+}
 </code></pre>
 
 
@@ -184,6 +212,8 @@ export default App;
     
       <google-codelab-step label="表示に簡易ログイン機能を実装" duration="3">
         <aside class="special"><p>説明：ReactアプリでJavaScriptを記述し、プログラミングを組み合わせる方法を確認し、いつでも追加実装できるようにポイントを押さえましょう。</p>
+</aside>
+<aside class="warning"><p>指示１：</p>
 </aside>
 <pre><code language="language-js" class="language-js">const checkIn = () =&gt; {
   var pass = prompt(&#34;パスワードを入力して下さい:&#34;,&#34;&#34;);
