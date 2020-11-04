@@ -103,7 +103,7 @@ cd practice
       </google-codelab-step>
     
       <google-codelab-step label="表示されているテキストの編集" duration="3">
-        <aside class="special"><p>説明：Reactアプリを開発するときに大切になるjsファイルの中身を確認し、基本的な構成要素を説明できるようになりましょう。</p>
+        <aside class="special"><p>説明：Reactアプリを開発するときに大切になるjsファイルの中身を確認し、基本的な構成要素を説明できるようになりましょう。ここでは、テキストと画像の置き換えを行います。</p>
 </aside>
 <p><code>完成後のApp.js</code></p>
 <pre><code language="language-js" class="language-js">import &#39;./App.css&#39;;
@@ -134,7 +134,7 @@ function App() {
 
 export default App;
 </code></pre>
-<aside class="warning"><p>指示：</p>
+<aside class="warning"><p>指示１：</p>
 </aside>
 
 
@@ -213,7 +213,40 @@ export default App;
       <google-codelab-step label="表示に簡易ログイン機能を実装" duration="3">
         <aside class="special"><p>説明：ReactアプリでJavaScriptを記述し、プログラミングを組み合わせる方法を確認し、いつでも追加実装できるようにポイントを押さえましょう。</p>
 </aside>
-<aside class="warning"><p>指示１：</p>
+<p><code>完成後のApp.js</code></p>
+<pre><code language="language-js" class="language-js">import &#39;./App.css&#39;;
+
+const checkIn = () =&gt; {
+  var pass = prompt(&#34;パスワードを入力して下さい:&#34;,&#34;&#34;);
+  if (pass != null) window.location.href = &#34;https://yu-sei-m.github.io/&#34; + pass;
+}
+
+const App = () =&gt; {
+  const logo = &#39;/images/logo.png&#39;;
+  return (
+    &lt;div className=&#34;App&#34;&gt;
+      &lt;header className=&#34;App-header&#34;&gt;
+        &lt;img src={logo} className=&#34;App-logo&#34; alt=&#34;logo&#34; /&gt;
+        &lt;br/&gt;
+        &lt;br/&gt;
+        &lt;p&gt;
+          &lt;b&gt;フィットネス・エンジニアの勉強会&lt;/b&gt;
+        &lt;/p&gt;
+        &lt;a
+          className=&#34;App-link&#34;
+          onClick={()=&gt;checkIn()}
+        &gt;
+          はじめて学ぶReact
+        &lt;/a&gt;
+      &lt;/header&gt;
+    &lt;/div&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>関数の定義方法が違うことに気づきましたか？この説明は最後に補足するので、今は<strong>「このように書いても動くんだなあ」</strong>と把握するにとどめておきましょう。</p>
+<aside class="warning"><p>指示１：次のように関数を定義して、App.jsのApp関数の上に記述しましょう。</p>
 </aside>
 <pre><code language="language-js" class="language-js">const checkIn = () =&gt; {
   var pass = prompt(&#34;パスワードを入力して下さい:&#34;,&#34;&#34;);
