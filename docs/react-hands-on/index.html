@@ -50,10 +50,19 @@
       <google-codelab-step label="アプリ作成コマンドの実行と説明" duration="3">
         <aside class="special"><p>説明：Reactアプリはコマンドで作成できます。コマンドはデフォルトで入っているものではなく、インターネットでダウンロードできるFacebook製の外部コマンドです。</p>
 </aside>
-<pre>npx create-react-app react-practice
-cd practice
+<aside class="warning"><p>指示１：次のコマンドを順番に一つずつ実行しましょう。</p>
+</aside>
+<p><code>コマンドラインで実行</code></p>
+<pre>cd ~/Desktop
 </pre>
+<pre>npx create-react-app react-practice
+</pre>
+<pre><code>cd practice
+</code></pre>
+<aside class="warning"><p>指示２：実行が完了したら、VSCodeで開きましょう。</p>
+</aside>
 <p class="image-container"><img src="img/9478cb577d22cd55.gif"></p>
+<p>開けたら、編集を始める前にReactアプリの中身について確認しておきます。次に進みましょう。</p>
 
 
       </google-codelab-step>
@@ -62,6 +71,8 @@ cd practice
         <aside class="special"><p>説明：コマンド一つでアプリの雛形が完成しますが、いきなり編集を始めるのではなく、中身について大体のイメージができていることが大切です。</p>
 </aside>
 <p class="image-container"><img src="img/2f30963fb3751971.png"></p>
+<h2 is-upgraded>雛形アプリの中身について</h2>
+<p>以下、簡単に説明します。</p>
 <table>
 <tr><td colspan="1" rowspan="1"><p>名前</p>
 </td><td colspan="1" rowspan="1"><p>説明</p>
@@ -88,6 +99,7 @@ cd practice
 </td><td colspan="1" rowspan="1"><p>このアプリの利用ライブラリの依存関係が書かれている</p>
 </td></tr>
 </table>
+<p>現段階で完璧に理解できている必要はありません。<strong>重要なのはディレクトリの中に自分で開発するコードが増えていくというイメージを持つことです。</strong>ざっと把握できたら次に進みましょう。</p>
 
 
       </google-codelab-step>
@@ -95,8 +107,12 @@ cd practice
       <google-codelab-step label="Reactアプリ起動コマンドの確認" duration="1">
         <aside class="special"><p>説明：ローカルサーバーを起動すると開発環境で開発しているReactアプリをブラウザで確認できます。</p>
 </aside>
+<aside class="warning"><p>指示１：次の起動コマンドを実行しましょう。</p>
+</aside>
+<p><code>コマンドラインで実行</code></p>
 <pre>npm start
 </pre>
+<p>起動に成功すると、ブラウザで以下のようなデフォルトの雛形アプリを確認することができます。</p>
 <p class="image-container"><img src="img/e9f5d1c1d47ae64e.png"></p>
 
 
@@ -134,8 +150,24 @@ function App() {
 
 export default App;
 </code></pre>
-<aside class="warning"><p>指示１：</p>
+<p>以下の順番で一緒に作業を進めていきましょう。</p>
+<aside class="warning"><p>指示１：元の一行目を削除しましょう。</p>
 </aside>
+<aside class="warning"><p>指示２：publicのなかにimagesディレクトリを作成して、中にロゴ画像を設置しましょう。</p>
+</aside>
+<p class="image-container"><img src="img/7b676c5363a16f83.gif"></p>
+<aside class="warning"><p>指示３：App関数の中の先頭に設置したイメージを読み込みましょう。</p>
+</aside>
+<pre>const logo = &#39;/images/logo.png&#39;;
+</pre>
+<aside class="warning"><p>指示４：pタグの中身を以下のように書き換えましょう。</p>
+</aside>
+<pre>&lt;p&gt;
+  &lt;b&gt;フィットネス・エンジニアの勉強会&lt;/b&gt;
+&lt;/p&gt;
+</pre>
+<p>変更して保存するたびにブラウザの表示が変わっていきますね！ 以下のようになっていたら次に進みましょう！</p>
+<p class="image-container"><img src="img/dfb4d9bcf216179.png"></p>
 
 
       </google-codelab-step>
@@ -206,6 +238,7 @@ export default App;
   /* 以下省略 */
 }
 </code></pre>
+<p><code>完成後の状態</code><img src="img/de42a86280e76595.png"></p>
 
 
       </google-codelab-step>
@@ -262,6 +295,9 @@ export default App;
   はじめて学ぶReact
 &lt;/a&gt;
 </code></pre>
+<p>以下のように「はじめて学ぶReact」をクリックすると入力画面が表示されると簡易ログイン機能の完成です！</p>
+<p class="image-container"><img src="img/1e7ab877a3ca2733.png"></p>
+<p>次に進みましょう！</p>
 
 
       </google-codelab-step>
@@ -269,9 +305,6 @@ export default App;
       <google-codelab-step label="コンポーネント作成と導入" duration="3">
         <aside class="special"><p>説明：Reactアプリ開発においてなぜコンポーネントを作成することが大切なのか理解し、今後はコンポーネントを活用できるようになりましょう。</p>
 </aside>
-<pre>mkdir -p src/components
-touch src/components/link.js
-</pre>
 <p><code>完成後のApp.js</code></p>
 <pre><code language="language-js" class="language-js">import &#39;./App.css&#39;;
 import Link from &#39;./components/link.js&#39;
@@ -300,7 +333,13 @@ const App = () =&gt; {
 
 export default App;
 </code></pre>
-<aside class="warning"><p>指示１：次のようにリンクコンポーネントを作成しましょう。</p>
+<aside class="warning"><p>指示１：次のコマンドをコマンドラインで実行してコンポーネントディレクトリとリンクコンポーネントファイルを作成しましょう。</p>
+</aside>
+<pre>mkdir -p src/components
+</pre>
+<pre>touch src/components/link.js
+</pre>
+<aside class="warning"><p>指示２：次のようにリンクコンポーネントを作成しましょう。</p>
 </aside>
 <p><code>完成後のlink.js</code></p>
 <pre><code language="language-js" class="language-js">const Link = (props) =&gt; &lt;a
@@ -312,29 +351,40 @@ export default App;
 
 export default Link;
 </code></pre>
-<aside class="warning"><p>指示２：次のようにimportを記述し、<code>&lt;Link&gt;</code>タグを記述しましょう。 &#34;`js // ２行目に追記 import Link from ‘./components/link.js&#39;</p>
+<aside class="warning"><p>指示３：次のようにimportを記述し、タグを記述しましょう。</p>
 </aside>
-<p>// 元のaタグを以下に置換 checkIn()}/&gt;</p>
-<pre><code>## Reactのビルドコマンド実行
-Duration: 0:02:00
+<pre><code language="language-js" class="language-js">// ２行目に追記
+import Link from &#39;./components/link.js&#39;
 
-Positive
-: 説明：Reactアプリを公開するときのオーソドックスな方法を学びます。
-
-```console
-npm build
+// 元のaタグを以下に置換
+&lt;Link text=&#34;はじめて学ぶReact&#34; onClick={()=&gt;checkIn()}/&gt;
 </code></pre>
+<p>完成後の見た目は変わりませんが、きちんと同じように挙動することが確認できたでしょうか？ここまでできたら、次に進んでネット上に公開しましょう！</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Reactのビルドコマンド実行" duration="2">
+        <aside class="special"><p>説明：Reactアプリを公開するときのオーソドックスな方法を学びます。</p>
+</aside>
+<aside class="warning"><p>指示１：次のビルドコマンドを実行しましょう。</p>
+</aside>
+<pre>npm build
+</pre>
+<aside class="warning"><p>指示２：Nelifyを開いて、次のようにドラッグ&amp;ドロップをしましょう。</p>
+</aside>
+<p class="image-container"><img src="img/48b70cd348e830a4.gif"></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="初心者が混乱するポイント" duration="5">
-        <aside class="special"><p>説明：初心者がReactを学習するときにわからなくなりがちなところをピックアップします。</p>
+        <aside class="special"><p>説明：初心者がReactを学習するときにわからなくなりがちなところをピックアップし画面共有しながらポイントと心構えをお伝えします。</p>
 </aside>
 <ul>
-<li>ライブラリの利用方法の揺らぎ</li>
+<li>関数の書き方についての揺らぎ</li>
 <li>コンポーネントの定義の揺らぎ</li>
-<li>関数の書き方の揺らぎ</li>
+<li>ライブラリの利用方法の揺らぎ</li>
 </ul>
 
 
