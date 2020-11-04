@@ -30,14 +30,30 @@
       <google-codelab-step label="課題１の解答例" duration="1">
         <aside class="warning"><p>課題１：フッターコンポーネント（footer.js）を作成して、トップページにフッターを追加してください。クラス名はApp-footerとし、背景色は「#efefef」とします。</p>
 </aside>
-<p>※ 背景色の指定に加えて以下のようにスタイリングすると見栄えが良くなりますのでお試しください。</p>
-<pre><code language="language-css" class="language-css">position: absolute;
-bottom: 0;
-width: 100%;
-padding: 16px 0px;
+<p>コンポーネントディレクトリの中にフッター用のファイルを作成しましょう。</p>
+<p><code>コマンドラインでファイル作成</code></p>
+<pre>touch src/components/footer.js
+</pre>
+<p>作成できたら、VSCodeで開き、以下のように記載します。</p>
+<p><code>footer.js</code></p>
+<pre>const Footer = () =&gt; &lt;footer className=&#34;App-footer&#34;&gt;©️2020 NPO法人FitnessEngineer&lt;/footer&gt;
+
+export default Footer;
+</pre>
+<p>footerタグのクラスに「App-footer」と名前をつけました。ここはCSSと対応していれば名前はなんでも大丈夫です。</p>
+<p><code>App.css</code></p>
+<pre><code language="language-css" class="language-css">.App-footer {
+  background-color: #efefef;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 16px 0px;
+}
 </code></pre>
+<p>上記のようにApp.cssにフッター用のスタイリングを記述しましょう。</p>
+<p>ブラウザを確認すると、以下のようになっていますね。</p>
 <p><code>完成後の状態</code><img src="img/8657e56e8f9ac0e2.png"></p>
-<aside class="special"><p>解説：こうして作業してみると、CSSもちゃんと勉強する価値があるなとよくわかりますね！</p>
+<aside class="special"><p>解説：HTMLで習ったタグを書いて、classNameに自由にクラス名をつけ、そのクラス名にCSSでスタイルを書く流れを覚えておきましょう。</p>
 </aside>
 
 
@@ -47,7 +63,10 @@ padding: 16px 0px;
         <aside class="warning"><p>課題２：以下の手順に沿って、publicディレクトリに好きな画像を設置し、トップページで読み込んでください。</p>
 </aside>
 <p><code>以下のように移動してドロップ</code><img src="img/7b676c5363a16f83.gif"></p>
-<aside class="special"><p>解説：パブリックディレクトリの画像フォルダに入れて、変数にそのパスを代入して埋め込んでいましたね。</p>
+<pre><code language="language-js" class="language-js">const logo = &#34;/images/画像のファイル名&#34;
+</code></pre>
+<p>と記載することでロゴに別の画像を配置できますね！</p>
+<aside class="special"><p>解説：パブリックディレクトリの画像フォルダに入れて、変数にそのパスを代入して埋め込む流れは覚えておいて損はありません。</p>
 </aside>
 
 
@@ -63,10 +82,14 @@ padding: 16px 0px;
 
       </google-codelab-step>
     
-      <google-codelab-step label="アプリのデプロイ" duration="1">
+      <google-codelab-step label="課題４の解答例" duration="1">
         <aside class="warning"><p>課題４：ビルドを実行してからネット上に公開したあと、Discordに共有してください。</p>
 </aside>
-<p><code>以下のようにドラッグ&amp;ドロップ</code><img src="img/48b70cd348e830a4.gif"></p>
+<p><code>コマンドラインでビルド</code></p>
+<pre>npm build
+</pre>
+<p>実行すると、ローカルの変更を反映した新しいbuildディレクトリが生成されます。</p>
+<p><code>以下のようにbuildディレクトリをドラッグ&amp;ドロップ</code><img src="img/48b70cd348e830a4.gif"></p>
 <aside class="special"><p>解説：ビルドコマンドを実行してビルドされたディレクトリをNetlifyの指定箇所に放り込むことで公開できました。</p>
 </aside>
 
