@@ -50,8 +50,9 @@
       <google-codelab-step label="アプリ作成コマンドの実行と説明" duration="3">
         <aside class="special"><p>説明：Reactアプリはコマンドで作成できます。コマンドはデフォルトで入っているものではなく、インターネットでダウンロードできるFacebook製の外部コマンドです。</p>
 </aside>
-<aside class="warning"><p>指示１：次のコマンドを順番に一つずつ実行しましょう。</p>
+<aside class="warning"><p>指示１：コマンドラインを開き、次のコマンドを順番に一つずつ実行しましょう。</p>
 </aside>
+<p>コマンドラインとは、Macではターミナルと呼ばれ、Windowsではコマンドプロンプトと呼ばれる「コマンド（パソコンへの命令）を出すソフト」のことでした。</p>
 <p><code>コマンドラインで実行</code></p>
 <pre>cd ~/Desktop
 </pre>
@@ -231,7 +232,7 @@ export default App;
   /* 以下省略 */
 }
 </code></pre>
-<aside class="warning"><p>指示２：リンクの色をカラーコード「#fefefe」に変更しましょう。</p>
+<aside class="warning"><p>指示２：リンクの色をカラーコード「#294b8f」に変更しましょう。</p>
 </aside>
 <p>一行目のカラーの指定をコメントアウトして値を「color: #294b8f;」を追記します。</p>
 <p><code>App.cssの中のApp-linkクラスのスタイルを変更</code></p>
@@ -385,6 +386,18 @@ import Link from &#39;./components/link.js&#39;
 <aside class="warning"><p>指示３：デプロイが完了したらNetlifyの画面に緑色のリンクが表示されているはずなので、それをクリックして開きましょう。</p>
 </aside>
 <p>お疲れ様でした！</p>
+<h3 is-upgraded>完成できなかった人のための共有</h3>
+<p><a href="https://yu-sei-m.github.io/react-practice-20201107.zip" target="_blank"><paper-button class="colored" raised>本日作成したアプリディレクトリのzip</paper-button></a></p>
+<p>ダウンロードして展開した後に以下のコマンドを実行してください。</p>
+<p><code>ライブラリのインストール</code></p>
+<pre>npm install
+</pre>
+<p><code>ローカルサーバーの起動</code></p>
+<pre>npm start
+</pre>
+<p><code>作成したアプリのビルド</code></p>
+<pre>npm build
+</pre>
 
 
       </google-codelab-step>
