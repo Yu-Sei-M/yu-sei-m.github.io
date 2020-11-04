@@ -99,7 +99,7 @@
 </td><td colspan="1" rowspan="1"><p>このアプリの利用ライブラリの依存関係が書かれている</p>
 </td></tr>
 </table>
-<p>現段階で完璧に理解できている必要はありません。<strong>重要なのはディレクトリの中に自分で開発するコードが増えていくというイメージを持つことです。</strong>ざっと把握できたら次に進みましょう。</p>
+<p>現段階で完璧に理解できている必要はありません。<strong>重要なのはsrcディレクトリの中に自分で開発するコードが増えていくというイメージを持つことです。</strong>ざっと把握できたら次に進みましょう。</p>
 
 
       </google-codelab-step>
@@ -114,6 +114,7 @@
 </pre>
 <p>起動に成功すると、ブラウザで以下のようなデフォルトの雛形アプリを確認することができます。</p>
 <p class="image-container"><img src="img/e9f5d1c1d47ae64e.png"></p>
+<p>それでは開発をスタートします！次へ進みましょう。</p>
 
 
       </google-codelab-step>
@@ -155,6 +156,7 @@ export default App;
 </aside>
 <aside class="warning"><p>指示２：publicのなかにimagesディレクトリを作成して、中にロゴ画像を設置しましょう。</p>
 </aside>
+<p><a href="https://yu-sei-m.github.io/images/logo.png" target="_blank"><paper-button class="colored" raised>ロゴのダウンロード</paper-button></a></p>
 <p class="image-container"><img src="img/7b676c5363a16f83.gif"></p>
 <aside class="warning"><p>指示３：App関数の中の先頭に設置したイメージを読み込みましょう。</p>
 </aside>
@@ -166,7 +168,8 @@ export default App;
   &lt;b&gt;フィットネス・エンジニアの勉強会&lt;/b&gt;
 &lt;/p&gt;
 </pre>
-<p>変更して保存するたびにブラウザの表示が変わっていきますね！ 以下のようになっていたら次に進みましょう！</p>
+<p>変更して保存するたびにブラウザの表示が変わっていきますね！</p>
+<p>最終的に以下のようになっていたら次に進みましょう！</p>
 <p class="image-container"><img src="img/dfb4d9bcf216179.png"></p>
 
 
@@ -239,6 +242,7 @@ export default App;
 }
 </code></pre>
 <p><code>完成後の状態</code><img src="img/de42a86280e76595.png"></p>
+<p>ずいぶん最終目標に近づいてきましたね！次に進みましょう。</p>
 
 
       </google-codelab-step>
@@ -297,7 +301,8 @@ export default App;
 </code></pre>
 <p>以下のように「はじめて学ぶReact」をクリックすると入力画面が表示されると簡易ログイン機能の完成です！</p>
 <p class="image-container"><img src="img/1e7ab877a3ca2733.png"></p>
-<p>次に進みましょう！</p>
+<p>試しに「react-hands-on」と入力してみてください！</p>
+<p>今回のハンズオン資料が表示されましたか？いいですね！もう少しで完成です！次に進みましょう。</p>
 
 
       </google-codelab-step>
@@ -339,9 +344,9 @@ export default App;
 </pre>
 <pre>touch src/components/link.js
 </pre>
-<aside class="warning"><p>指示２：次のようにリンクコンポーネントを作成しましょう。</p>
+<aside class="warning"><p>指示２：VSCodeでlink.jsを開いて次のようにリンクコンポーネントを作成しましょう。</p>
 </aside>
-<p><code>完成後のlink.js</code></p>
+<p><code>link.js</code></p>
 <pre><code language="language-js" class="language-js">const Link = (props) =&gt; &lt;a
   className=&#34;App-link&#34;
   onClick={props.onClick}
@@ -351,15 +356,17 @@ export default App;
 
 export default Link;
 </code></pre>
-<aside class="warning"><p>指示３：次のようにimportを記述し、タグを記述しましょう。</p>
+<p>link.jsはこれでOKです。</p>
+<aside class="warning"><p>指示３：VSCodeでApp.jsを開いて次のようにimportを記述し、タグを記述しましょう。</p>
 </aside>
+<p><code>App.js</code></p>
 <pre><code language="language-js" class="language-js">// ２行目に追記
 import Link from &#39;./components/link.js&#39;
 
 // 元のaタグを以下に置換
 &lt;Link text=&#34;はじめて学ぶReact&#34; onClick={()=&gt;checkIn()}/&gt;
 </code></pre>
-<p>完成後の見た目は変わりませんが、きちんと同じように挙動することが確認できたでしょうか？ここまでできたら、次に進んでネット上に公開しましょう！</p>
+<p>完成後の見た目は変わりませんが、きちんと同じように挙動することが確認できたでしょうか？これがいわゆる<strong>コンポーネント化で</strong>、作成から読み込みまでできたことになります。ここまでできたら、次に進んでネット上に公開しましょう！</p>
 
 
       </google-codelab-step>
@@ -374,6 +381,10 @@ import Link from &#39;./components/link.js&#39;
 <aside class="warning"><p>指示２：Nelifyを開いて、次のようにドラッグ&amp;ドロップをしましょう。</p>
 </aside>
 <p class="image-container"><img src="img/48b70cd348e830a4.gif"></p>
+<h2 is-upgraded>完成おめでとうございます！</h2>
+<aside class="warning"><p>指示３：デプロイが完了したらNetlifyの画面に緑色のリンクが表示されているはずなので、それをクリックして開きましょう。</p>
+</aside>
+<p>お疲れ様でした！</p>
 
 
       </google-codelab-step>
