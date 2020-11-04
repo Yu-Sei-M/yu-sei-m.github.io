@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2020-11-05T05:33:49+09:00",
+  "id": "react-challenge-answer",
+  "duration": 4,
+  "title": "解答｜はじめて学ぶReact",
+  "summary": "はじめて学ぶReactハンズオン課題の解答",
+  "source": "react-challenge-answer.md",
+  "theme": "",
+  "status": [
+    "draft"
+  ],
+  "category": [
+    "react",
+    "tutorial"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/Yu-Sei-M/yu-sei-m.github.io/issues",
+  "url": "react-challenge-answer"
+}
