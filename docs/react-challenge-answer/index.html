@@ -51,7 +51,15 @@ export default Footer;
 }
 </code></pre>
 <p>上記のようにApp.cssにフッター用のスタイリングを記述しましょう。</p>
-<p>ブラウザを確認すると、以下のようになっていますね。</p>
+<p>最後にApp.jsに読み込みの記述と呼び出しをかけば完了です。</p>
+<p><code>App.js</code></p>
+<pre><code language="language-js" class="language-js">// 三行目に追記
+import Footer from &#39;./components/footer.js&#39;
+
+// &lt;/header&gt;の次の行に追記
+&lt;Footer/&gt;
+</code></pre>
+<p>上記の変更を保存してブラウザを確認すると、以下のようになっていますね。</p>
 <p><code>完成後の状態</code><img src="img/8657e56e8f9ac0e2.png"></p>
 <aside class="special"><p>解説：HTMLで習ったタグを書いて、classNameに自由にクラス名をつけ、そのクラス名にCSSでスタイルを書く流れを覚えておきましょう。</p>
 </aside>
