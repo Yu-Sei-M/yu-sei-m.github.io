@@ -83,13 +83,13 @@
 </td><td colspan="1" rowspan="1"><p>説明</p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p>node_modules</p>
-</td><td colspan="1" rowspan="1"><p>このアプリが利用しているライブラリが入っている</p>
+</td><td colspan="1" rowspan="1"><p>このアプリが利用しているライブラリが配置される</p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p>public</p>
 </td><td colspan="1" rowspan="1"><p>静的サイトを公開したいときにファイルを配置する</p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p>src</p>
-</td><td colspan="1" rowspan="1"><p>このアプリを開発するときに書くコードやプログラムが入っている</p>
+</td><td colspan="1" rowspan="1"><p>このアプリを開発するときに書くコードやプログラムを配置する</p>
 </td></tr>
 <tr><td colspan="1" rowspan="1"><p>.gitignore</p>
 </td><td colspan="1" rowspan="1"><p>リモートリポジトリにプッシュしないファイルを書く</p>
@@ -125,7 +125,8 @@
       </google-codelab-step>
     
       <google-codelab-step label="表示されているテキストの編集" duration="6">
-        <aside class="special"><p>説明：Reactアプリを開発するときに大切になるjsファイルの中身を確認し、基本的な構成要素を説明できるようになりましょう。ここでは、テキストと画像の置き換えを行います。</p>
+        <p>Reactアプリを開発するときに大切になるjsファイルの中身を確認し、基本的な構成要素を説明できるようになりましょう。</p>
+<aside class="special"><p>説明：ここでは、テキストと画像の置き換えを行います。初期状態ではReactのロゴが表示されていますが、これをフィットネスエンジニアのロゴに変更し、表示されるメッセージも変更します。</p>
 </aside>
 <p><code>完成後のApp.js</code></p>
 <pre><code language="language-js" class="language-js">import &#39;./App.css&#39;;
@@ -157,17 +158,19 @@ function App() {
 export default App;
 </code></pre>
 <p>以下の順番で一緒に作業を進めていきましょう。</p>
-<aside class="warning"><p>指示１：元の一行目を削除しましょう。</p>
+<aside class="warning"><p>指示１：srcディレクトリ配下にあるApp.jsを編集して１行目を削除しましょう。以下の１行です。</p>
 </aside>
+<pre><code language="language-js" class="language-js">import logo from &#39;./logo.svg&#39;; // 削除
+</code></pre>
 <aside class="warning"><p>指示２：publicのなかにimagesディレクトリを作成して、中にロゴ画像を設置しましょう。</p>
 </aside>
 <p><a href="https://yu-sei-m.github.io/images/logo.png" target="_blank"><paper-button class="colored" raised>ロゴのダウンロード</paper-button></a></p>
 <p class="image-container"><img src="img/7b676c5363a16f83.gif"></p>
-<aside class="warning"><p>指示３：App関数の中の先頭に設置したイメージを読み込みましょう。</p>
+<aside class="warning"><p>指示３：srcディレクトリ配下にあるApp.js内部のApp関数の中の先頭に設置したイメージを読み込みましょう。</p>
 </aside>
 <pre>const logo = &#39;/images/logo.png&#39;;
 </pre>
-<aside class="warning"><p>指示４：pタグとaタグの中身を以下のように書き換えましょう。</p>
+<aside class="warning"><p>指示４：srcディレクトリ配下にあるApp.jsの中のpタグとaタグの中身を以下のように書き換えましょう。</p>
 </aside>
 <pre>&lt;p&gt;
   &lt;b&gt;フィットネス・エンジニアの勉強会&lt;/b&gt;
@@ -237,9 +240,9 @@ export default App;
   }
 }
 </code></pre>
-<aside class="warning"><p>指示１：背景色をカラーコード「#fefefe」に変更し、見出し文字を「dimgrey」に変更しましょう。</p>
+<aside class="warning"><p>指示１：srcディレクトリ配下にあるApp.cssを編集し、背景色をカラーコード「#fefefe」に変更し、見出し文字を「dimgrey」に変更しましょう。</p>
 </aside>
-<p>一行目のバックグラウンドカラーをコメントアウトして値を「background-color: #fefefe;」を追記します。同様に、最後のカラーをコメントアウトして値を「color: dimgrey;」にしましょう。</p>
+<p>App-headerクラスのbackground-colorの行をコメントアウトして値を「background-color: #fefefe;」を追記します。同様に、最後のカラーをコメントアウトして値を「color: dimgrey;」にしましょう。</p>
 <p><code>App.cssの中のApp-headerクラスのスタイルを変更</code></p>
 <pre><code language="language-css" class="language-css">.App-header {
   /* background-color: #282c34; */
@@ -249,7 +252,7 @@ export default App;
   color: dimgrey;
 }
 </code></pre>
-<aside class="warning"><p>指示２：リンクの色をカラーコード「#294b8f」に変更しましょう。</p>
+<aside class="warning"><p>指示２：App-linkクラスのcolorの行をコメントアウトしてカラーコード「#294b8f」に変更しましょう。</p>
 </aside>
 <p>一行目のカラーの指定をコメントアウトして値を「color: #294b8f;」を追記します。</p>
 <p><code>App.cssの中のApp-linkクラスのスタイルを変更</code></p>
@@ -357,11 +360,20 @@ const App = () =&gt; {
 
 export default App;
 </code></pre>
-<aside class="warning"><p>指示１：次のコマンドをコマンドラインで実行してコンポーネントディレクトリとリンクコンポーネントファイルを作成しましょう。</p>
+<aside class="warning"><p>指示１：ローカルサーバーを起動（npm start）したコマンドラインと別のコマンドラインを開き、次のコマンドをコマンドラインで実行してコンポーネントディレクトリとリンクコンポーネントファイルを作成しましょう。</p>
 </aside>
-<pre>mkdir -p src/components
+<p><code>Mac/Win共通（ソースディレクトリ内部にコンポーネント格納用ディレクトリ作成）</code></p>
+<pre>cd src
 </pre>
-<pre>touch src/components/link.js
+<pre>mkdir components
+</pre>
+<pre>cd components
+</pre>
+<p><code>Macのみ（リンクコンポーネントのファイル作成）</code></p>
+<pre>touch link.js
+</pre>
+<p><code>Winのみ（リンクコンポーネントのファイル作成）</code></p>
+<pre>copy nul link.js
 </pre>
 <aside class="warning"><p>指示２：VSCodeでlink.jsを開いて次のようにリンクコンポーネントを作成しましょう。</p>
 </aside>
@@ -376,13 +388,13 @@ export default App;
 export default Link;
 </code></pre>
 <p>link.jsはこれでOKです。</p>
-<aside class="warning"><p>指示３：VSCodeでApp.jsを開いて次のようにimportを記述し、タグを記述しましょう。</p>
+<aside class="warning"><p>指示３：VSCodeでsrcディレクトリ配下のApp.jsを開いて次のようにimportを記述し、タグを記述しましょう。</p>
 </aside>
 <p><code>App.js</code></p>
 <pre><code language="language-js" class="language-js">// ２行目に追記
 import Link from &#39;./components/link.js&#39;
 
-// 元のaタグを以下に置換
+// 元のaタグ全体を以下に置換
 &lt;Link text=&#34;はじめて学ぶReact&#34; onClick={()=&gt;checkIn()}/&gt;
 </code></pre>
 <p>完成後の見た目は変わりませんが、きちんと同じように挙動することが確認できたでしょうか？これがいわゆる<strong>コンポーネント化で</strong>、作成から読み込みまでできたことになります。ここまでできたら、次に進んでネット上に公開しましょう！</p>
@@ -395,15 +407,18 @@ import Link from &#39;./components/link.js&#39;
 </aside>
 <aside class="warning"><p>指示１：次のビルドコマンドを実行しましょう。</p>
 </aside>
-<pre>npm build
+<pre>npm run-script build
 </pre>
-<aside class="warning"><p>指示２：事前準備で作成したNelifyのアカウントを開いて、次のようにドラッグ&amp;ドロップをしましょう。</p>
+<p><strong>このbuildコマンドを実行するとbuildディレクトリが作成されます。</strong></p>
+<p>buildディレクトリとは、本番環境で公開するために書き出されたウェブアプリ（ウェブサイト）のディレクトリのことです。</p>
+<aside class="warning"><p>指示２：事前準備で作成したNelifyのアカウントを開いて、次のようにbuildディレクトリドラッグ&amp;ドロップをしましょう。</p>
 </aside>
 <p class="image-container"><img src="img/48b70cd348e830a4.gif"></p>
 <h2 is-upgraded>完成おめでとうございます！</h2>
-<aside class="warning"><p>指示３：デプロイが完了したらNetlifyの画面に緑色のリンクが表示されているはずなので、それをクリックして開きましょう。</p>
+<aside class="warning"><p>指示３：デプロイが完了したらNetlifyの画面に緑色のリンクが表示されているはずなので、それをクリックして開きましょう。以下の画像の緑のリンクに相当する部分をクリックすればオーケーです。</p>
 </aside>
-<p>お疲れ様でした！</p>
+<p class="image-container"><img src="img/9ea29c7bc4a58261.png"></p>
+<p>作成したサイトが表示されましたね！お疲れ様でした！</p>
 <p>早く終わった人は課題にも挑戦してみましょう！</p>
 <p><strong>Doneを押してからChallengeをクリックして「react-challenge」と入力すると課題に取り組むことができます。</strong></p>
 <p>以下のボタンをクリックしても開けます。</p>
