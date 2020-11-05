@@ -225,7 +225,7 @@ export default App;
 </code></pre>
 <aside class="warning"><p>指示１：背景色をカラーコード「#fefefe」に変更し、見出し文字を「dimgrey」に変更しましょう。</p>
 </aside>
-<p>一行目のバックグラウンドカラーをコメントアウトして値を「background-color: #fefefe;」を追記します。同様に、最後のカラーをコメントアウトして値を「color: dimgrey」にしましょう。</p>
+<p>一行目のバックグラウンドカラーをコメントアウトして値を「background-color: #fefefe;」を追記します。同様に、最後のカラーをコメントアウトして値を「color: dimgrey;」にしましょう。</p>
 <p><code>App.cssの中のApp-headerクラスのスタイルを変更</code></p>
 <pre><code language="language-css" class="language-css">.App-header {
   /* background-color: #282c34; */
@@ -262,7 +262,8 @@ const checkIn = () =&gt; {
   if (pass != null) window.location.href = &#34;https://yu-sei-m.github.io/&#34; + pass;
 }
 
-const App = () =&gt; {
+// function App() { // 通常の関数定義
+const App = () =&gt; { // アロー関数定義
   const logo = &#39;/images/logo.png&#39;;
   return (
     &lt;div className=&#34;App&#34;&gt;
