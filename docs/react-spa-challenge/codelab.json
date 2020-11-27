@@ -3,12 +3,12 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2020-11-28T08:12:14+09:00",
-  "id": "react-spa-hands-on",
-  "duration": 37,
-  "title": "ハンズオン｜ReactでSPA開発",
-  "summary": "Reactハンズオンの事前準備",
-  "source": "react-hands-on-2.md",
+  "updated": "2020-11-28T08:44:09+09:00",
+  "id": "react-spa-challenge",
+  "duration": 27,
+  "title": "課題｜はじめて学ぶReact",
+  "summary": "はじめて学ぶReactハンズオン課題",
+  "source": "react-spa-challenge.md",
   "theme": "",
   "status": [
     "draft"
@@ -21,5 +21,5 @@
     "web"
   ],
   "feedback": "https://github.com/Yu-Sei-M/yu-sei-m.github.io/issues",
-  "url": "react-spa-hands-on"
+  "url": "react-spa-challenge"
 }

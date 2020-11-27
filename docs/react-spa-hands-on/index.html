@@ -55,19 +55,19 @@
 <p><code>Winの方</code></p>
 <pre>nodist 10.19.0
 </pre>
-<p>残念ながら実行してもバージョンが変わらない方、そもそも環境構築を完了していない方は、この時間で追いつくことは難しいと判断されるため、今回は聴講スタイルでご参加ください。</p>
+<p>残念ながら上のコマンドを実行してもバージョンが変わらない方、そもそも環境構築を完了していない方は、今回は追いつくことは難しいと判断されるため、今回は聴講スタイルでご参加ください。</p>
 <p>それでは進めていきましょう。</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="第一回で作ったアプリの確認" duration="0">
+      <google-codelab-step label="第１回で作ったアプリの確認" duration="0">
         <aside class="special"><p>説明：Reactアプリはコマンドで作成でき、HTML、CSS、JavaScriptを知っていると簡単に開発を進めることができました。</p>
 </aside>
 <aside class="warning"><p>指示１：前回参加した人と事前準備で第一回を済ませた方は前回のReactアプリのディレクトリを開きましょう。今回初参加の方は、以下のデータをダウンロードして開きましょう。</p>
 </aside>
 <p>�ましょう。</p>
-<p><a href="https://yu-sei-m.github.io/react-practice-20201107.zip" target="_blank"><paper-button class="colored" raised>第一回で作成したアプリディレクトリのzip</paper-button></a></p>
+<p><a href="https://yu-sei-m.github.io/react-practice-20201107.zip" target="_blank"><paper-button class="colored" raised>第１回で作成したアプリディレクトリのzip</paper-button></a></p>
 <p>ダウンロードして展開した後に以下のコマンドを実行してください。</p>
 <p><code>ライブラリのインストール</code></p>
 <pre>npm install
@@ -127,7 +127,11 @@
       </google-codelab-step>
     
       <google-codelab-step label="ページ単位でのファイルの編集" duration="2">
-        <aside class="special"><p>説明：ローカルサーバーを起動すると開発環境で開発しているReactアプリをブラウザで確認できます。</p>
+        <ul>
+<li>Top.js</li>
+<li>About.js</li>
+</ul>
+<aside class="special"><p>説明：ローカルサーバーを起動すると開発環境で開発しているReactアプリをブラウザで確認できます。</p>
 </aside>
 <aside class="warning"><p>指示１：次の起動コマンドを実行しましょう。</p>
 </aside>
@@ -141,7 +145,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="表示されているテキストの編集" duration="6">
+      <google-codelab-step label="ルーティング管理ライブラリ導入" duration="6">
         <p>Reactアプリを開発するときに大切になるjsファイルの中身を確認し、基本的な構成要素を説明できるようになりましょう。</p>
 <aside class="special"><p>説明：ここでは、テキストと画像の置き換えを行います。初期状態ではReactのロゴが表示されていますが、これをフィットネスエンジニアのロゴに変更し、表示されるメッセージも変更します。</p>
 </aside>
@@ -210,7 +214,7 @@ export default App;
 
       </google-codelab-step>
     
-      <google-codelab-step label="表示されているデザインの編集" duration="7">
+      <google-codelab-step label="ルーティングの設定（index.js）" duration="7">
         <aside class="special"><p>説明：Reactアプリの表示画面の見た目を整えるためにどこをどのように編集すれば良いかを押さえましょう。ここではCSSの内容については特に説明しないので、「装飾したい部分にこんなふうに指定すると色やサイズ・余白を変更できるのか」と感覚をつかんでください。</p>
 </aside>
 <p><code>完成後のApp.css</code></p>
@@ -285,7 +289,7 @@ export default App;
 
       </google-codelab-step>
     
-      <google-codelab-step label="表示に簡易ログイン機能を実装" duration="7">
+      <google-codelab-step label="ルーティングの設定（routes.js）" duration="7">
         <aside class="special"><p>説明：ReactアプリでJavaScriptを記述し、プログラミングを組み合わせる方法を確認し、いつでも追加実装できるようにポイントを押さえましょう。</p>
 </aside>
 <p><code>完成後のApp.js</code></p>
@@ -346,7 +350,7 @@ export default App;
 
       </google-codelab-step>
     
-      <google-codelab-step label="コンポーネント作成と導入" duration="6">
+      <google-codelab-step label="ルーティングの設定（App.js）" duration="6">
         <aside class="special"><p>説明：Reactアプリ開発においてなぜコンポーネントを作成することが大切なのか理解し、今後はコンポーネントを活用できるようになりましょう。</p>
 </aside>
 <p><code>完成後のApp.js</code></p>
@@ -419,7 +423,7 @@ import Link from &#39;./components/link.js&#39;
 
       </google-codelab-step>
     
-      <google-codelab-step label="Reactのビルドコマンド実行" duration="5">
+      <google-codelab-step label="まとめとチャレンジ課題" duration="5">
         <aside class="special"><p>説明：Reactアプリを公開するときのオーソドックスな方法を学びます。</p>
 </aside>
 <aside class="warning"><p>指示１：次のビルドコマンドを実行しましょう。</p>
