@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>課題｜はじめて学ぶReact</title>
+  <title>課題｜ReactでSPA開発</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
@@ -23,7 +23,7 @@
   <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
   <google-codelab codelab-gaid=""
                   id="react-spa-challenge"
-                  title="課題｜はじめて学ぶReact"
+                  title="課題｜ReactでSPA開発"
                   environment="web"
                   feedback-link="https://github.com/Yu-Sei-M/yu-sei-m.github.io/issues">
     
@@ -33,8 +33,8 @@
 <h2 is-upgraded>課題リスト</h2>
 <ol type="1">
 <li>ページの追加実装</li>
-<li>ローディング実装</li>
 <li>コードの理解を深める</li>
+<li>ローディング実装（暇な人向け）</li>
 <li>アプリのデプロイ</li>
 </ol>
 <p>それでは次に進んで早速取り組んでいきましょう。</p>
@@ -43,65 +43,67 @@
       </google-codelab-step>
     
       <google-codelab-step label="ページの追加実装" duration="5">
-        <aside class="warning"><p>課題１：フッターコンポーネント（footer.js）を作成して、トップページにフッター（©︎2020 NPO法人FitnessEnginer）を追加してください。クラス名はApp-footerとし、背景色は「#efefef」とします。</p>
+        <aside class="warning"><p>課題１：お問い合わせページを <code>/contact</code> のパスにアクセスしたら表示されるように実装しましょう。ページの中身はアバウトページの表示文字を少し変更したもので構いません。</p>
 </aside>
-<p><code>目指す状態</code><img src="img/8657e56e8f9ac0e2.png"></p>
-<p>※ 背景色の指定に加えて以下のようにスタイリングすると見栄えが良くなりますのでお試しください。</p>
-<pre><code language="language-css" class="language-css">position: absolute;
-bottom: 0;
-width: 100%;
-padding: 16px 0px;
-</code></pre>
+<p><code>目指す状態</code></p>
+<p>お問い合わせページに遷移ができる</p>
 <p><code>ヒント</code></p>
 <ul>
-<li>どのディレクトリの中に作成するのか考えてみましょう</li>
-<li>クラス指定でCSSを当てられるということはどこに何を書くべきでしょうか</li>
+<li>どのディレクトリの中に何を作成するのか思い出しながらやってみましょう</li>
+<li>コンポーネントとルーティングがあればオッケーでしたね</li>
 </ul>
-<p><a href="https://yu-sei-m.github.io/react-challenge-answer/#0" target="_blank"><paper-button class="colored" raised>解答例</paper-button></a></p>
-<aside class="special"><p>こうして作業してみると、CSSもちゃんと勉強する価値があるなとよくわかりますね！</p>
+<p>やりたい人はフォームなどを設置してもらっても構いません。</p>
+<ul>
+<li><a href="https://ja.reactjs.org/docs/forms.html" target="_blank">参考：React公式ドキュメント｜フォーム</a></li>
+</ul>
+<aside class="special"><p>こうして自分で作業してみると、routes.jsを作成した意味も実感できるのではないでしょうか。ページを追加するときに編集するファイルが最小限でかつ分かりやすいですね！</p>
 </aside>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="ローディング実装" duration="3">
-        <aside class="warning"><p>課題２：以下の手順に沿って、publicディレクトリに好きな画像を設置し、トップページで読み込んでください。</p>
+      <google-codelab-step label="コードの理解を深める" duration="5">
+        <aside class="warning"><p>課題２：index.jsの中のreportWebVitals()関数は何のために存在するのかを調べてみましょう。</p>
 </aside>
 <p><code>ヒント</code></p>
 <ul>
-<li>どのディレクトリの中に配置するのか考えてみましょう</li>
-<li>読み込み方はどうするとよかったでしょうか</li>
+<li>Googleでどのようなキーワードで検索すると良いか考えてみましょう。</li>
 </ul>
-<p><a href="https://yu-sei-m.github.io/react-challenge-answer/#1" target="_blank"><paper-button class="colored" raised>解答例</paper-button></a></p>
-<aside class="special"><p>HTMLとCSSが書ける人は、自分が作ったサイトをここに設置したらReactと合わせて公開できる！ということもわかりますね。機会があれば試しにやってみると良いでしょう。</p>
+<aside class="special"><p>教えてもらって理解できることも大変素晴らしいですが、自立して色々知識をつけて実装できるようになるためには自分で検索して理解しようとすることが必要です。その練習と思って調べてみましょう！</p>
 </aside>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="コードの理解を深める" duration="4">
-        <aside class="warning"><p>課題３：トップページの背景色や文字色などを自分の好きな色に変更してください。</p>
+      <google-codelab-step label="ローディング実装" duration="10">
+        <p>完全に初心者の方は飛ばしてください。こんな実装もできるのか、と知識を得るにとどめて問題ありません。</p>
+<aside class="warning"><p>応用課題：かなり早く終わった人のみチャレンジしてみましょう。React.lazyという最新のReactにはデフォルトで搭載されている機能で、コンポーネントの遅延読み込みが実現できます。</p>
 </aside>
-<p><code>例</code><img src="img/6b849ccd0c2eb1ef.png"></p>
 <p><code>ヒント</code></p>
 <ul>
-<li>どこを編集するか思い出してみましょう</li>
+<li><a href="https://serip39.hatenablog.com/entry/2020/09/23/190000" target="_blank">【React】React.lazy + React.Suspense + React Routerを使ったローディング画面実装とコード分割</a></li>
 </ul>
-<p><a href="https://yu-sei-m.github.io/react-challenge-answer/#2" target="_blank"><paper-button class="colored" raised>解答例</paper-button></a></p>
-<aside class="special"><p>リンクの色を緑にして、背景色を黒にしてみました。カラーコードの値を調べて好きな色に設定して構いません。</p>
+<p>模範的な回答は次回余裕があれば掲載します。</p>
+<aside class="special"><p>遅延読み込みで読み込み表示が重たいページではローディング画面を表示できるので、ユーザビリティが向上しサイト評価の向上も見込めます。</p>
 </aside>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="アプリのデプロイ" duration="4">
-        <aside class="warning"><p>課題４：ビルドを実行してからネット上に公開したあと、Discordに共有してください。</p>
+      <google-codelab-step label="アプリのデプロイ" duration="5">
+        <aside class="warning"><p>課題４：ビルドを実行してからネット上に公開したあと、お問い合わせページをDiscordに共有してください。</p>
 </aside>
 <p><code>ヒント</code></p>
 <ul>
-<li>Netlifyを開いて「あるディレクトリ」をドラッグ&amp;ドロップするだけでしたね！</li>
+<li>一度デプロイしたNetlifyのアプリを更新するためには以下の手順が必要です。</li>
 </ul>
-<p><a href="https://yu-sei-m.github.io/react-challenge-answer/#3" target="_blank"><paper-button class="colored" raised>解答例</paper-button></a></p>
+<p>手順</p>
+<ol type="1">
+<li>NetlifyのトップページでSitesをクリック</li>
+<li>先ほどデプロイしたアプリをクリック</li>
+<li>Deploysをクリックして開く</li>
+<li>ビルドディレクトリをドラッグ&amp;ドロップ</li>
+</ol>
 <aside class="special"><p>１０年２０年前に比べると、非常に手軽にサイトやアプリを公開できる時代になりましたね。</p>
 </aside>
 
@@ -128,7 +130,7 @@ padding: 16px 0px;
 <p><strong>#40 【フロントエンド開発入門】Reactハンズオン勉強会（PWA開発編）｜JavaScript初心者可</strong></p>
 <aside class="warning"><p>PWAとは、プログレッシブウェブアプリケーションと呼ばれるGoogleが提起した規格に沿ったウェブサイト、ウェブアプリのことです。PWAもSPAとは全く異なる理由で表示が高速で、SEOの観点でも非常に有利である（検索して上位表示されやすくなる）他、iOSのAppStoreやAndroidのPlayStoreにアプリを公開することなくウェブアプリをスマホアプリのようにユーザーに使ってもらうことができる（３０％の手数料を回避できる）などの特長もあって注目を集めています。第３回では、ハンズオンで作成したアプリをさらにカスタマイズした上でPWAを完成させることを目指します。</p>
 </aside>
-<p><a href="https://npo-fitness-engineer.connpass.com/event" target="_blank"><paper-button class="colored" raised>コンパスのリンク（準備中）</paper-button></a></p>
+<p><a href="https://npo-fitness-engineer.connpass.com/event" target="_blank"><paper-button class="colored" raised>コンパスのリンク</paper-button></a></p>
 <p>　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇</p>
 <p><strong>お知らせ｜情報発信のためにTwitterアカウント作成しました！</strong></p>
 <p>connpassでは募集をしないイベントなども徐々に増えていくと思いますので、アカウントをお持ちの方はフォローの上、イベント開催情報の投稿に気付いた時はいいね・リツイートをお願いいたします！ボランティアで運営している状態のため、本格的な運用開始時期は未定です。来年度以降になりそうですが、フォローしておいていただけると活動のモチベーション・励みになります。</p>
