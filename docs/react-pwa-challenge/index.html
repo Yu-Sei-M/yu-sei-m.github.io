@@ -1,0 +1,139 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>課題｜ReactでPWA開発</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="react-pwa-challenge"
+                  title="課題｜ReactでPWA開発"
+                  environment="web"
+                  feedback-link="https://github.com/Yu-Sei-M/yu-sei-m.github.io/issues">
+    
+      <google-codelab-step label="はじめに" duration="1">
+        <aside class="special"><p>説明：今回のハンズオンで学んだことを思い出しながら、４つの課題に取り組みましょう。</p>
+</aside>
+<h2 is-upgraded>課題リスト</h2>
+<ol type="1">
+<li>Lighthouseでいろんなサイトをチェックしてみましょう</li>
+<li>自分が公開したサイトをスマホのホーム画面に追加してみましょう</li>
+<li>オフラインでページ遷移ができることを確認してみましょう</li>
+<li>WASMについて調べてみましょう</li>
+</ol>
+<p>それでは次に進んで早速取り組んでいきましょう。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="課題：Lighthouse" duration="5">
+        <aside class="warning"><p>課題１：Lighthouseでいろんなサイトをチェックしてみましょう。普段使っているどのサイトがPWAなのかわかりますね！</p>
+</aside>
+<p><code>目指す状態</code></p>
+<ul>
+<li>パフォーマンスの高いサービスをいくつか見つける。</li>
+</ul>
+<aside class="special"><p>ページの表示が遅いサイトから速いサイトまで、様々あったのではないでしょうか。良いアプリを作る時に参考になるサービスなどストックできそうですね！</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="課題：PWAインストール" duration="5">
+        <aside class="warning"><p>課題２：自分が公開したサイトをスマホのホーム画面に追加してみましょう。</p>
+</aside>
+<p><code>ヒント</code></p>
+<ul>
+<li>スマホのブラウザで開いて追加する手順がiOS,Androidそれぞれあるので検索してみるなど</li>
+</ul>
+<aside class="special"><p>教えてもらって理解できることも大変素晴らしいですが、自立して色々知識をつけて様々な実装ができるようになるためには自分で検索して理解しようとすることが必要です。その練習と思って調べてみましょう！</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="課題：オフラインの挙動" duration="5">
+        <aside class="warning"><p>課題３：オフラインでページ遷移ができることを確認してみましょう。</p>
+</aside>
+<p><code>ヒント</code></p>
+<ul>
+<li>自分で公開したPWAのページを開いた状態で、スマホのネット接続を切ってみましょう。</li>
+</ul>
+<p>画面遷移してもネットに繋がっていませんと表示されずにアクセスできますね。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="発展：WASMについて" duration="5">
+        <p>こちらは完全に初心者の方は飛ばしてください。こんな技術もあるのか、と知識を得るにとどめて問題ありません。</p>
+<aside class="warning"><p>発展課題：かなり早く終わった人のみウェブアセンブリについて調べて知識を深めてみましょう。</p>
+</aside>
+<p>調べてからでも調べる前でも、以下に書いた説明がシンプルにまとまっており概要を理解しやすいと思いますので、時間が余った人は一読しておくと良いでしょう。</p>
+<aside class="special"><p>導入：WebAssemblyはWASMとも呼ばれる、JavaScriptの産みの親であるブレダン・アイクによって提起された技術です。フロント開発はやれモダンだ最先端だとJavaScriptがもてはやされていますが、それはブラウザ上で処理を走らせることができる言語がJavaScriptだからです。その前提で、AppShellやServiceWorkerなどがハイスピードな情報表示を実現してきました。一方で、その前提を覆して高速化を実現しようとしているのがWASM（ワズム）です。</p>
+</aside>
+<p><code>参考情報</code></p>
+<ul>
+<li><a href="https://webassembly.org/" target="_blank">WebAssembly</a></li>
+</ul>
+<p>上述の通り、SPAもPWAも情報をより高速に表示し、より上質なユーザー体験を追求する中で生まれてきた技術や仕様です。</p>
+<p>ウェブアセンブリー（WASM）は、端的に言えばJavaScript以外の言語のコードもブラウザで動く機械語にコンパイルする仕組みです。バイナリコードでアプリをネット上に公開するのが基本となるムーブメントが（JavaScript開発者の起案で）着実に進んでいるということです。現在のモダンフロントより一層高速に機能するアプリケーションがウェブを席巻する日も近いのかもしれません。</p>
+<aside class="special"><p>まとめ：JavaScript以外の言語で書かれたプログラムもブラウザで動く機械語のプログラムに変換するWASMは、ウェブ開発の言語の選択におけるJavaScript制限を取り払い、OS層でしか行われていない低レイヤの処理すらブラウザ上で行われるのが当たり前の状態が近づいています。</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="重要：フィードバック" duration="4">
+        <aside class="warning"><p>お願い：最後に今回のハンズオンイベントを思い返しながら評価してください。</p>
+</aside>
+<p><a href="https://docs.google.com/forms/d/e/1FAIpQLSddJZPiyf5sevZls-XZC9E1QhAgDnSpjXyHQH9kltEp0ukE-Q/viewform" target="_blank"><paper-button class="colored" raised>ハンズオンを思い返しながら評価</paper-button></a></p>
+<p>初心者でも再現できて楽しく学べるという観点で、勉強会の主催団体の中で一番わかりやすいと言われる団体を目指しています！ぜひ皆様のお声をお聞かせください。</p>
+<aside class="special"><p>皆さんの意見は真摯に受け止めて改善に活かしておりますので、何度か参加されている方も新規の方も、ぜひフィードバックをお伝えください。応援のメッセージも継続のモチベーションとなり、大変励みになります！逆に満足できなかった方も、改善点をお伝えいただければ幸いです！</p>
+</aside>
+<p>　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇</p>
+<p><strong>お知らせ｜情報発信のためにTwitterアカウント作成しました！</strong></p>
+<p>connpassでは募集をしないイベントなども徐々に増えていくと思いますので、アカウントをお持ちの方はフォローの上、イベント開催情報の投稿に気付いた時はいいね・リツイートをお願いいたします！ボランティアで運営している状態のため、本格的な運用開始時期は未定です。使い始めるのは来年度以降になりそうですが、フォローしておいていただけると活動のモチベーション・励みになります。</p>
+<p><a href="https://twitter.com/NPO_FE" target="_blank">フィットネス・エンジニア公式Twitter</a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="初心者が混乱するポイント" duration="5">
+        <aside class="special"><p>説明：初心者がReactを学習するときにわからなくなりがちなところをピックアップしました。時間に余裕があり希望者がいる場合に画面共有をしながらポイントと心構えをお伝えします。</p>
+</aside>
+<ul>
+<li>関数の書き方についての揺らぎ</li>
+<li>コンポーネントの定義の揺らぎ</li>
+<li>ライブラリの利用方法の揺らぎ</li>
+</ul>
+<p>※ 時間が押している場合は取り扱いませんのでご了承ください。</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

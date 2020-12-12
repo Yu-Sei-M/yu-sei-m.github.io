@@ -1,0 +1,291 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>ハンズオン｜ReactでPWA開発</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="react-pwa"
+                  title="ハンズオン｜ReactでPWA開発"
+                  environment="web"
+                  feedback-link="https://github.com/Yu-Sei-M/yu-sei-m.github.io/issues">
+    
+      <google-codelab-step label="はじめに" duration="4">
+        <aside class="special"><p>説明：今回のハンズオンでは、ReactでPWAを開発する手順を確認しながら、作成から公開までを通しで進めていきます。途中で詰まった場合はDiscordに投稿してください。</p>
+</aside>
+<h2 is-upgraded>ハンズオンの流れ</h2>
+<ol type="1">
+<li>はじめに（ハンズオンの流れ）</li>
+<li>第１回で作ったアプリの確認</li>
+<li>Lighthouseの紹介</li>
+<li>PWAの作成</li>
+<li>PWAの確認</li>
+<li>PWA有効化</li>
+<li>React開発</li>
+<li>SPA開発</li>
+<li>デプロイとチャレンジ課題</li>
+</ol>
+<p><strong>なお、本ハンズオンは</strong><a href="https://yu-sei-m.github.io/how-to-install-nodejs/#0" target="_blank"><strong>こちら</strong></a><strong>の事前準備を完了していることが前提になります。</strong></p>
+<aside class="special"><p>正しく指示通りに完了している場合は、以下のコマンドを実行すると<strong>10.19.0</strong>と表示されるはずです。</p>
+</aside>
+<pre>node -v
+</pre>
+<aside class="warning"><p>環境構築に挑戦したのに10.19.0ではないぞ、という人は以下のコマンドを試しましょう。</p>
+</aside>
+<p><code>Macの方</code></p>
+<pre>sudo n 10.19.0
+</pre>
+<p><code>Winの方</code></p>
+<pre>nodist 10.19.0
+</pre>
+<p>残念ながら上のコマンドを実行してもバージョンが変わらない方、そもそも環境構築を完了していない方は、今回は追いつくことは難しいと判断されるため、今回は聴講スタイルでご参加ください。</p>
+<p>それでは進めていきましょう。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="第１回で作ったアプリ確認" duration="9">
+        <aside class="special"><p>説明：Reactアプリはコマンドで作成でき、HTML、CSS、JavaScriptを知っていると簡単に開発を進めることができました。</p>
+</aside>
+<aside class="warning"><p>指示１：Reactアプリの雛形を作成する手順を復習しておきましょう。どのように雛形が作成されるのかを完璧に理解している人は作業しなくても構いません。</p>
+</aside>
+<p><code>Windowsの方が初回のみパワーシェルで実行するコマンド１つ</code></p>
+<pre>npm install -g npx
+</pre>
+<p><code>WindowsもMacもLinuxも全ての方が実行するコマンド３つホームディレクトリに移動</code></p>
+<pre>cd ~
+</pre>
+<p><code>アプリ雛形作成コマンドのインストール</code></p>
+<pre>npm install create-react-app
+</pre>
+<p><code>React雛形の作成</code></p>
+<pre>npx create-react-app react-app
+</pre>
+<aside class="warning"><p>指示２：実行が完了したら、VSCodeで開きましょう。</p>
+</aside>
+<p class="image-container"><img src="img/9478cb577d22cd55.gif"></p>
+<p>開けたら、編集を始める前にReactアプリの中身について確認しておきます。</p>
+<p class="image-container"><img src="img/2f30963fb3751971.png"></p>
+<h2 is-upgraded>雛形アプリの中身について</h2>
+<p>以下、簡単に説明します。</p>
+<table>
+<tr><td colspan="1" rowspan="1"><p>名前</p>
+</td><td colspan="1" rowspan="1"><p>説明</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>node_modules</p>
+</td><td colspan="1" rowspan="1"><p>このアプリが利用しているライブラリが配置される</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>public</p>
+</td><td colspan="1" rowspan="1"><p>静的サイトを公開したいときにファイルを配置する</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>src</p>
+</td><td colspan="1" rowspan="1"><p>このアプリを開発するときに書くコードやプログラムを配置する</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>.gitignore</p>
+</td><td colspan="1" rowspan="1"><p>リモートリポジトリにプッシュしないファイルを書く</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>package.json</p>
+</td><td colspan="1" rowspan="1"><p>このアプリのライブラリや各種情報を書く</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>README.md</p>
+</td><td colspan="1" rowspan="1"><p>このディレクトリのアプリの説明などを書く</p>
+</td></tr>
+<tr><td colspan="1" rowspan="1"><p>yarn.lock</p>
+</td><td colspan="1" rowspan="1"><p>このアプリの利用ライブラリの依存関係が書かれている</p>
+</td></tr>
+</table>
+<p>現段階で完璧に理解できている必要はありません。<strong>重要なのはsrcディレクトリの中に自分で開発するコードが増えていくというイメージを持つことです。</strong>ざっと把握できたら次に進みましょう。</p>
+<aside class="warning"><p>指示３：VSCodeでコマンドラインを開き、サーバーを起動しましょう。</p>
+</aside>
+<p><code>ローカルサーバーの起動</code></p>
+<pre>npm start
+</pre>
+<p>起動に成功すると、ブラウザで以下のようなデフォルトの雛形アプリを確認することができます。</p>
+<p class="image-container"><img src="img/e9f5d1c1d47ae64e.png"></p>
+<aside class="warning"><p>指示４：前回参加した人と事前準備で第一回を済ませた方は前回のReactアプリのディレクトリを開きましょう。今回初参加の方は、以下のデータをダウンロードしてください。</p>
+</aside>
+<p>以下のボタンをクリックしてダウンロードして展開した後にそのフォルダのディレクトリでその下のコマンドを実行してください。</p>
+<p><a href="https://yu-sei-m.github.io/react-practice-20201107.zip" target="_blank"><paper-button class="colored" raised>第１回で作成したアプリディレクトリのzip</paper-button></a></p>
+<p><code>ライブラリの一括インストール</code></p>
+<pre>npm install
+</pre>
+<p><code>ローカルサーバーの起動</code></p>
+<pre>npm start
+</pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Lighthouseの紹介" duration="4">
+        <aside class="special"><p>今回はPWAを開発していきますが、何を持ってプログレッシブウェブアプリケーションになっているのか、外から見るだけでは違いがわかりません。そのため、ウェブサイトの評価ツールであるライトハウスを利用して確認を行います。</p>
+</aside>
+<aside class="warning"><p>指示１：以下のサイトにアクセスして、前回公開したアプリをチェックしてみましょう。</p>
+</aside>
+<p><a href="https://lighthouse-metrics.com/" target="_blank">Lighthouse Metrics</a></p>
+<p>chromeブラウザを利用している人は拡張機能もあります。</p>
+<p><a href="https://chrome.google.com/webstore/detail/lighthouse/blipmdconlkpinefehnmjammfjpmpbjk?hl=ja" target="_blank">Lighthouse拡張機能</a></p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="PWAの作成" duration="4">
+        <aside class="special"><p>説明：それでは、PWAを作成していきましょう。</p>
+</aside>
+<aside class="warning"><p>指示１：コマンドラインにて以下のコマンドを実行してください。</p>
+</aside>
+<pre>cd ~
+</pre>
+<pre>npx create-react-app react-practice-pwa --template cra-template-pwa
+</pre>
+<p>アプリ作成コマンドはテンプレートを指定して実行することも可能なのでReactでテンプレートを指定してアプリを作成する方法はこのようにすれば良いということを覚えておきましょう。</p>
+<aside class="warning"><p>指示２：作成したディレクトリをVSCodeで開きましょう。</p>
+</aside>
+<p>これでPWA開発の下ごしらえが終わったので、メイン部分の実装をスタートします！次へ進みましょう。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="PWAの確認" duration="3">
+        <aside class="special"><p>説明：普通にReactアプリを開発する場合と何が違っているのかを確認しておきましょう。</p>
+</aside>
+<aside class="warning"><p>指示１：PWAとして公開するために大切な３つのファイルを確認しましょう。</p>
+</aside>
+<ul>
+<li>service-worker.js</li>
+<li>serviceWorkerRegistration.js</li>
+<li>manifest.json</li>
+</ul>
+<aside class="warning"><p>指示２：ハンズオンのペースよりも早く進めている人のみ、プログレッシブウェブアプリやサービスワーカー、マニュフェストの説明を読んでおきましょう。</p>
+</aside>
+<ul>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/Progressive_web_apps" target="_blank">プログレッシブウェブアプリ</a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/API/Service_Worker_API" target="_blank">サービスワーカーAPI</a></li>
+<li><a href="https://developer.mozilla.org/ja/docs/Web/Manifest" target="_blank">マニフェストファイル</a></li>
+</ul>
+<aside class="special"><p>補足：初心者の場合、記事を読んで理解できることが少なかった方もいらっしゃると思いますが、基本的にプログレッシブウェブアプリ（PWA）はSwiftやKotlin、ReactNativeなどを学ばずにウェブ開発の技術のみで準モバイルアプリを作成することができ、モバイル利用時に便利な機能（オフライン利用やプッシュ通知など）が実装しうるということが押さえられていればOKです。</p>
+</aside>
+<p>次に進みましょう！</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="PWA有効化" duration="3">
+        <aside class="special"><p>説明：Reactでページ遷移を実現する際に必要になるreact-router-domの使い方を見ていきましょう。まずはindex.jsを編集します。</p>
+</aside>
+<p><code>完成後のindex.js</code></p>
+<pre><code language="language-js" class="language-js">import React from &#39;react&#39;;
+import ReactDOM from &#39;react-dom&#39;;
+import &#39;./index.css&#39;;
+import App from &#39;./App&#39;;
+import * as serviceWorkerRegistration from &#39;./serviceWorkerRegistration&#39;;
+import reportWebVitals from &#39;./reportWebVitals&#39;;
+
+ReactDOM.render(
+  &lt;React.StrictMode&gt;
+    &lt;App /&gt;
+  &lt;/React.StrictMode&gt;,
+  document.getElementById(&#39;root&#39;)
+);
+
+serviceWorkerRegistration.register();
+reportWebVitals();
+</code></pre>
+<aside class="warning"><p>指示１：元のindex.jsの中身を削除しましょう。</p>
+</aside>
+<aside class="warning"><p>指示２：完成後のindex.jsを写経しましょう。コピペでも構いません。</p>
+</aside>
+<p>以下のようにサービスワーカーを読み込んで、呼び出して利用していますね。</p>
+<p><code>index.jsより抜粋</code></p>
+<pre><code language="language-js" class="language-js">import * as serviceWorkerRegistration from &#39;./serviceWorkerRegistration&#39;;
+serviceWorkerRegistration.register();
+</code></pre>
+<p>エッセンスとしては、reactでPWAを有効化する場合は、このようにテンプレートで作成したPWAのサービスワーカーを呼び出している部分を「unregister()」から「register()」に変更することを知っておけば手軽にPWAとして公開することが可能となっています。</p>
+<p>どのように変更したのかを確認できたら、次に進みましょう。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="React開発" duration="20">
+        <aside class="special"><p>説明：第１回のハンズオン資料をかいつまんで開発を進めていきましょう。</p>
+</aside>
+<p><a href="https://yu-sei-m.github.io/react-hands-on/#4" target="_blank">第１回ハンズオン資料</a></p>
+<p>共通部分はコンポーネントを作成して読み込んで使うのがReactの基本でしたね！次に進みましょう。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="SPA開発" duration="10">
+        <aside class="special"><p>説明：第２回のハンズオン資料をかいつまんで開発を進めていきましょう。</p>
+</aside>
+<p><a href="https://yu-sei-m.github.io/react-spa-hands-on/#2" target="_blank">第２回ハンズオン資料</a></p>
+<p>画面遷移を実現することをルーティングを実装すると呼びました。Reactでルーティングを設定するときはreact-router-domを利用するのが基本でしたね！次に進みましょう。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="デプロイとチャレンジ課題" duration="3">
+        <aside class="special"><p>説明：Reactアプリを公開するときのオーソドックスな方法を学びます。</p>
+</aside>
+<aside class="warning"><p>指示１：次のビルドコマンドを実行しましょう。</p>
+</aside>
+<pre>npm run-script build
+</pre>
+<p><strong>このbuildコマンドを実行するとbuildディレクトリが作成されます。</strong></p>
+<p>buildディレクトリとは、本番環境で公開するために書き出されたウェブアプリ（ウェブサイト）のディレクトリのことです。</p>
+<aside class="warning"><p>指示２：事前準備で作成したNelifyのアカウントを開いて、次のようにbuildディレクトリドラッグ&amp;ドロップをしましょう。</p>
+</aside>
+<p class="image-container"><img src="img/48b70cd348e830a4.gif"></p>
+<h2 is-upgraded>完成おめでとうございます！</h2>
+<aside class="warning"><p>指示３：デプロイが完了したらNetlifyの画面に緑色のリンクが表示されているはずなので、それをクリックして開きましょう。以下の画像の緑のリンクに相当する部分をクリックすればオーケーです。</p>
+</aside>
+<p class="image-container"><img src="img/9ea29c7bc4a58261.png"></p>
+<p>作成したサイトが表示されましたね！お疲れ様でした！</p>
+<p>早く終わった人は課題にも挑戦してみましょう！</p>
+<p><strong>Doneを押してからChallengeをクリックして「react-pwa-challenge」と入力すると課題に取り組むことができます。</strong></p>
+<p>以下のボタンをクリックしても今日の課題を開けます。</p>
+<p><a href="https://yu-sei-m.github.io/react-pwa-challenge/#0" target="_blank"><paper-button class="colored" raised>課題に取り組む</paper-button></a></p>
+<p>　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇</p>
+<h3 is-upgraded>完成できなかった人のための共有</h3>
+<p><a href="https://yu-sei-m.github.io/react-practice-20201212.zip" target="_blank"><paper-button class="colored" raised>本日作成したアプリディレクトリのzip</paper-button></a></p>
+<p>ダウンロードして展開した後に以下のコマンドを実行してください。</p>
+<p>本日のハンズオンで作業した内容が反映されたアプリを起動することができます。</p>
+<p><code>ライブラリのインストール</code></p>
+<pre>npm install
+</pre>
+<p><code>ローカルサーバーの起動</code></p>
+<pre>npm start
+</pre>
+<p><code>作成したアプリのビルド</code></p>
+<pre>npm run-script build
+</pre>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

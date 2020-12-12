@@ -1,0 +1,25 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2020-12-12T11:16:06+09:00",
+  "id": "react-pwa",
+  "duration": 60,
+  "title": "ハンズオン｜ReactでPWA開発",
+  "summary": "ReactハンズオンPWA開発編",
+  "source": "react-hands-on-3.md",
+  "theme": "",
+  "status": [
+    "draft"
+  ],
+  "category": [
+    "react",
+    "tutorial"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/Yu-Sei-M/yu-sei-m.github.io/issues",
+  "url": "react-pwa"
+}
