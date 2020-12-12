@@ -145,7 +145,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="PWAの作成" duration="4">
+      <google-codelab-step label="ステップ１：PWAの作成" duration="4">
         <aside class="special"><p>説明：それでは、PWAを作成していきましょう。</p>
 </aside>
 <aside class="warning"><p>指示１：コマンドラインにて以下のコマンドを実行してください。</p>
@@ -162,7 +162,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="PWAの確認" duration="3">
+      <google-codelab-step label="ステップ２：PWAの確認" duration="3">
         <aside class="special"><p>説明：普通にReactアプリを開発する場合と何が違っているのかを確認しておきましょう。</p>
 </aside>
 <aside class="warning"><p>指示１：PWAとして公開するために大切な３つのファイルを確認しましょう。</p>
@@ -186,7 +186,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="PWA有効化" duration="3">
+      <google-codelab-step label="ステップ３：PWA有効化" duration="3">
         <aside class="special"><p>説明：Reactでページ遷移を実現する際に必要になるreact-router-domの使い方を見ていきましょう。まずはindex.jsを編集します。</p>
 </aside>
 <p><code>完成後のindex.js</code></p>
@@ -222,19 +222,100 @@ serviceWorkerRegistration.register();
 
       </google-codelab-step>
     
-      <google-codelab-step label="ReactSPA開発" duration="30">
+      <google-codelab-step label="ReactSPA開発 on PWA" duration="30">
         <aside class="special"><p>説明：第１回、第２回の内容を踏まえて作業を進めましょう。</p>
 </aside>
 <ul>
 <li>src/pagesディレクトリ作成</li>
 <li>src/pages/Top.jsファイル作成</li>
-<li>src/pages/About.jsファイル作成</li>
+<li>src/pages/LINE.jsファイル作成</li>
 <li>react-router-domライブラリ追加</li>
 <li>src/routes.jsの作成</li>
 <li>src/App.jsの編集</li>
 <li>src/index.jsの編集</li>
 <li>public/_redirectsファイル作成</li>
 </ul>
+<h2 is-upgraded>src/pagesディレクトリ作成</h2>
+<aside class="warning"><p>指示１：srcディレクトリ直下にpagesディレクトリを作成してください。</p>
+</aside>
+<h2 is-upgraded>src/pages/Top.jsファイル作成</h2>
+<aside class="warning"><p>指示２：pagesディレクトリ直下にTopコンポーネントを作成してください。</p>
+</aside>
+<h2 is-upgraded>src/pages/LINE.jsファイル作成</h2>
+<aside class="warning"><p>指示３：pagesディレクトリ直下にLINEコンポーネントを作成してください。</p>
+</aside>
+<h2 is-upgraded>react-router-domライブラリ追加</h2>
+<aside class="warning"><p>指示４：SPAで画面遷移を実現するために以下のコマンドを実行してreact-router-domというライブラリを追加してください。</p>
+</aside>
+<p><code>コマンドライン（アプリのディレクトリ直下）で実行</code></p>
+<pre>npm install react-router-dom
+</pre>
+<h2 is-upgraded>src/routes.jsの作成</h2>
+<aside class="warning"><p>指示５：画面遷移を管理しやすくするために、ルーティングの設定ファイルを切り出して作成してください。</p>
+</aside>
+<pre><code language="language-js" class="language-js">import Top from &#39;./pages/Top&#39;;
+import LINE from &#39;./pages/LINE&#39;;
+
+const routes = [
+  { path: &#39;/&#39;, component: Top, exact : true },
+  { path: &#39;/line&#39;, component: LINE },
+];
+
+export default routes;
+</code></pre>
+<h2 is-upgraded>src/App.jsの編集</h2>
+<aside class="warning"><p>指示６：画面遷移ができるように、作成したroutesファイルをインポートし、react-router-domのRoute,Switch,withRouterを利用してApp.jsにルーティングを設定してください。</p>
+</aside>
+<p><code>App.js</code></p>
+<pre><code language="language-js" class="language-js">import React from &#34;react&#34;;
+import { Route, Switch, withRouter } from &#34;react-router-dom&#34;;
+import routes from &#34;./routes&#34;;
+
+const App = () =&gt; {
+	return (
+    &lt;Switch&gt;
+      {routes.map((route, idx) =&gt; (
+        &lt;Route
+          path={route.path}
+          exact={route.exact}
+          component={route.component}
+          key={idx}
+        /&gt;
+      ))}
+    &lt;/Switch&gt;
+	);
+};
+
+export default withRouter(App);
+</code></pre>
+<h2 is-upgraded>src/index.jsの編集</h2>
+<aside class="warning"><p>指示７：react-router-domで画面遷移ができるように、BrowserRouterをインポートした後にレンダリング領域で呼び出してAppコンポーネントを囲みましょう。</p>
+</aside>
+<p><code>index.js</code></p>
+<pre><code language="language-js" class="language-js">import React from &#39;react&#39;;
+import ReactDOM from &#39;react-dom&#39;;
+import { BrowserRouter } from &#34;react-router-dom&#34;;
+import &#39;./index.css&#39;;
+import App from &#39;./App&#39;;
+import * as serviceWorkerRegistration from &#39;./serviceWorkerRegistration&#39;;
+import reportWebVitals from &#39;./reportWebVitals&#39;;
+
+ReactDOM.render(
+  &lt;BrowserRouter&gt;
+    &lt;App /&gt;
+  &lt;/BrowserRouter&gt;,
+  document.getElementById(&#39;root&#39;)
+);
+
+serviceWorkerRegistration.register();
+reportWebVitals();
+</code></pre>
+<h2 is-upgraded>public/_redirectsファイル作成</h2>
+<aside class="warning"><p>指示８：Netlifyに公開した時に、SPAの子ページに直接アクセスした時にもきちんと表示されるようにpublicディレクトリ直下に_redirectsファイルを作成し、以下のリダイレクトの設定をしてください。</p>
+</aside>
+<p><code>_redirects</code></p>
+<pre><code>/*    /index.html   200
+</code></pre>
 
 
       </google-codelab-step>
