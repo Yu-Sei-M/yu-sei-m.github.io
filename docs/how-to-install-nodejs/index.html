@@ -120,9 +120,23 @@
 <p><code>nodeのバージョン確認</code></p>
 <pre>node -v
 </pre>
-<p>最後の実行結果が以下のように出力されていれば問題ありません。</p>
+<p>バージョン確認の実行結果が以下のように出力されていれば問題ありません。</p>
 <p class="image-container"><img alt="Nodeバージョン" src="img/ad2e5cd8297c2f6b.png"></p>
 <aside class="warning"><p>ここまで説明を元に作業して自分のnodeバージョンが10.19.0にならない方はおそらくまだ環境構築時にトライアンドエラーを重ねる経験が足りていないと思いますので、今回は聴講スタイルで受講するのが無難と思われます。よろしくお願いいたします。</p>
+</aside>
+<p>最後に、以下コマンドの実行でネット回線が弱いなどの理由で３０分以上時間がかかる方もいらっしゃるようなので、事前に実行し、gatsbyを使うためのツールをインストールしておいてください。</p>
+<p><code>gatsbyを使用する準備</code></p>
+<pre><code>npm install -g gatsby-cli
+</code></pre>
+<p>もし上のコマンドを実行してもインストールが完了できない方がいらっしゃれば、以下のコマンドをお試しください。</p>
+<p><code>gatsbyをインストールできない人が実行するコマンド３つ</code></p>
+<pre><code>npm config delete prefix
+</code></pre>
+<pre><code>npm config set prefix /usr/local
+</code></pre>
+<pre><code>sudo npm install -g gatsby-cli
+</code></pre>
+<aside class="special"><p>注意：３つ目のコマンドを実行するときにパスワードの入力を求められたらパソコンを起動したときに入力するパスワードを入力してエンターキーを押してください。</p>
 </aside>
 
 
