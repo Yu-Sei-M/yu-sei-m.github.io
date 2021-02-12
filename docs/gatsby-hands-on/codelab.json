@@ -1,0 +1,26 @@
+{
+  "environment": "web",
+  "format": "html",
+  "prefix": "https://storage.googleapis.com",
+  "mainga": "UA-49880327-14",
+  "updated": "2021-02-12T17:50:18+09:00",
+  "id": "gatsby-hands-on",
+  "duration": 45,
+  "title": "ハンズオン｜Gatsbyで爆速ブログ公開",
+  "summary": "GatsbyJSハンズオン配布資料",
+  "source": "gatsby-hands-on.md",
+  "theme": "",
+  "status": [
+    "draft"
+  ],
+  "category": [
+    "gatsby",
+    "react",
+    "tutorial"
+  ],
+  "tags": [
+    "web"
+  ],
+  "feedback": "https://github.com/Yu-Sei-M/yu-sei-m.github.io/issues",
+  "url": "gatsby-hands-on"
+}
