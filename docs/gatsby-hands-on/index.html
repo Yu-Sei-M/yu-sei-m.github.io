@@ -68,153 +68,29 @@
       <google-codelab-step label="テンプレートを選ぼう" duration="5">
         <aside class="special"><p>説明：GatsbyもReactなどと同様にコマンド一発でアプリの雛形が完成しますが、Gatsby公式に共有されているテンプレートを使えば<strong>さらに効率よく</strong>アプリの雛形を作成することができます。</p>
 </aside>
-<p class="image-container"><img src="img/3310876acfea7381.png"></p>
-<aside class="warning"><p>指示：配信を見ながら一緒にテンプレを選ぶ作業を進めて行きます。まずは「GatsbyJS テンプレート」でググりましょう！</p>
+<aside class="warning"><p>指示：配信を見ながら一緒にテンプレを選ぶ作業を進めていただきます。まずは「GatsbyJS テンプレート」でググりましょう！</p>
 </aside>
+<p class="image-container"><img src="img/3310876acfea7381.png"></p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="コマンドを実行しよう" duration="5">
-        <p>Reactアプリを開発するときに大切になるjsファイルの中身を確認し、基本的な構成要素を説明できるようになりましょう。</p>
-<aside class="special"><p>説明：ここでは、テキストと画像の置き換えを行います。初期状態ではReactのロゴが表示されていますが、これをフィットネスエンジニアのロゴに変更し、表示されるメッセージも変更します。</p>
+        <p>GatsbyJS公式のテンプレサイトを見るといろんなテンプレートが公開されていました。 今回はBlogを作りたいので、SEO対策が施され、PWA対応しているテンプレートを選びましたね。</p>
+<aside class="special"><p>説明：ここでは、テンプレートからGatsbyアプリの雛形を作っていきます。と言っても通常のGatsbyアプリの作成と同じコマンドを使って実行するので、何か難しい作業が必要なわけではありません。進めていきましょう。</p>
 </aside>
-<h2 is-upgraded>雛形アプリの中身について</h2>
-<p>以下、簡単に説明します。</p>
-<table>
-<tr><td colspan="1" rowspan="1"><p>名前</p>
-</td><td colspan="1" rowspan="1"><p>説明</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p>node_modules</p>
-</td><td colspan="1" rowspan="1"><p>このアプリが利用しているライブラリが配置される</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p>public</p>
-</td><td colspan="1" rowspan="1"><p>静的サイトを公開したいときにファイルを配置する</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p>src</p>
-</td><td colspan="1" rowspan="1"><p>このアプリを開発するときに書くコードやプログラムを配置する</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p>.gitignore</p>
-</td><td colspan="1" rowspan="1"><p>リモートリポジトリにプッシュしないファイルを書く</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p>package.json</p>
-</td><td colspan="1" rowspan="1"><p>このアプリのライブラリや各種情報を書く</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p>README.md</p>
-</td><td colspan="1" rowspan="1"><p>このディレクトリのアプリの説明などを書く</p>
-</td></tr>
-<tr><td colspan="1" rowspan="1"><p>yarn.lock</p>
-</td><td colspan="1" rowspan="1"><p>このアプリの利用ライブラリの依存関係が書かれている</p>
-</td></tr>
-</table>
-<p>現段階で完璧に理解できている必要はありません。<strong>重要なのはsrcディレクトリの中に自分で開発するコードが増えていくというイメージを持つことです。</strong>ざっと把握できたら次に進みましょう。</p>
-<p>以下の順番で一緒に作業を進めていきましょう。</p>
-<aside class="warning"><p>指示１：srcディレクトリ配下にあるApp.jsを編集して１行目を削除しましょう。以下の１行です。</p>
-</aside>
-<pre><code language="language-js" class="language-js">import logo from &#39;./logo.svg&#39;; // 削除
-</code></pre>
-<aside class="warning"><p>指示２：publicのなかにimagesディレクトリを作成して、中にロゴ画像を設置しましょう。</p>
-</aside>
-<p><a href="https://yu-sei-m.github.io/images/logo.png" target="_blank"><paper-button class="colored" raised>ロゴのダウンロード</paper-button></a></p>
-<p class="image-container"><img src="img/7b676c5363a16f83.gif"></p>
-<aside class="warning"><p>指示３：srcディレクトリ配下にあるApp.js内部のApp関数の中の先頭に設置したイメージを読み込みましょう。</p>
-</aside>
-<pre>const logo = &#39;/images/logo.png&#39;;
+<p class="image-container"><img src="img/b99a51529ef53cad.png"></p>
+<pre>コマンド
 </pre>
-<aside class="warning"><p>指示４：srcディレクトリ配下にあるApp.jsの中のpタグとaタグの中身を以下のように書き換えましょう。</p>
-</aside>
-<pre>&lt;p&gt;
-  &lt;b&gt;フィットネス・エンジニアの勉強会&lt;/b&gt;
-&lt;/p&gt;
-</pre>
-<pre>&lt;a
-  className=&#34;App-link&#34;
-  href=&#34;https://yu-sei-m.github.io/react-hands-on&#34;
-  target=&#34;_blank&#34;
-  rel=&#34;noopener noreferrer&#34;
-&gt;
-  はじめて学ぶReact
-&lt;/a&gt;
-</pre>
-<p>タグの間を日本語にするだけでなく、hrefの中のURLも変更しているのでご注意ください。</p>
-<p>変更して保存するたびにブラウザの表示が変わっていきましたね！</p>
-<p class="image-container"><img src="img/dfb4d9bcf216179.png"></p>
-<p>最終的に上の画像のようになっていたら次に進みましょう！</p>
+<p>コマンドの実行は時間がかかる場合があります。 事前準備ですでに１つ目は実行している方が多いと思いますが、ここで一旦小休憩を挟みます。</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="エディタで編集しよう" duration="7">
-        <aside class="special"><p>説明：Reactアプリの表示画面の見た目を整えるためにどこをどのように編集すれば良いかを押さえましょう。ここではCSSの内容については特に説明しないので、「装飾したい部分にこんなふうに指定すると色やサイズ・余白を変更できるのか」と感覚をつかんでください。</p>
+      <google-codelab-step label="エディタで編集しよう" duration="20">
+        <aside class="special"><p>説明：Gatsbyアプリの見た目をいじるためにどこをどのように編集すれば良いかを押さえましょう。ここではコードの内容については深く説明しないので、「こんな風にあたりをつけて試行錯誤すればいじり方がわかるのか」と感覚をつかんでください。</p>
 </aside>
-<p><code>完成後のApp.css</code></p>
-<pre><code language="language-css" class="language-css">.App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  /* background-color: #282c34; */
-  background-color: #fefefe;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  /* color: white; */
-  color: dimgrey;
-}
-
-.App-link {
-  /* color: #61dafb; */
-  color: #294b8f;
-  text-decoration: none;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-</code></pre>
-<aside class="warning"><p>指示１：srcディレクトリ配下にあるApp.cssを編集し、背景色をカラーコード「#fefefe」に変更し、見出し文字を「dimgrey」に変更しましょう。</p>
-</aside>
-<p>App-headerクラスのbackground-colorの行をコメントアウトして値を「background-color: #fefefe;」を追記します。同様に、最後のカラーをコメントアウトして値を「color: dimgrey;」にしましょう。</p>
-<p><code>App.cssの中のApp-headerクラスのスタイルを変更</code></p>
-<pre><code language="language-css" class="language-css">.App-header {
-  /* background-color: #282c34; */
-  background-color: #fefefe;
-  /* （中略） */
-  /* color: white; */
-  color: dimgrey;
-}
-</code></pre>
-<aside class="warning"><p>指示２：App-linkクラスのcolorの行をコメントアウトしてカラーコード「#294b8f」に変更しましょう。</p>
-</aside>
-<p>一行目のカラーの指定をコメントアウトして値を「color: #294b8f;」を追記します。</p>
-<p><code>App.cssの中のApp-linkクラスのスタイルを変更</code></p>
-<pre><code language="language-css" class="language-css">.App-link {
-  /* color: #61dafb; */
-  color: #294b8f;
-  /* 以下省略 */
-}
-</code></pre>
-<p><code>完成後の状態</code><img src="img/de42a86280e76595.png"></p>
-<p>ずいぶん最終目標に近づいてきましたね！次に進みましょう。</p>
+<p class="image-container"><img src="img/d95fa8cde50591d0.png"></p>
 
 
       </google-codelab-step>
