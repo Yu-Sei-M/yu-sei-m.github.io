@@ -47,27 +47,38 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="静的サイトジェネレータ" duration="6">
-        <aside class="special"><p>説明：今回一緒にブログアプリを作成する際に利用するGatsbyJSというフレームワークの実質的内容を把握しましょう。</p>
+      <google-codelab-step label="講義パートのおさらい" duration="3">
+        <aside class="special"><p>説明：前半の座学では、今回一緒にブログアプリを作成する際に利用するGatsbyJSというフレームワークの実質的内容を把握しました。</p>
 </aside>
+<p>以下の到達目標を達成できているか確認してください。</p>
 <h2 is-upgraded>到達目標</h2>
 <ul>
 <li>フレームワークを利用する意義を理解する</li>
 <li>静的サイトジェネレータについて人に説明できる</li>
 <li>モダンな開発の正体を知る</li>
-<li>Gatsbyの３つのコンセプトを押さえる</li>
+<li>GatsbyJSの３つのコンセプトを押さえる</li>
 </ul>
-<p>今回のハンズオン終了時に「GatsbyJSがわかった！」「今後自分で試してみることができそう！」と思えたなら参加した価値があったと自信を持って言えそうです。がんばりましょう。</p>
-<aside class="warning"><p>指示：スライドを見ながら解説を聞いてください。</p>
+<p>今回のハンズオン終了時に「GatsbyJSがわかった！」「今後自分で試してみることができそう！」と思えたなら参加した価値があったと自信を持って言えるはずです。がんばりましょう。</p>
+<aside class="warning"><p>指示：スライドで解説した内容を意識しながら一緒にGatsbyJSアプリをいじりましょう。</p>
 </aside>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="テンプレートを選ぼう" duration="4">
-        <aside class="special"><p>説明：GatsbyもReactなどと同様にコマンド一発でアプリの雛形が完成しますが、Gatsby公式に共有されているテンプレートを使えばさらに効率よくアプリの雛形を作成することができます。</p>
+      <google-codelab-step label="テンプレートを選ぼう" duration="5">
+        <aside class="special"><p>説明：GatsbyもReactなどと同様にコマンド一発でアプリの雛形が完成しますが、Gatsby公式に共有されているテンプレートを使えば<strong>さらに効率よく</strong>アプリの雛形を作成することができます。</p>
 </aside>
 <p class="image-container"><img src="img/3310876acfea7381.png"></p>
+<aside class="warning"><p>指示：配信を見ながら一緒にテンプレを選ぶ作業を進めて行きます。まずは「GatsbyJS テンプレート」でググりましょう！</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="コマンドを実行しよう" duration="5">
+        <p>Reactアプリを開発するときに大切になるjsファイルの中身を確認し、基本的な構成要素を説明できるようになりましょう。</p>
+<aside class="special"><p>説明：ここでは、テキストと画像の置き換えを行います。初期状態ではReactのロゴが表示されていますが、これをフィットネスエンジニアのロゴに変更し、表示されるメッセージも変更します。</p>
+</aside>
 <h2 is-upgraded>雛形アプリの中身について</h2>
 <p>以下、簡単に説明します。</p>
 <table>
@@ -97,43 +108,6 @@
 </td></tr>
 </table>
 <p>現段階で完璧に理解できている必要はありません。<strong>重要なのはsrcディレクトリの中に自分で開発するコードが増えていくというイメージを持つことです。</strong>ざっと把握できたら次に進みましょう。</p>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="コマンドを実行しよう" duration="6">
-        <p>Reactアプリを開発するときに大切になるjsファイルの中身を確認し、基本的な構成要素を説明できるようになりましょう。</p>
-<aside class="special"><p>説明：ここでは、テキストと画像の置き換えを行います。初期状態ではReactのロゴが表示されていますが、これをフィットネスエンジニアのロゴに変更し、表示されるメッセージも変更します。</p>
-</aside>
-<p><code>完成後のApp.js</code></p>
-<pre><code language="language-js" class="language-js">import &#39;./App.css&#39;;
-
-function App() {
-  const logo = &#39;/images/logo.png&#39;;
-  return (
-    &lt;div className=&#34;App&#34;&gt;
-      &lt;header className=&#34;App-header&#34;&gt;
-        &lt;img src={logo} className=&#34;App-logo&#34; alt=&#34;logo&#34; /&gt;
-        &lt;br/&gt;
-        &lt;br/&gt;
-        &lt;p&gt;
-          &lt;b&gt;フィットネス・エンジニアの勉強会&lt;/b&gt;
-        &lt;/p&gt;
-        &lt;a
-          className=&#34;App-link&#34;
-          href=&#34;https://yu-sei-m.github.io/react-hands-on&#34;
-          target=&#34;_blank&#34;
-          rel=&#34;noopener noreferrer&#34;
-        &gt;
-          はじめて学ぶReact
-        &lt;/a&gt;
-      &lt;/header&gt;
-    &lt;/div&gt;
-  );
-}
-
-export default App;
-</code></pre>
 <p>以下の順番で一緒に作業を進めていきましょう。</p>
 <aside class="warning"><p>指示１：srcディレクトリ配下にあるApp.jsを編集して１行目を削除しましょう。以下の１行です。</p>
 </aside>
