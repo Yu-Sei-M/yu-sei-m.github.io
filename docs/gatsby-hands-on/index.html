@@ -80,9 +80,27 @@
 <aside class="special"><p>説明：ここでは、テンプレートからGatsbyアプリの雛形を作っていきます。と言っても通常のGatsbyアプリの作成と同じコマンドを使って実行するので、何か難しい作業が必要なわけではありません。進めていきましょう。</p>
 </aside>
 <p class="image-container"><img src="img/b99a51529ef53cad.png"></p>
-<pre>コマンド
+<aside class="warning"><p>指示：以下のコマンドを順番に１つずつ実行しましょう。</p>
+</aside>
+<pre>npm install -g gatsby-cli
 </pre>
-<p>コマンドの実行は時間がかかる場合があります。 事前準備ですでに１つ目は実行している方が多いと思いますが、ここで一旦小休憩を挟みます。</p>
+<pre>gatsby new gatsby-blog https://github.com/maxpou/gatsby-
+starter-morning-dew
+</pre>
+<pre>cd gatsby-blog
+</pre>
+<pre>gatsby develop
+</pre>
+<p>※ コマンドの実行（特に１つ目）は時間がかかる場合があります。</p>
+<h3 is-upgraded>１つ目のコマンドが実行できない人へ</h3>
+<p>以下のコマンド３つを実行してから再度トライしてください。</p>
+<pre>npm config delete prefix
+</pre>
+<pre>npm config set prefix /usr/local
+</pre>
+<pre>sudo npm install -g gatsby-cli
+</pre>
+<p>事前準備資料に記載しているのですでに１つ目は実行している方が多いと思いますが、ここで一旦<strong>フィットネス（小休憩）</strong>を挟みます。</p>
 
 
       </google-codelab-step>
@@ -91,72 +109,32 @@
         <aside class="special"><p>説明：Gatsbyアプリの見た目をいじるためにどこをどのように編集すれば良いかを押さえましょう。ここではコードの内容については深く説明しないので、「こんな風にあたりをつけて試行錯誤すればいじり方がわかるのか」と感覚をつかんでください。</p>
 </aside>
 <p class="image-container"><img src="img/d95fa8cde50591d0.png"></p>
+<aside class="warning"><p>指示：配信を見ながら真似をして作業していきましょう！</p>
+</aside>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="ウェブに公開しよう" duration="7">
-        <aside class="special"><p>説明：ReactアプリでJavaScriptを記述し、プログラミングを組み合わせる方法を確認し、いつでも追加実装できるようにポイントを押さえましょう。</p>
+      <google-codelab-step label="ウェブに公開しよう" duration="5">
+        <aside class="special"><p>説明：Gatsbyアプリ（に限らず自身で作成した静的サイト）を公開するときのオーソドックスな方法を学びます。</p>
 </aside>
-<p><code>完成後のApp.js</code></p>
-<pre><code language="language-js" class="language-js">import &#39;./App.css&#39;;
-
-const checkIn = () =&gt; {
-  var pass = prompt(&#34;パスワードを入力して下さい:&#34;,&#34;&#34;);
-  if (pass != null) window.location.href = &#34;https://yu-sei-m.github.io/&#34; + pass;
-}
-
-// function App() { // 通常の関数定義
-const App = () =&gt; { // アロー関数定義
-  const logo = &#39;/images/logo.png&#39;;
-  return (
-    &lt;div className=&#34;App&#34;&gt;
-      &lt;header className=&#34;App-header&#34;&gt;
-        &lt;img src={logo} className=&#34;App-logo&#34; alt=&#34;logo&#34; /&gt;
-        &lt;br/&gt;
-        &lt;br/&gt;
-        &lt;p&gt;
-          &lt;b&gt;フィットネス・エンジニアの勉強会&lt;/b&gt;
-        &lt;/p&gt;
-        &lt;a
-          className=&#34;App-link&#34;
-          onClick={()=&gt;checkIn()}
-        &gt;
-          はじめて学ぶReact
-        &lt;/a&gt;
-      &lt;/header&gt;
-    &lt;/div&gt;
-  );
-}
-
-export default App;
-</code></pre>
-<p>関数の定義方法が違うことに気づきましたか？この説明は最後に補足するので、今は<strong>「このように書いても動くんだなあ」</strong>と把握するにとどめておきましょう。</p>
-<aside class="warning"><p>指示１：次のように関数を定義して、App.jsのApp関数の上に記述しましょう。</p>
+<aside class="warning"><p>指示１：次のビルドコマンドを実行しましょう。</p>
 </aside>
-<pre><code language="language-js" class="language-js">const checkIn = () =&gt; {
-  var pass = prompt(&#34;パスワードを入力して下さい:&#34;,&#34;&#34;);
-  if (pass != null) window.location.href = &#34;https://yu-sei-m.github.io/&#34; + pass;
-}
-</code></pre>
-<aside class="warning"><p>指示２：次のようにaタグの中にonClickプロパティに関数を記述しましょう。</p>
+<pre>gatsby build
+</pre>
+<p><strong>このbuildコマンドを実行するとbuildディレクトリが作成されます。</strong></p>
+<p>buildディレクトリとは、本番環境で公開するために書き出されたウェブアプリ（ウェブサイト）のディレクトリのことです。</p>
+<p>ここに、講義パートで説明した静的サイトが作成（ジェネレート）されています。この機能ゆえに「静的サイトジェネレータ」に区分されるフレームワークです。本当はもう少し奥が深いフレームワークですが、ここではSSGの観点だけ押さえておけばOKです！</p>
+<aside class="warning"><p>指示２：事前準備で作成したNelifyのアカウントを開いて、次のようにbuildディレクトリドラッグ&amp;ドロップをしましょう。</p>
 </aside>
-<pre><code language="language-js" class="language-js">&lt;a
-  className=&#34;App-link&#34;
-  onClick={()=&gt;checkIn()}
-&gt;
-  はじめて学ぶReact
-&lt;/a&gt;
-</code></pre>
-<p>以下のように「はじめて学ぶReact」をクリックすると入力画面が表示されると簡易ログイン機能の完成です！</p>
-<p class="image-container"><img src="img/1e7ab877a3ca2733.png"></p>
-<p>試しに「react-hands-on」と入力してみてください！</p>
-<p>今回のハンズオン資料が表示されましたか？いいですね！もう少しで完成です！次に進みましょう。</p>
+<p class="image-container"><img src="img/48b70cd348e830a4.gif"></p>
+<h2 is-upgraded>完成おめでとうございます！</h2>
+<p>無事公開できましたか？公開できた方はZoomのチャットなどでお知らせください！</p>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="まとめ" duration="6">
+      <google-codelab-step label="まとめ" duration="5">
         <aside class="special"><p>説明：Reactアプリ開発においてなぜコンポーネントを作成することが大切なのか理解し、今後はコンポーネントを活用できるようになりましょう。</p>
 </aside>
 <p><code>完成後のApp.js</code></p>
@@ -229,20 +207,8 @@ import Link from &#39;./components/link.js&#39;
 
       </google-codelab-step>
     
-      <google-codelab-step label="補足" duration="5">
-        <aside class="special"><p>説明：Reactアプリを公開するときのオーソドックスな方法を学びます。</p>
-</aside>
-<aside class="warning"><p>指示１：次のビルドコマンドを実行しましょう。</p>
-</aside>
-<pre>npm run-script build
-</pre>
-<p><strong>このbuildコマンドを実行するとbuildディレクトリが作成されます。</strong></p>
-<p>buildディレクトリとは、本番環境で公開するために書き出されたウェブアプリ（ウェブサイト）のディレクトリのことです。</p>
-<aside class="warning"><p>指示２：事前準備で作成したNelifyのアカウントを開いて、次のようにbuildディレクトリドラッグ&amp;ドロップをしましょう。</p>
-</aside>
-<p class="image-container"><img src="img/48b70cd348e830a4.gif"></p>
-<h2 is-upgraded>完成おめでとうございます！</h2>
-<aside class="warning"><p>指示３：デプロイが完了したらNetlifyの画面に緑色のリンクが表示されているはずなので、それをクリックして開きましょう。以下の画像の緑のリンクに相当する部分をクリックすればオーケーです。</p>
+      <google-codelab-step label="補足" duration="0">
+        <aside class="warning"><p>指示３：デプロイが完了したらNetlifyの画面に緑色のリンクが表示されているはずなので、それをクリックして開きましょう。以下の画像の緑のリンクに相当する部分をクリックすればオーケーです。</p>
 </aside>
 <p class="image-container"><img src="img/9ea29c7bc4a58261.png"></p>
 <p>作成したサイトが表示されましたね！お疲れ様でした！</p>
