@@ -28,11 +28,11 @@
                   feedback-link="https://github.com/Yu-Sei-M/yu-sei-m.github.io/issues">
     
       <google-codelab-step label="はじめに" duration="2">
-        <aside class="special"><p>説明：今回のハンズオンでは、Reactアプリ開発の基本を確認しながら、作成から公開までを通しで進めていきます。途中で詰まった場合はDiscordに投稿してください。</p>
+        <aside class="special"><p>説明：今回のハンズオンでは、Gatsbyアプリ開発の手順を確認しながら、作成から公開までを通しで進めていきます。途中で詰まった場合はZoomのチャットに投稿してください。可能な範囲で対応いたします。</p>
 </aside>
 <h2 is-upgraded>ハンズオンの流れ</h2>
 <ol type="1">
-<li>はじめに（ハンズオンの流れ）</li>
+<li>はじめに</li>
 <li>講義パートおさらい</li>
 <li>テンプレートを選ぼう</li>
 <li>コマンドを実行しよう</li>
@@ -59,6 +59,7 @@
 <li>モダンな開発の正体を知る</li>
 <li>GatsbyJSの３つのコンセプトを押さえる</li>
 </ul>
+<p>ここまでの理解に加えて、実践を通してGatsbyを利用してアプリを作る工程をイメージできるようになりましょう！</p>
 <p>今回のハンズオン終了時に <strong>「GatsbyJSがわかった！」 「今後自分で試してみることができそう！」</strong> と思えたなら参加した価値があったと自信を持って言えるはずです。がんばっていきましょう！</p>
 <aside class="warning"><p>指示：スライドで解説した内容を意識しながら一緒にGatsbyJSアプリをいじりましょう。</p>
 </aside>
@@ -77,7 +78,7 @@
       </google-codelab-step>
     
       <google-codelab-step label="コマンドを実行しよう" duration="5">
-        <p>GatsbyJS公式のテンプレサイトを見るといろんなテンプレートが公開されていました。 今回はBlogを作りたいので、SEO対策が施され、PWA対応しているテンプレートを選びましたね。</p>
+        <p>GatsbyJS公式のテンプレサイトを見るといろんなテンプレートが公開されていました。 <strong>今回はBlogを作りたいので、SEO対策が施され、PWA対応しているテンプレートを選びましたね。</strong></p>
 <aside class="special"><p>説明：ここでは、テンプレートからGatsbyアプリの雛形を作っていきます。と言っても通常のGatsbyアプリの作成と同じコマンドを使って実行するので、何か難しい作業が必要なわけではありません。進めていきましょう。</p>
 </aside>
 <p class="image-container"><img src="img/b99a51529ef53cad.png"></p>
@@ -93,6 +94,7 @@ starter-morning-dew
 <pre>gatsby develop
 </pre>
 <p>※ コマンドの実行（特に１つ目）は時間がかかる場合があります。</p>
+<p>事前準備資料に記載している部分なので、すでに１つ目は実行している方が多いと思いますが、ここで一旦<strong>フィットネス（小休憩）</strong>を挟みます。</p>
 <h3 is-upgraded>１つ目のコマンドが実行できない人へ</h3>
 <p>以下のコマンド３つを実行してから再度トライしてください。</p>
 <pre>npm config delete prefix
@@ -101,23 +103,25 @@ starter-morning-dew
 </pre>
 <pre>sudo npm install -g gatsby-cli
 </pre>
-<p>事前準備資料に記載している部分なので、すでに１つ目は実行している方が多いと思いますが、ここで一旦<strong>フィットネス（小休憩）</strong>を挟みます。</p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="エディタで編集しよう" duration="20">
-        <aside class="special"><p>説明：Gatsbyアプリの見た目をいじるためにどこをどのように編集すれば良いかを押さえましょう。ここではコードの内容については深く説明しないので、「こんな風にあたりをつけて試行錯誤すればいじり方がわかるのか」と感覚をつかんでください。</p>
+        <aside class="special"><p>説明：Gatsbyアプリの見た目をいじるためにどこをどのように編集すれば良いかを押さえましょう。ここではコードの内容については深く説明しないので <strong>「こんな風にあたりをつけて試行錯誤すればいじり方がわかるのか」</strong> と感覚をつかんでください。</p>
 </aside>
 <p class="image-container"><img src="img/d95fa8cde50591d0.png"></p>
 <aside class="warning"><p>指示：配信を見ながら真似をして作業していきましょう！</p>
 </aside>
-<p>配信を見ていれば雰囲気が掴めた要領の良い方もいらっしゃるかもしれません。いかに課題を用意しましたので、ハンズオンが退屈になってきた方はチャレンジしてみてください。最後に時間があれば解説する予定です。</p>
+<p>配信を見ているうちにGatsbyテンプレート編集の雰囲気が掴めた要領の良い方もいらっしゃるかもしれません。以下に課題を用意しましたので、ハンズオンが退屈になってきた方はチャレンジしてみてください。最後に時間があれば解説する予定です。</p>
 <aside class="warning"><p>課題１：Disqusというサービスを検索して概要を知りましょう。</p>
 </aside>
+<p>自分で実装しなくても様々な機能を組み合わせることができるというのは本当に便利な時代ですね。</p>
 <aside class="warning"><p>課題２：Gatsbyアプリ上に表示されているDisqus部分を消してみましょう！</p>
 </aside>
-<p><strong>エラーを出さずに消せたorエラー出しながらも試行錯誤して消せたならプログラミング上達の才能ありです！</strong></p>
+<p>「自分のブログにDisqusいらないよ〜」という人が多いのではと思い課題にさせていただきました。</p>
+<p><strong>エラーを出さずに消せたorエラー出しながらも試行錯誤して消せたという方はプログラミング上達の才能ありだと思います！</strong></p>
+<p>消せなかった人はあとで自力でもう一度トライするか、どうしてもという場合はDiscordなどで聞いてもらえれば対応します。</p>
 
 
       </google-codelab-step>
@@ -131,111 +135,48 @@ starter-morning-dew
 </pre>
 <p><strong>このbuildコマンドを実行するとbuildディレクトリが作成されます。</strong></p>
 <p>buildディレクトリとは、本番環境で公開するために書き出されたウェブアプリ（ウェブサイト）のディレクトリのことです。</p>
-<p>ここに、講義パートで説明した静的サイトが作成（ジェネレート）されています。この機能ゆえに「静的サイトジェネレータ」に区分されるフレームワークです。本当はもう少し奥が深いフレームワークですが、ここではSSGの観点だけ押さえておけばOKです！</p>
+<p>このコマンドを実行したタイミングで、講義パートで説明した <strong>静的サイトが作成（ジェネレート）</strong> されています。この機能ゆえにGatsbyJSは「静的サイトジェネレータ」に区分されるフレームワークです。本当はもう少し奥が深いフレームワークですが、ここではSSGの観点だけ押さえておけばOKです！</p>
 <aside class="warning"><p>指示２：事前準備で作成したNelifyのアカウントを開いて、次のようにbuildディレクトリドラッグ&amp;ドロップをしましょう。</p>
 </aside>
 <p class="image-container"><img src="img/48b70cd348e830a4.gif"></p>
+<aside class="warning"><p>指示３：デプロイが完了したらNetlifyの画面に緑色のリンクが表示されているはずなので、それをクリックして開きましょう。以下の画像の緑のリンクに相当する部分をクリックすればオーケーです。</p>
+</aside>
+<p class="image-container"><img src="img/9ea29c7bc4a58261.png"></p>
+<p>無事、作成したサイトが表示されましたね！お疲れ様でした！</p>
 <h2 is-upgraded>完成おめでとうございます！</h2>
-<p>無事公開できましたか？公開できた方はZoomのチャットなどでお知らせください！</p>
+<p>無事公開できましたか？公開できた方はどうぞZoomのチャットなどでお知らせください！</p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="ハンズオンまとめ" duration="5">
-        <aside class="special"><p>説明：Reactアプリ開発においてなぜコンポーネントを作成することが大切なのか理解し、今後はコンポーネントを活用できるようになりましょう。</p>
+        <aside class="special"><p>説明：GatsbyJSハンズオンで無事公開までできましたね。できなかった人は資料を見ながらもう一度ゼロからトライしてみると良いかもしれません。特に初心者の場合、そういった地道な反復を一定度合い経験しなければ開けない境地がありますので、めげずに取り組んでみてください！</p>
 </aside>
-<p><code>完成後のApp.js</code></p>
-<pre><code language="language-js" class="language-js">import &#39;./App.css&#39;;
-import Link from &#39;./components/link.js&#39;
-
-const checkIn = () =&gt; {
-  var pass = prompt(&#34;パスワードを入力して下さい:&#34;,&#34;&#34;);
-  if (pass != null) window.location.href = &#34;https://yu-sei-m.github.io/&#34; + pass;
-}
-
-const App = () =&gt; {
-  const logo = &#39;/images/logo.png&#39;;
-  return (
-    &lt;div className=&#34;App&#34;&gt;
-      &lt;header className=&#34;App-header&#34;&gt;
-        &lt;img src={logo} className=&#34;App-logo&#34; alt=&#34;logo&#34; /&gt;
-        &lt;br/&gt;
-        &lt;br/&gt;
-        &lt;p&gt;
-          &lt;b&gt;フィットネス・エンジニアの勉強会&lt;/b&gt;
-        &lt;/p&gt;
-        &lt;Link text=&#34;はじめて学ぶReact&#34; onClick={()=&gt;checkIn()}/&gt;
-      &lt;/header&gt;
-    &lt;/div&gt;
-  );
-}
-
-export default App;
-</code></pre>
-<aside class="warning"><p>指示１：ローカルサーバーを起動（npm start）したコマンドラインと別のコマンドラインを開き、次のコマンドをコマンドラインで実行してコンポーネントディレクトリとリンクコンポーネントファイルを作成しましょう。</p>
+<aside class="warning"><p>指示：スライドに戻って「本日のまとめ」をお聞きください。</p>
 </aside>
-<p><code>Mac/Win共通（ソースディレクトリ内部にコンポーネント格納用ディレクトリ作成）</code></p>
-<pre>cd src
-</pre>
-<pre>mkdir components
-</pre>
-<pre>cd components
-</pre>
-<p><code>Macのみ（リンクコンポーネントのファイル作成）</code></p>
-<pre>touch link.js
-</pre>
-<p><code>Winのみ（リンクコンポーネントのファイル作成）</code></p>
-<pre>copy nul link.js
-</pre>
-<aside class="warning"><p>指示２：VSCodeでlink.jsを開いて次のようにリンクコンポーネントを作成しましょう。</p>
-</aside>
-<p><code>link.js</code></p>
-<pre><code language="language-js" class="language-js">const Link = (props) =&gt; &lt;a
-  className=&#34;App-link&#34;
-  onClick={props.onClick}
-&gt;
-  {props.text}
-&lt;/a&gt;
-
-export default Link;
-</code></pre>
-<p>link.jsはこれでOKです。</p>
-<aside class="warning"><p>指示３：VSCodeでsrcディレクトリ配下のApp.jsを開いて次のようにimportを記述し、タグを記述しましょう。</p>
-</aside>
-<p><code>App.js</code></p>
-<pre><code language="language-js" class="language-js">// ２行目に追記
-import Link from &#39;./components/link.js&#39;
-
-// 元のaタグ全体を以下に置換
-&lt;Link text=&#34;はじめて学ぶReact&#34; onClick={()=&gt;checkIn()}/&gt;
-</code></pre>
-<p>完成後の見た目は変わりませんが、きちんと同じように挙動することが確認できたでしょうか？これがいわゆる<strong>コンポーネント化で</strong>、作成から読み込みまでできたことになります。ここまでできたら、次に進んでネット上に公開しましょう！</p>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="公開までの手順の整理" duration="5">
-        <aside class="warning"><p>指示３：デプロイが完了したらNetlifyの画面に緑色のリンクが表示されているはずなので、それをクリックして開きましょう。以下の画像の緑のリンクに相当する部分をクリックすればオーケーです。</p>
-</aside>
-<p class="image-container"><img src="img/9ea29c7bc4a58261.png"></p>
-<p>作成したサイトが表示されましたね！お疲れ様でした！</p>
-<p>早く終わった人は課題にも挑戦してみましょう！</p>
-<p><strong>Doneを押してからChallengeをクリックして「react-challenge」と入力すると課題に取り組むことができます。</strong></p>
-<p>以下のボタンをクリックしても開けます。</p>
-<p><a href="https://yu-sei-m.github.io/react-challenge/#0" target="_blank"><paper-button class="colored" raised>課題に取り組む</paper-button></a></p>
-<p>　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇</p>
-<h3 is-upgraded>完成できなかった人のための共有</h3>
-<p><a href="https://yu-sei-m.github.io/react-practice-20201107.zip" target="_blank"><paper-button class="colored" raised>本日作成したアプリディレクトリのzip</paper-button></a></p>
-<p>ダウンロードして展開した後に以下のコマンドを実行してください。</p>
-<p><code>ライブラリのインストール</code></p>
-<pre>npm install
-</pre>
-<p><code>ローカルサーバーの起動</code></p>
-<pre>npm start
-</pre>
-<p><code>作成したアプリのビルド</code></p>
-<pre>npm run-script build
-</pre>
+        <p>プログラミングを勉強すると聞くと、多くの場合「何にどう活用するのかわからない文法を学ぶ」という切り口から入ることが多いかと思います。</p>
+<p>今回は「結果から逆算して必要な部分をオンデマンドに学ぶ」という方法でプログラミング・アプリ開発の習得の入り口に立ってみました。</p>
+<ol type="1">
+<li>テンプレサイトを開く</li>
+<li>使えそうなもの探す</li>
+<li>テンプレ個別ページを開く</li>
+<li>指定のコマンドをコピーして実行する</li>
+<li>自分のエディタでテンプレを開く</li>
+<li>中身を確認しどこをいじればいいか把握する</li>
+<li>一箇所ずつ変更して試行錯誤しつつ自由に変更する</li>
+<li>変更が終わったらビルドコマンドを実行する</li>
+<li>Netlifyログインしビルドディレクトリをドラッグ&amp;ドロップする</li>
+</ol>
+<p>上にまとめた９つのステップについて今日のハンズオンで選んだテンプレートで何度か繰り返し作業してみると、他のフレームワークを学ぶ時にも使えるはずなのでしっかり覚えておきましょう。</p>
+<p>GatsbyJSを体験すると言いつつ、学び方の事例紹介になりましたが、ただ本を読む勉強会よりも実践的で楽しめた人がいらっしゃれば幸いです。</p>
+<p><strong>本日はご参加ありがとうございました。またのご参加お待ちしております！</strong></p>
+<p>必須項目以外は飛ばせますので、アンケートの回答もよろしくお願いいたします！継続の励みになります！</p>
+<p><a href="https://forms.gle/zofMoX7AhtKfVRfF9" target="_blank">https://forms.gle</a></p>
 
 
       </google-codelab-step>
