@@ -1,0 +1,682 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>ハンズオン｜はじめて学ぶReact</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="js-hands-on"
+                  title="ハンズオン｜はじめて学ぶReact"
+                  environment="web"
+                  feedback-link="https://github.com/Yu-Sei-M/yu-sei-m.github.io/issues">
+    
+      <google-codelab-step label="はじめに｜制作物の確認と進め方" duration="2">
+        <aside class="special"><p>説明：今回のハンズオンでは、JavaScriptのコードを書くことで、HTML,CSSのサイトを作成します。</p>
+</aside>
+<p>制作物はこちらです。 <a href="https://serene-swirles-e25e17.netlify.app/" target="_blank">完成形</a></p>
+<p>HTML/CSSハンズオンで作成したサイトのコードは以下の通りでした。</p>
+<pre><code language="language-html" class="language-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;style&gt;
+      * {
+        box-sizing: border-box;
+        color: #444;
+      }
+      body {
+        font-family: Arial;
+        background: #f1f1f1;
+      }
+      .header {
+        padding: 30px;
+        text-align: center;
+        background: white;
+      }
+      .header h1 {
+        font-size: 40px;
+      }
+      .menu {
+        overflow: hidden;
+        background-color: #1f4c96;
+      }
+      .menu a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      .menu a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      .left-content {
+        float: left;
+        width: 75%;
+      }
+      .card {
+        background-color: white;
+        padding: 20px;
+        margin-top: 20px;
+      }
+      .fakeimg {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+      }
+      .right-content {
+        float: left;
+        width: 25%;
+        background-color: #f1f1f1;
+        padding-left: 20px;
+      }
+      .bottom-space {
+        margin-bottom: 10px;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: #23ac38;
+        margin-top: 20px;
+      }
+      .footer h2 {
+        color: #fff;
+      }
+      .contents:after {
+        content: &#34;&#34;;
+        display: block;
+        clear: both;
+      }
+
+      /* ＊ 以下の、CSSを追加する */
+      @media screen and (max-width: 800px) {
+        .left-content,
+        .right-content {
+          width: 100%;
+          padding: 0;
+        }
+      }
+      /* ＊ ここまで */
+    &lt;/style&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;div class=&#34;header&#34;&gt;
+      &lt;h1&gt;Fitness Engineerブログ&lt;/h1&gt;
+      &lt;p&gt;フィットネスを習慣にしてデスクワーカーを健康にする！&lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&#34;menu&#34;&gt;
+      &lt;a href=&#34;#&#34;&gt;健康&lt;/a&gt;
+      &lt;a href=&#34;#&#34;&gt;運動&lt;/a&gt;
+      &lt;a href=&#34;#&#34;&gt;肩こり&lt;/a&gt;
+      &lt;a href=&#34;#&#34; style=&#34;float: right&#34;&gt;検索&lt;/a&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&#34;contents&#34;&gt;
+      &lt;div class=&#34;left-content&#34;&gt;
+        &lt;div class=&#34;card&#34;&gt;
+          &lt;h2&gt;オフィスワーカーが肩こりを解消するための方法教えます。&lt;/h2&gt;
+          &lt;h5&gt;2021/1/23&lt;/h5&gt;
+          &lt;div class=&#34;fakeimg&#34; style=&#34;height: 300px&#34;&gt;画像&lt;/div&gt;
+          &lt;p&gt;内容&lt;/p&gt;
+          &lt;p&gt;
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          &lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&#34;right-content&#34;&gt;
+        &lt;div class=&#34;card&#34;&gt;
+          &lt;h2&gt;運営者情報&lt;/h2&gt;
+          &lt;div class=&#34;fakeimg&#34; style=&#34;height: 100px&#34;&gt;画像&lt;/div&gt;
+          &lt;p&gt;NPO法人フィットネス・エンジニアが本ブログを運営しています。&lt;/p&gt;
+        &lt;/div&gt;
+
+        &lt;div class=&#34;card&#34;&gt;
+          &lt;h3&gt;人気の投稿&lt;/h3&gt;
+          &lt;div class=&#34;fakeimg bottom-space&#34;&gt;&lt;p&gt;画像&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&#34;fakeimg bottom-space&#34;&gt;&lt;p&gt;画像&lt;/p&gt;&lt;/div&gt;
+          &lt;div class=&#34;fakeimg bottom-spaces&#34;&gt;&lt;p&gt;画像&lt;/p&gt;&lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class=&#34;card&#34;&gt;
+          &lt;h3&gt;SNSもどうぞ！&lt;/h3&gt;
+          &lt;p&gt;テキスト...&lt;/p&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class=&#34;footer&#34;&gt;
+      &lt;h2&gt;フッター&lt;/h2&gt;
+    &lt;/div&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h2 is-upgraded>ハンズオンの流れ</h2>
+<ol type="1">
+<li>制作物の確認と進め方 &lt;&lt; Now</li>
+<li>HTMLファイルの作成</li>
+<li>DOMオブジェクトの生成と挿入</li>
+<li>大枠の構造の完成</li>
+<li>オプションの設定方法</li>
+<li>テキストの挿入</li>
+<li>設定の切り出し</li>
+<li>課題</li>
+<li>レビュー</li>
+</ol>
+<p>それでは進めていきましょう。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="HTMLファイルの作成" duration="6">
+        <aside class="special"><p>説明：ウェブページを作るので、ファイルはHTMLの拡張子で作成します。しかし、記述するのはJavaScriptです。</p>
+</aside>
+<aside class="warning"><p>指示１：デスクトップにフォルダを作成し、その中にjs.htmlを作成しましょう。</p>
+</aside>
+<p><code>ターミナルでやる人はこちら</code></p>
+<pre>cd ~/Desktop
+</pre>
+<pre>touch js.html
+</pre>
+<aside class="warning"><p>指示２：実行が完了したら、VSCodeでjs.htmlを開きましょう。</p>
+</aside>
+<aside class="warning"><p>指示３：次のコードを記述してください。</p>
+</aside>
+<pre><code language="language-js" class="language-js">&lt;script&gt;
+  console.log(document)
+&lt;/script&gt;
+</code></pre>
+<p>出力結果を一緒に確認しましょう！</p>
+<aside class="warning"><p>指示４：次のコードを記述してください。</p>
+</aside>
+<pre><code language="language-js" class="language-js">&lt;script&gt;
+  window.addEventListener(&#39;load&#39;, () =&gt; {
+    console.log(document)
+  });
+&lt;/script&gt;
+</code></pre>
+<p>このようにしてロードが完全に終了した後でなければ、要素を操作することができません。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="DOMオブジェクトの生成と挿入" duration="4">
+        <aside class="warning"><p>headの中に１つのstyleタグと、bodyの中に４つのdivタグがあるので、作成しましょう。</p>
+</aside>
+<pre><code language="language-js" class="language-js">&lt;script&gt;
+  window.addEventListener(&#39;load&#39;, () =&gt; {
+    console.log(document)
+    var style = document.createElement(&#39;style&#39;);
+    document.head.appendChild(style);
+    var header = document.createElement(&#39;div&#39;);
+    document.body.appendChild(header);
+    var menu = document.createElement(&#39;div&#39;);
+    document.body.appendChild(menu);
+    var contents = document.createElement(&#39;div&#39;);
+    document.body.appendChild(contents);
+    var footer = document.createElement(&#39;div&#39;);
+    document.body.appendChild(footer);
+  });
+&lt;/script&gt;
+</code></pre>
+<aside class="special"><p>説明：HTMLの要素をJavaScriptを使って足していきましょう。</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="大枠の作成" duration="0">
+        <aside class="warning"><p>ハンズオンではmenuとcontentsを割愛するので、headerとfooterの中の子要素を加えていきましょう。</p>
+</aside>
+<pre><code language="language-js" class="language-js">&lt;script&gt;
+  window.addEventListener(&#39;load&#39;, () =&gt; {
+    console.log(document)
+    var style = document.createElement(&#39;style&#39;);
+    document.head.appendChild(style);
+    var header = document.createElement(&#39;div&#39;);
+    document.body.appendChild(header);
+    var h1 = document.createElement(&#39;h1&#39;);
+    header.appendChild(h1);
+    var p = document.createElement(&#39;p&#39;);
+    header.appendChild(p);
+    // var menu = document.createElement(&#39;div&#39;);
+    // document.body.appendChild(menu);
+    // var contents = document.createElement(&#39;div&#39;);
+    // document.body.appendChild(contents);
+    var footer = document.createElement(&#39;div&#39;);
+    document.body.appendChild(footer);
+    var h2 = document.createElement(&#39;h2&#39;);
+    footer.appendChild(h2);
+  });
+&lt;/script&gt;
+</code></pre>
+<p>この段階では文字も装飾もないので真っ白ですね！</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="テキストの挿入" duration="0">
+        <aside class="warning"><p>必要な所に文字情報を記載していきましょう！</p>
+</aside>
+<pre><code language="language-js" class="language-js">&lt;script&gt;
+  window.addEventListener(&#39;load&#39;, () =&gt; {
+    console.log(document)
+    var style = document.createElement(&#39;style&#39;);
+    style.innerText = `* {
+        box-sizing: border-box;
+        color: #444;
+      }
+      body {
+        font-family: Arial;
+        background: #f1f1f1;
+      }
+      .header {
+        padding: 30px;
+        text-align: center;
+        background: white;
+      }
+      .header h1 {
+        font-size: 40px;
+      }
+      .menu {
+        overflow: hidden;
+        background-color: #1f4c96;
+      }
+      .menu a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      .menu a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      .left-content {
+        float: left;
+        width: 75%;
+      }
+      .card {
+        background-color: white;
+        padding: 20px;
+        margin-top: 20px;
+      }
+      .fakeimg {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+      }
+      .right-content {
+        float: left;
+        width: 25%;
+        background-color: #f1f1f1;
+        padding-left: 20px;
+      }
+      .bottom-space {
+        margin-bottom: 10px;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: #23ac38;
+        margin-top: 20px;
+      }
+      .footer h2 {
+        color: #fff;
+      }
+      .contents:after {
+        content: &#34;&#34;;
+        display: block;
+        clear: both;
+      }
+      /* ＊ 以下の、CSSを追加する */
+      @media screen and (max-width: 800px) {
+        .left-content,
+        .right-content {
+          width: 100%;
+          padding: 0;
+        }
+      }`;
+    document.head.appendChild(style);
+    var header = document.createElement(&#39;div&#39;);
+    document.body.appendChild(header);
+    var h1 = document.createElement(&#39;h1&#39;);
+    h1.innerText = &#34;Fitness Engineerブログ&#34;;
+    header.appendChild(h1);
+    var p = document.createElement(&#39;p&#39;);
+    p.innerText = &#34;フィットネスを習慣にしてデスクワーカーを健康にする！&#34;;
+    header.appendChild(p);
+    // var menu = document.createElement(&#39;div&#39;);
+    // menu.className = &#34;menu&#34;;
+    // document.body.appendChild(menu);
+    // var contents = document.createElement(&#39;div&#39;);
+    // contents.className = &#34;contents&#34;;
+    // document.body.appendChild(contents);
+    var footer = document.createElement(&#39;div&#39;);
+    document.body.appendChild(footer);
+    var h2 = document.createElement(&#39;h2&#39;);
+    h2.innerText = &#34;フッター&#34;;
+    footer.appendChild(h2);
+  });
+&lt;/script&gt;
+</code></pre>
+<p>ここまでできたら検証ツールで実際の状態を確認しましょう。</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="オプションの設定" duration="0">
+        <aside class="warning"><p>CSSを当てるために、divタグにclassNameを指定していきましょう！</p>
+</aside>
+<pre><code language="language-js" class="language-js">&lt;script&gt;
+  window.addEventListener(&#39;load&#39;, () =&gt; {
+    console.log(document)
+    var style = document.createElement(&#39;style&#39;);
+    style.innerText = config.style;
+    document.head.appendChild(style);
+    var header = document.createElement(&#39;div&#39;);
+    header.className = &#34;header&#34;;
+    document.body.appendChild(header);
+    var h1 = document.createElement(&#39;h1&#39;);
+    h1.innerText = config.title;
+    header.appendChild(h1);
+    var p = document.createElement(&#39;p&#39;);
+    p.innerText = config.description;
+    header.appendChild(p);
+    var menu = document.createElement(&#39;div&#39;);
+    // menu.className = &#34;menu&#34;;
+    // document.body.appendChild(menu);
+    // var contents = document.createElement(&#39;div&#39;);
+    // contents.className = &#34;contents&#34;;
+    // document.body.appendChild(contents);
+    // var footer = document.createElement(&#39;div&#39;);
+    footer.className = &#34;footer&#34;;
+    document.body.appendChild(footer);
+    var h2 = document.createElement(&#39;h2&#39;);
+    h2.innerText = &#34;フッター&#34;;
+    footer.appendChild(h2);
+  });
+&lt;/script&gt;
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="設定の切り出し" duration="2">
+        <aside class="special"><p>説明：コードの中にサイトの情報を入れていくと、とても見づらくなってしまいますね。ここでは、その辺りをスッキリさせていきましょう。</p>
+</aside>
+<aside class="warning"><p>指示１：設定を入れる変数を作りましょう。</p>
+</aside>
+<p><code>設定変数</code></p>
+<pre><code language="language-js" class="language-js">var config =
+  {
+    title: &#34;Fitness Engineerブログ&#34;,
+    description: &#34;フィットネスを習慣にしてデスクワーカーを健康にする！&#34;,
+    style: `
+    * {
+        box-sizing: border-box;
+        color: #444;
+      }
+      body {
+        font-family: Arial;
+        background: #f1f1f1;
+      }
+      .header {
+        padding: 30px;
+        text-align: center;
+        background: white;
+      }
+      .header h1 {
+        font-size: 40px;
+      }
+      .menu {
+        overflow: hidden;
+        background-color: #1f4c96;
+      }
+      .menu a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      .menu a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      .left-content {
+        float: left;
+        width: 75%;
+      }
+      .card {
+        background-color: white;
+        padding: 20px;
+        margin-top: 20px;
+      }
+      .fakeimg {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+      }
+      .right-content {
+        float: left;
+        width: 25%;
+        background-color: #f1f1f1;
+        padding-left: 20px;
+      }
+      .bottom-space {
+        margin-bottom: 10px;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: #23ac38;
+        margin-top: 20px;
+      }
+      .footer h2 {
+        color: #fff;
+      }
+      .contents:after {
+        content: &#34;&#34;;
+        display: block;
+        clear: both;
+      }
+      /* ＊ 以下の、CSSを追加する */
+      @media screen and (max-width: 800px) {
+        .left-content,
+        .right-content {
+          width: 100%;
+          padding: 0;
+        }
+      }
+    `,
+    footer: &#34;フッター&#34;
+  }
+</code></pre>
+<p>このように切り出すことで、以下のように記載できます。</p>
+<pre><code language="language-js" class="language-js">&lt;script&gt;
+  var config = {
+    title: &#34;Fitness Engineerブログ&#34;,
+    description: &#34;フィットネスを習慣にしてデスクワーカーを健康にする！&#34;,
+    style: `
+    * {
+        box-sizing: border-box;
+        color: #444;
+      }
+      body {
+        font-family: Arial;
+        background: #f1f1f1;
+      }
+      .header {
+        padding: 30px;
+        text-align: center;
+        background: white;
+      }
+      .header h1 {
+        font-size: 40px;
+      }
+      .menu {
+        overflow: hidden;
+        background-color: #1f4c96;
+      }
+      .menu a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      .menu a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      .left-content {
+        float: left;
+        width: 75%;
+      }
+      .card {
+        background-color: white;
+        padding: 20px;
+        margin-top: 20px;
+      }
+      .fakeimg {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+      }
+      .right-content {
+        float: left;
+        width: 25%;
+        background-color: #f1f1f1;
+        padding-left: 20px;
+      }
+      .bottom-space {
+        margin-bottom: 10px;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: #23ac38;
+        margin-top: 20px;
+      }
+      .footer h2 {
+        color: #fff;
+      }
+      .contents:after {
+        content: &#34;&#34;;
+        display: block;
+        clear: both;
+      }
+      /* ＊ 以下の、CSSを追加する */
+      @media screen and (max-width: 800px) {
+        .left-content,
+        .right-content {
+          width: 100%;
+          padding: 0;
+        }
+      }
+    `
+  }
+  window.addEventListener(&#39;load&#39;, () =&gt; {
+    console.log(document)
+    var style = document.createElement(&#39;style&#39;);
+    style.innerText = config.style;
+    document.head.appendChild(style);
+    var header = document.createElement(&#39;div&#39;);
+    header.className = &#34;header&#34;;
+    document.body.appendChild(header);
+    var h1 = document.createElement(&#39;h1&#39;);
+    h1.innerText = config.title;
+    header.appendChild(h1);
+    var p = document.createElement(&#39;p&#39;);
+    p.innerText = config.description;
+    header.appendChild(p);
+    // var menu = document.createElement(&#39;div&#39;);
+    // menu.className = &#34;menu&#34;;
+    // document.body.appendChild(menu);
+    // var contents = document.createElement(&#39;div&#39;);
+    // contents.className = &#34;contents&#34;;
+    // document.body.appendChild(contents);
+    var footer = document.createElement(&#39;div&#39;);
+    footer.className = &#34;footer&#34;;
+    document.body.appendChild(footer);
+    var h2 = document.createElement(&#39;h2&#39;);
+    h2.innerText = &#34;フッター&#34;;
+    footer.appendChild(h2);
+  });
+&lt;/script&gt;
+</code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="課題" duration="6">
+        <p>はやめに終わった人は取り組んでみましょう！</p>
+<aside class="warning"><p>課題１：先ほどdivタグのうち、menuとcontentsを残しておきました。残り時間に余裕のある方は、ぜひ自分の頭で考えて完成させてみましょう。</p>
+</aside>
+<ul>
+<li>menuの中にアンカータグを４つ配置する</li>
+<li>contentsの中の複雑な構造を再現する</li>
+<li>その上でお題のHTML・CSSを再現する</li>
+</ul>
+<p>オプションの設定はここまでにやった内容を踏まえて応用してみましょう！</p>
+<aside class="warning"><p>課題２：完成したコードは非常に冗長な状態になっています。JavaScriptの知識を使って行数を出来るだけ短くしてみましょう！</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="レビュー" duration="7">
+        <aside class="special"><p>説明：今回は、新しい取り組みとして、課題を完了した方の中で希望者に対してコードレビューをさせていただきます。合っているかどうか気になる方や、もう一歩踏み込んだ知識を学びたい方はご検討ください。レビュー＆個別指導費用として2000円必要になります。</p>
+</aside>
+<h2 is-upgraded>レビューの内容</h2>
+<ul>
+<li>作成したコードに対するコメント</li>
+<li>課題の解答の一例</li>
+</ul>
+<h2 is-upgraded>学べること</h2>
+<ul>
+<li>ループの実践的な実装の組み込み</li>
+<li>同一処理のパッケージング</li>
+<li>必要に応じたリファクタリング</li>
+</ul>
+<aside class="warning"><p>指示：公式ラインを追加して、レビュー希望のむねお伝えいただければ入金案内が届きますので、入金後に完成したコードをご提出ください。</p>
+</aside>
+<p>FitnessEngineer公式LINEはこちらから登録可能です。 <a href="https://lin.ee/tp6VjQa" target="_blank">LINEに追加</a></p>
+<p>　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇　◆　◇</p>
+<p><strong>お知らせ｜情報発信のためにTwitterアカウント作成しました！</strong> connpassでは募集をしないイベントなども徐々に増えていくと思いますので、アカウントをお持ちの方はフォローの上、イベント開催情報の投稿に気付いた時はいいね・リツイートをお願いいたします！ボランティアで運営している状態のため、本格的な運用開始時期は未定です。 <a href="https://twitter.com/NPO_FE" target="_blank">フィットネス・エンジニア公式Twitter</a></p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>

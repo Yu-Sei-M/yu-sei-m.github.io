@@ -1,0 +1,135 @@
+<html>
+  <head>
+    <style>
+      * {
+        box-sizing: border-box;
+        color: #444;
+      }
+      body {
+        font-family: Arial;
+        background: #f1f1f1;
+      }
+      .header {
+        padding: 30px;
+        text-align: center;
+        background: white;
+      }
+      .header h1 {
+        font-size: 40px;
+      }
+      .menu {
+        overflow: hidden;
+        background-color: #1f4c96;
+      }
+      .menu a {
+        float: left;
+        display: block;
+        color: #f2f2f2;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+      .menu a:hover {
+        background-color: #ddd;
+        color: black;
+      }
+      .left-content {
+        float: left;
+        width: 75%;
+      }
+      .card {
+        background-color: white;
+        padding: 20px;
+        margin-top: 20px;
+      }
+      .fakeimg {
+        background-color: #aaa;
+        width: 100%;
+        padding: 20px;
+      }
+      .right-content {
+        float: left;
+        width: 25%;
+        background-color: #f1f1f1;
+        padding-left: 20px;
+      }
+      .bottom-space {
+        margin-bottom: 10px;
+      }
+      .footer {
+        padding: 20px;
+        text-align: center;
+        background: #23ac38;
+        margin-top: 20px;
+      }
+      .footer h2 {
+        color: #fff;
+      }
+      .contents:after {
+        content: "";
+        display: block;
+        clear: both;
+      }
+
+      /* ＊ 以下の、CSSを追加する */
+      @media screen and (max-width: 800px) {
+        .left-content,
+        .right-content {
+          width: 100%;
+          padding: 0;
+        }
+      }
+      /* ＊ ここまで */
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Fitness Engineerブログ</h1>
+      <p>フィットネスを習慣にしてデスクワーカーを健康にする！</p>
+    </div>
+
+    <div class="menu">
+      <a href="#">健康</a>
+      <a href="#">運動</a>
+      <a href="#">肩こり</a>
+      <a href="#" style="float: right">検索</a>
+    </div>
+
+    <div class="contents">
+      <div class="left-content">
+        <div class="card">
+          <h2>オフィスワーカーが肩こりを解消するための方法教えます。</h2>
+          <h5>2021/1/23</h5>
+          <div class="fakeimg" style="height: 300px">画像</div>
+          <p>内容</p>
+          <p>
+            テキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキストテキスト
+          </p>
+        </div>
+      </div>
+
+      <div class="right-content">
+        <div class="card">
+          <h2>運営者情報</h2>
+          <div class="fakeimg" style="height: 100px">画像</div>
+          <p>NPO法人フィットネス・エンジニアが本ブログを運営しています。</p>
+        </div>
+
+        <div class="card">
+          <h3>人気の投稿</h3>
+          <div class="fakeimg bottom-space"><p>画像</p></div>
+          <div class="fakeimg bottom-space"><p>画像</p></div>
+          <div class="fakeimg bottom-spaces"><p>画像</p></div>
+        </div>
+        <div class="card">
+          <h3>SNSもどうぞ！</h3>
+          <p>テキスト...</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer">
+      <h2>フッター</h2>
+    </div>
+  </body>
+</html>
