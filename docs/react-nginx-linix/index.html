@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
   <meta name="theme-color" content="#4F7DC9">
   <meta charset="UTF-8">
-  <title>事前準備｜NginxでReactアプリ公開</title>
+  <title>NginxでReactアプリ公開</title>
   <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
   <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
   <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
@@ -23,7 +23,7 @@
   <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
   <google-codelab codelab-gaid=""
                   id="react-nginx-linix"
-                  title="事前準備｜NginxでReactアプリ公開"
+                  title="NginxでReactアプリ公開"
                   environment="web"
                   feedback-link="https://github.com/Yu-Sei-M/yu-sei-m.github.io/issues">
     
@@ -81,7 +81,7 @@
 
       </google-codelab-step>
     
-      <google-codelab-step label="サーバーで公開する４つの方法" duration="0">
+      <google-codelab-step label="サーバーで公開する3つの方法" duration="0">
         <aside class="special"><p>サーバーは「ホスティング」するためのパソコンで、借りることができます。ホスティングとはフォルダやファイルを設置することでした。離れたサーバーに手元のフォルダやファイルを設置するには、どうすればいいでしょうか？簡単です。アップロードですね！</p>
 </aside>
 <p>手元のフォルダやファイルをアップロードする方法はいくつかあります。</p>
@@ -92,7 +92,7 @@
 <li>sshコマンド+直接開発</li>
 </ul>
 <p>１つ目のFTPがもっとも古典的な方法ですが、現代でもまだ使われていますね。 今回は手元のターミナル（パワーシェル）でコマンドを実行することで自分が契約した（日本のどこかの離れたところにある）サーバーにアプリケーションファイルを設置していきます。</p>
-<p><strong>方法は３つあり、人によってパソコンの環境などが原因でうまくいかないこともあるので、このどれか１つで公開できたら今日の目標は達成とします。</strong></p>
+<p><strong>今回取り組む方法は３つあり、人によってパソコンの環境などが原因でうまくいかないこともあるので、このどれか１つで公開できたら今日の目標は達成とします。</strong></p>
 
 
       </google-codelab-step>
@@ -147,6 +147,7 @@
 </pre>
 <pre>mkdir www &amp;&amp; cd $_
 </pre>
+<p>nodeだけ入っていればreactはいつでも作れます。</p>
 
 
       </google-codelab-step>
@@ -186,15 +187,64 @@
 </pre>
 <pre>sudo nginx -s reload
 </pre>
-<aside class="warning"><p>指示２：ファイルの中身に以下を記述してください。</p>
+<aside class="warning"><p>指示２：ファイルの中身に以下を記述してください。 <br><code>server {<br>listen       80;<br>server_name  160.251.42.142;<br>location / {<br>    proxy_pass http://localhost:3000;<br>}<br>}<br></code></p>
 </aside>
-<pre><code language="language-bash" class="language-bash"></code></pre>
 
 
       </google-codelab-step>
     
-      <google-codelab-step label="セキュリティ設定の基本" duration="0">
-        <p>・ファイアーウォール ・パスワード無効化 ・ポート変更 ・SSL化</p>
+      <google-codelab-step label="ファイヤーウォールの設定" duration="0">
+        <aside class="special"><p>ファイヤーウォールの設定をしましょう。</p>
+</aside>
+<p>はじめに、ネットで検索してファイヤーウォールのイメージをつかみます。</p>
+<p>まず、今どのポートが開いているかを確認します。</p>
+<pre>firewall-cmd --list-all
+</pre>
+<p>一時的にポートを解放するコマンドは以下です。</p>
+<pre>firewall-cmd --zone=public --add-service=http
+</pre>
+<p>恒久的にポートを解放するコマンドは以下です。</p>
+<pre>firewall-cmd --zone=public --add-service=http --permanent
+</pre>
+<p>ポート解放が終わったら、もう一度確認しましょう。</p>
+<pre>firewall-cmd --list-all
+</pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="アプリの公開を確認" duration="0">
+        <aside class="special"><p>ConoHaVPSで借りたサーバーのIPアドレスをブラウザで開いてみましょう。</p>
+</aside>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="アプリのデプロイ" duration="0">
+        <aside class="special"><p>ここまでは、ssh接続先のサーバーで直接Reactアプリを作成して公開しました。実際に手元で何かファイルを作成し、公開してみましょう。</p>
+</aside>
+<p>desktopなどに自由にファイルを作成します。真似しながらトライしましょう。</p>
+<p>過去にReactの勉強会に参加された方は過去のアプリをデプロイする方針でも問題ありません。</p>
+<pre>scp -r -i ~/.ssh/fe-nginx.pem -P 1216 -o StrictHostKeyChecking=no ~/desktop/nginx-test root@	160.251.42.142:/var/www/
+</pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="発展課題" duration="0">
+        <h2 is-upgraded>github連携</h2>
+<ul>
+<li>githubアカウント登録</li>
+<li>サーバーで秘密鍵と公開鍵を作成</li>
+<li>公開鍵をgithubに登録</li>
+<li>サーバーでgitをインストール</li>
+</ul>
+<h2 is-upgraded>セキュリティの設定</h2>
+<ul>
+<li>パスワード無効化</li>
+<li>ポート変更</li>
+<li>SSL化</li>
+</ul>
 
 
       </google-codelab-step>
