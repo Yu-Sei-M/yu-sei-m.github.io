@@ -1,0 +1,146 @@
+
+<!doctype html>
+
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1.0, user-scalable=yes">
+  <meta name="theme-color" content="#4F7DC9">
+  <meta charset="UTF-8">
+  <title>事前準備｜NginxでReactアプリ公開</title>
+  <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Source+Code+Pro:400|Roboto:400,300,400italic,500,700|Roboto+Mono">
+  <link rel="stylesheet" href="//fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://storage.googleapis.com/codelab-elements/codelab-elements.css">
+  <style>
+    .success {
+      color: #1e8e3e;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <google-codelab-analytics gaid="UA-49880327-14"></google-codelab-analytics>
+  <google-codelab codelab-gaid=""
+                  id="react-nginx-linix"
+                  title="事前準備｜NginxでReactアプリ公開"
+                  environment="web"
+                  feedback-link="https://github.com/Yu-Sei-M/yu-sei-m.github.io/issues">
+    
+      <google-codelab-step label="はじめに" duration="2">
+        <h2 is-upgraded>受講前提</h2>
+<ul>
+<li>安定した通信環境</li>
+<li>２画面の作業環境</li>
+</ul>
+<aside class="warning"><p>今回はレンタルサーバーを借りて、そこでアプリのデプロイ作業をやっていきます。インフラに触れたことがない人に向けて、公開時のポイントや仕組みを確認しながら丁寧に進めます。</p>
+</aside>
+<h2 is-upgraded>目次</h2>
+<ul>
+<li>はじめに</li>
+<li>サーバーとは？</li>
+<li>サーバーで公開する４つの方法</li>
+<li>サーバーで「公開する」とは？</li>
+<li>サーバーへのリモート接続</li>
+<li>Reactとは？</li>
+<li>環境構築：React</li>
+<li>Reactアプリの作成と起動</li>
+<li>Nginxとは？</li>
+<li>環境構築：Nginx</li>
+<li>Nginxの設定とアプリ配信</li>
+<li>セキュリティ設定の基本</li>
+</ul>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="サーバーとは" duration="0">
+        <p>・ホスティングする ・前提としてアプリもサイトもフォルダとファイル ・そのフォルダとファイルを設置すること＝ホスティング ・様々なホスティングサービス</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="サーバーで公開する４つの方法" duration="0">
+        <p>・FTPソフト ・scpコマンド ・sshコマンド+gitコマンド ・sshコマンド+直接開発</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="サーバーで「公開する」とは？" duration="0">
+        <p>・ポートを開いてアクセスを許可すること ・自分のパソコンもネット経由で他のパソコンのアクセスを受け付けられる ・リスクが非常に高い ・いろんな人が出入りできる場所は自分の家とは別に借りた方が安全 ・だからサーバーを借りる</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="サーバーへのリモート接続" duration="0">
+        <p>・SSH接続の設定をしましょう ・Macの方はご一緒に ・Winの方はこの記事を見ながらお願いします ・</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Reactとは？" duration="0">
+        <p>・昔のスクショ３枚くらい</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="環境構築：React" duration="0">
+        <aside class="warning"><p>指示１：下記のコマンドを実行してください。</p>
+</aside>
+<pre>node -v
+</pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Reactアプリの作成と起動" duration="0">
+        <p>・</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Nginxとは？" duration="0">
+        <p>・リバースプロキシです ・意味わからないのでプロキシから理解 ・プロキシは「」 ・リバースプロキシは「」</p>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="環境構築：Nginx" duration="0">
+        <aside class="warning"><p>指示１：下記のコマンドを実行してください。</p>
+</aside>
+<pre>node -v
+</pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="Nginxの設定とアプリ配信" duration="0">
+        <aside class="warning"><p>指示１：下記のコマンドを実行してください。</p>
+</aside>
+<pre>cd /etc/nginx/conf.d
+</pre>
+<pre>vi fe-nginx.conf
+</pre>
+<aside class="warning"><p>指示２：ファイルの中身に以下を記述してください。</p>
+</aside>
+<pre><code language="language-bash" class="language-bash"></code></pre>
+
+
+      </google-codelab-step>
+    
+      <google-codelab-step label="セキュリティ設定の基本" duration="0">
+        <p>・ファイアーウォール ・パスワード無効化 ・ポート変更 ・SSL化</p>
+
+
+      </google-codelab-step>
+    
+  </google-codelab>
+
+  <script src="https://storage.googleapis.com/codelab-elements/native-shim.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/custom-elements.min.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/prettify.js"></script>
+  <script src="https://storage.googleapis.com/codelab-elements/codelab-elements.js"></script>
+  <script src="//support.google.com/inapp/api.js"></script>
+
+</body>
+</html>
