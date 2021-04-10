@@ -63,15 +63,20 @@
 <h2 is-upgraded>様々なホスティングサービス</h2>
 <p>本当にたくさんありますが、一例を紹介します。</p>
 <h3 is-upgraded>Xserver</h3>
-<p>有名どころですね。知らない人はいないのではないでしょうか。 <a href="https://www.xserver.ne.jp/" target="_blank">https://www.xserver.ne.jp/</a></p>
+<p>有名どころですね。知らない人はいないのではないでしょうか。</p>
+<p><a href="https://www.xserver.ne.jp/" target="_blank">https://www.xserver.ne.jp/</a></p>
 <h3 is-upgraded>ConoHaVPS</h3>
-<p>Xserverに比べると聞いたことのある人はいないかもしれません。 時間単位の従量課金なので、練習などでも使いやすくおすすめです。 <a href="https://www.conoha.jp/" target="_blank">https://www.conoha.jp/</a></p>
+<p>Xserverに比べると聞いたことのある人はいないかもしれません。 時間単位の従量課金なので、練習などでも使いやすくおすすめです。</p>
+<p><a href="https://www.conoha.jp/" target="_blank">https://www.conoha.jp/</a></p>
 <h3 is-upgraded>Netlify</h3>
-<p>静的サイトホスティングを手軽に行えるホスティングサービスです。 無料なのがすごいところです。 <a href="https://www.netlify.com/" target="_blank">https://www.netlify.com/</a></p>
+<p>静的サイトホスティングを手軽に行えるホスティングサービスです。 無料なのがすごいところです。</p>
+<p><a href="https://www.netlify.com/" target="_blank">https://www.netlify.com/</a></p>
 <h3 is-upgraded>AWS</h3>
-<p>クラウドサービスのシェア１位のAWSのサービス内にもあります。Amplify, S3... <a href="https://aws.amazon.com/jp" target="_blank">https://aws.amazon.com/jp</a></p>
+<p>クラウドサービスのシェア１位のAWSのサービス内にもあります。Amplify, S3...</p>
+<p><a href="https://aws.amazon.com/jp" target="_blank">https://aws.amazon.com/jp</a></p>
 <h3 is-upgraded>GCP</h3>
-<p>Googleのクラウドサービスにもあり、Firebaseが人気です。 GCS, GAE, Firebase... <a href="https://cloud.google.com/gcp" target="_blank">https://cloud.google.com/gcp</a></p>
+<p>Googleのクラウドサービスにもあり、Firebaseが人気です。 GCS, GAE, Firebase...</p>
+<p><a href="https://cloud.google.com/gcp" target="_blank">https://cloud.google.com/gcp</a></p>
 
 
       </google-codelab-step>
@@ -86,7 +91,7 @@
 <li>sshコマンド+gitコマンド</li>
 <li>sshコマンド+直接開発</li>
 </ul>
-<p>１つ目のFTPがもっとも古典的な方法ですが、現代でもまだ使われていますね。 今回は手元のターミナル（パワーシェル）でコマンドを実行することで自分が契約した（日本のどこかの離れたところにある）サーバーにアプリケーションファイルを設置していきましょう。</p>
+<p>１つ目のFTPがもっとも古典的な方法ですが、現代でもまだ使われていますね。 今回は手元のターミナル（パワーシェル）でコマンドを実行することで自分が契約した（日本のどこかの離れたところにある）サーバーにアプリケーションファイルを設置していきます。</p>
 <p><strong>方法は３つあり、人によってパソコンの環境などが原因でうまくいかないこともあるので、このどれか１つで公開できたら今日の目標は達成とします。</strong></p>
 
 
@@ -107,7 +112,20 @@
       </google-codelab-step>
     
       <google-codelab-step label="サーバーへのリモート接続" duration="0">
-        <p>・SSH接続の設定をしましょう ・Macの方はご一緒に ・Winの方はこの記事を見ながらお願いします ・</p>
+        <aside class="special"><p>それでは、事前に借りたサーバーに対するSSH接続の設定をしていきましょう。</p>
+</aside>
+<ul>
+<li>Macの方はご一緒に</li>
+<li>Winの方は以下の記事を見ながらお願いします</li>
+</ul>
+<p><a href="https://mimimopu.com/powershell-ssh-client/" target="_blank">https://mimimopu.com/powershell-ssh-client/</a></p>
+<p>Winの方の作業が終わったら次に進みましょう。</p>
+<h2 is-upgraded>Macやること</h2>
+<ul>
+<li>ダウンロードしたpemキーを<code>~/.ssh</code>に設置する</li>
+<li>設置したキーのアクセス権限を許可する</li>
+<li><code>~/.ssh/config</code>にホストを登録する</li>
+</ul>
 
 
       </google-codelab-step>
@@ -121,14 +139,21 @@
       <google-codelab-step label="環境構築：React" duration="0">
         <aside class="warning"><p>指示１：下記のコマンドを実行してください。</p>
 </aside>
+<pre>sudo yum -y install nodejs
+</pre>
 <pre>node -v
+</pre>
+<pre>cd /var
+</pre>
+<pre>mkdir www &amp;&amp; cd $_
 </pre>
 
 
       </google-codelab-step>
     
       <google-codelab-step label="Reactアプリの作成と起動" duration="0">
-        <p>・</p>
+        <pre>npx create-react-app test-app
+</pre>
 
 
       </google-codelab-step>
@@ -142,7 +167,11 @@
       <google-codelab-step label="環境構築：Nginx" duration="0">
         <aside class="warning"><p>指示１：下記のコマンドを実行してください。</p>
 </aside>
-<pre>node -v
+<pre>dnf module list nginx
+</pre>
+<pre>sudo dnf module install nginx:1.18/common
+</pre>
+<pre>sudo service nginx start
 </pre>
 
 
@@ -154,6 +183,8 @@
 <pre>cd /etc/nginx/conf.d
 </pre>
 <pre>vi fe-nginx.conf
+</pre>
+<pre>sudo nginx -s reload
 </pre>
 <aside class="warning"><p>指示２：ファイルの中身に以下を記述してください。</p>
 </aside>
