@@ -153,8 +153,10 @@
       </google-codelab-step>
     
       <google-codelab-step label="Reactアプリの作成と起動" duration="0">
-        <pre>npx create-react-app test-app
+        <p>次のコマンドで１回で完了します。</p>
+<pre>npx create-react-app test-app
 </pre>
+<p>npxコマンドは、コマンドが存在しなければダウンロードした上でそのまま実行してくれます。</p>
 
 
       </google-codelab-step>
@@ -187,8 +189,16 @@
 </pre>
 <pre>sudo nginx -s reload
 </pre>
-<aside class="warning"><p>指示２：ファイルの中身に以下を記述してください。 <br><code>server {<br>listen       80;<br>server_name  160.251.42.142;<br>location / {<br>    proxy_pass http://localhost:3000;<br>}<br>}<br></code></p>
+<aside class="warning"><p>指示２：ファイルの中身に以下を記述してください。</p>
 </aside>
+<pre>server {
+  listen       80;
+  server_name  160.251.42.142;
+  location / {
+    proxy_pass http://localhost:3000;
+  }
+}
+</pre>
 
 
       </google-codelab-step>
@@ -234,16 +244,24 @@
       <google-codelab-step label="発展課題" duration="0">
         <h2 is-upgraded>github連携</h2>
 <ul>
-<li>githubアカウント登録</li>
-<li>サーバーで秘密鍵と公開鍵を作成</li>
-<li>公開鍵をgithubに登録</li>
-<li>サーバーでgitをインストール</li>
+<li>githubアカウント登録する</li>
+<li>サーバーで秘密鍵と公開鍵を作成する</li>
+<li>公開鍵をgithubに登録する</li>
+<li>サーバーでgitをインストールする</li>
+<li>手元のフォルダをgithubにpushする</li>
+<li>githubからサーバーにpullする</li>
+</ul>
+<h2 is-upgraded>独自ドメイン反映</h2>
+<ul>
+<li>ドメイン契約する</li>
+<li>サーバーにドメインを割り当てる</li>
+<li>Nginxの設定に書き込む</li>
+<li>SSL化する</li>
 </ul>
 <h2 is-upgraded>セキュリティの設定</h2>
 <ul>
-<li>パスワード無効化</li>
-<li>ポート変更</li>
-<li>SSL化</li>
+<li>パスワードを無効化する -&gt; 今回は初期設定で反映済み</li>
+<li>ポートを変更する</li>
 </ul>
 
 
