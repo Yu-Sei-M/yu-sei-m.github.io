@@ -3,7 +3,7 @@
   "format": "html",
   "prefix": "https://storage.googleapis.com",
   "mainga": "UA-49880327-14",
-  "updated": "2021-04-10T13:58:28+09:00",
+  "updated": "2021-04-10T14:12:07+09:00",
   "id": "react-nginx-linix",
   "duration": 2,
   "title": "NginxでReactアプリ公開",
