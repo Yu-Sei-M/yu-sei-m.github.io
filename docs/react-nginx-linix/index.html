@@ -224,8 +224,29 @@
         <aside class="special"><p>ここまでは、ssh接続先のサーバーで直接Reactアプリを作成して公開しました。実際に手元で何かファイルを作成し、公開してみましょう。</p>
 </aside>
 <p>desktopなどに自由にファイルを作成します。真似しながらトライしましょう。</p>
-<p>過去にReactの勉強会に参加された方は過去のアプリをデプロイする方針でも問題ありません。</p>
+<p>ここでは、index.htmlを作成します。</p>
+<pre><code language="language-html" class="language-html">&lt;html&gt;
+  &lt;head&gt;
+    &lt;meta http-equiv=&#34;content-type&#34; charset=&#34;utf-8&#34;&gt;
+    &lt;title&gt;Nginxテスト&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    このHTMLはNginxで配信されています。
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<p>過去にReactの勉強会に参加された方は過去のアプリをデプロイする方針でも問題ありません。 途中で詰まったらご質問ください。</p>
 <pre>scp -r -i ~/.ssh/fe-nginx.pem -P 1216 -o StrictHostKeyChecking=no ~/desktop/nginx-test root@	160.251.42.142:/var/www/
+</pre>
+<p>アップロードが完了したら、Nginxの設定を書き換えましょう。</p>
+<p>以下はindex.htmlを配信する場合です。</p>
+<pre># 中略
+  location / {
+    root /var/www/server/build;
+    try_files $uri /index.html;
+    index index.htm index.html;
+  }
+# 中略
 </pre>
 
 
