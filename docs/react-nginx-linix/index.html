@@ -87,9 +87,9 @@
 <p>手元のフォルダやファイルをアップロードする方法はいくつかあります。</p>
 <ul>
 <li>FTPソフト</li>
+<li>sshコマンド+直接開発</li>
 <li>scpコマンド</li>
 <li>sshコマンド+gitコマンド</li>
-<li>sshコマンド+直接開発</li>
 </ul>
 <p>１つ目のFTPがもっとも古典的な方法ですが、現代でもまだ使われていますね。 今回は手元のターミナル（パワーシェル）でコマンドを実行することで自分が契約した（日本のどこかの離れたところにある）サーバーにアプリケーションファイルを設置していきます。</p>
 <p><strong>今回取り組む方法は３つあり、人によってパソコンの環境などが原因でうまくいかないこともあるので、このどれか１つで公開できたら今日の目標は達成とします。</strong></p>
@@ -114,24 +114,20 @@
       <google-codelab-step label="サーバーへのリモート接続" duration="0">
         <aside class="special"><p>それでは、事前に借りたサーバーに対するSSH接続の設定をしていきましょう。</p>
 </aside>
-<ul>
-<li>Macの方はご一緒に</li>
-<li>Winの方は以下の記事を見ながらお願いします</li>
-</ul>
-<p><a href="https://mimimopu.com/powershell-ssh-client/" target="_blank">https://mimimopu.com/powershell-ssh-client/</a></p>
-<p>Winの方の作業が終わったら次に進みましょう。</p>
-<h2 is-upgraded>Macやること</h2>
+<h2 is-upgraded>Macの方はご一緒に</h2>
+<p><code>Macやること</code></p>
 <ul>
 <li>ダウンロードしたpemキーを<code>~/.ssh</code>に設置する</li>
 <li>設置したキーのアクセス権限を許可する</li>
 <li><code>~/.ssh/config</code>にホストを登録する</li>
 </ul>
-
-
-      </google-codelab-step>
-    
-      <google-codelab-step label="Reactとは？" duration="0">
-        <p>・昔のスクショ３枚くらい</p>
+<h2 is-upgraded>Winの方は以下の記事を見ながらお願いします</h2>
+<p><a href="https://mimimopu.com/powershell-ssh-client/" target="_blank">PowerShellでSSHクライアントを使う</a></p>
+<p>Winの方の作業が終わったら次に進みましょう。</p>
+<p>待ち時間が発生した場合は以下の記事を読んでお待ちください。</p>
+<ul>
+<li><a href="https://ascii.jp/elem/000/004/030/4030703/" target="_blank">リバースプロキシとプロキシ、その仕組みと役割の違い</a></li>
+</ul>
 
 
       </google-codelab-step>
